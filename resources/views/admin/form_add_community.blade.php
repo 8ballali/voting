@@ -44,6 +44,17 @@
                             @endif
 
                         </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea name="description" class="form-control" placeholder="Deskripsi Komunitas"></textarea>
+
+                             @if($errors->has('description'))
+                                <div class="text-danger">
+                                    {{ $errors->first('description')}}
+                                </div>
+                            @endif
+
+                        </div>
 
                         <div class="form-group">
                             <label>Phone Number</label>
