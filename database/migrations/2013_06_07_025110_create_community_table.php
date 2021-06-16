@@ -17,7 +17,7 @@ class CreateCommunityTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
-            $table->integer('phone');
+            $table->text('phone');
             $table->timestamps();
         });
     }

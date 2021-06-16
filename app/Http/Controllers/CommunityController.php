@@ -10,11 +10,11 @@ class CommunityController extends Controller
 
     public function index(){
         $community = Community::All();
-        return view('admin.community', ['community'=> $community]);
+        return view('admin.table-community', ['community'=> $community]);
     }
 
     public function add(){
-        return view('admin.form_add_community');
+        return view('admin.table-add-community');
     }
 
     public function store(Request $request){
@@ -35,7 +35,7 @@ class CommunityController extends Controller
 
         public function edit($id){
             $community = Community::find($id);
-            return view('admin.form_edit_community', ['community' => $community]);
+            return view('admin.table-edit-community', ['community' => $community]);
         }
 
         public function update ($id, Request $request){
