@@ -260,6 +260,12 @@
                                         <p>Edit Community</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="/e-vote/admin/community/import" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Import Community</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -317,6 +323,12 @@
                                     <a href="#" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Edit User</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/e-vote/admin/user/import" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Import User</p>
                                     </a>
                                 </li>
                             </ul>

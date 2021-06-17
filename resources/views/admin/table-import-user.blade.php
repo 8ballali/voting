@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Edit Community</title>
+    <title>AdminLTE 3 | Blank Page</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -29,7 +29,7 @@
                     <a href="../../index3.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Edit Community</a>
+                    <a href="#" class="nav-link">Contact</a>
                 </li>
             </ul>
 
@@ -201,8 +201,8 @@
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                        <li class="nav-item ">
-                            <a href="/e-vote/admin" class="nav-link ">
+                        <li class="nav-item menu-open">
+                            <a href="/e-vote/admin" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -238,12 +238,6 @@
                                         <p>Edit Community</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="/e-vote/admin/community/import" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Import Community</p>
-                                    </a>
-                                </li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -276,7 +270,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item menu-open">
+                        <li class="nav-item">
                             <a href="/e-vote/admin/user" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
@@ -286,27 +280,21 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/user" class="nav-link ">
+                                    <a href="/e-vote/admin/user" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List User</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/user/add" class="nav-link">
+                                    <a href="/e-vote/admin/add" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add User</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link active">
+                                    <a href="#" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Edit User</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/e-vote/admin/user/import" class="nav-link ">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Import User</p>
                                     </a>
                                 </li>
                             </ul>
@@ -359,127 +347,152 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-            <section class="content-header">
+            <div class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Edit User</h1>
-                        </div>
+                            <h1 class="m-0">Dashboard</h1>
+                        </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Edit User</li>
+                                <li class="breadcrumb-item active">Dashboard v1</li>
                             </ol>
-                        </div>
-                    </div>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
-            </section>
+            </div>
+            <!-- /.content-header -->
 
             <!-- Main content -->
             <section class="content">
-                <div class="container">
-                    <div class="card mt-5">
-                        <div class="card-header text-center">
-                            Edit User
+                <div class="container-fluid">
+                    <!-- Small boxes (Stat box) -->
+                    <div class="row">
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-info">
+                                <div class="icon">
+                                    <i class="ion ion-bag"></i>
+                                </div>
+
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <form method="post" action="/e-vote/admin/user/update/{{ $user->id }}">
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
 
-                                {{ csrf_field() }}
-                                {{ method_field('PUT') }}
-
-                                <div class="form-group">
-                                    <label>Name</label>
-                                    <input type="text" name="name" class="form-control" placeholder="Nama Komunitas"
-                                        value=" {{ $user->name }}">
-
-                                    @if($errors->has('name'))
-                                    <div class="text-danger">
-                                        {{ $errors->first('name')}}
-                                    </div>
-                                    @endif
-
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Email</label>
-                                    <textarea name="email" class="form-control"
-                                        placeholder="Deskripsi Komunitas"> {{ $user->email }} </textarea>
-
-                                    @if($errors->has('email'))
-                                    <div class="text-danger">
-                                        {{ $errors->first('email')}}
-                                    </div>
-                                    @endif
-
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Phone Number</label>
-                                    <textarea name="phone" class="form-control"
-                                        placeholder="Nomor Telepon"> {{ $user->phone }} </textarea>
-
-                                    @if($errors->has('phone'))
-                                    <div class="text-danger">
-                                        {{ $errors->first('phone')}}
-                                    </div>
-                                    @endif
-
-                                </div>
-                                <div class="form-group">
-                                    <label>Community ID</label>
-                                    <textarea name="community_id" class="form-control"
-                                        placeholder="Comunity ID"> {{ $user->community_id }} </textarea>
-
-                                    @if($errors->has('community_id'))
-                                    <div class="text-danger">
-                                        {{ $errors->first('community_id')}}
-                                    </div>
-                                    @endif
-
-                                </div>
-                                <div class="form-group">
-                                    <label>Role</label>
-                                    <textarea name="role" class="form-control"
-                                        placeholder="Role"> {{ $user->role }} </textarea>
-
-                                    @if($errors->has('role'))
-                                    <div class="text-danger">
-                                        {{ $errors->first('role')}}
-                                    </div>
-                                    @endif
-
-                                </div>
-                                <div class="form-group">
-                                    <input type="submit" class="btn btn-success" value="Simpan">
-                                </div>
-
-                            </form>
 
                         </div>
-                    </div>
-                </div>
-                <!-- /.card-footer-->
+                        <!-- ./col -->
+
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-danger">
+                                <!-- ./col -->
+                            </div>
+                            <!-- /.row -->
+                            <!-- Main row -->
+                            <div class="row">
+                                <!-- Left col -->
+                                <section class="col-lg-7 connectedSortable">
+                                    <!-- Custom tabs (Charts with tabs)-->
+
+                                    </ul>
+                                    </nav>
+                                    <!-- /.sidebar-menu -->
+                            </div>
+                            <!-- /.sidebar -->
+                            </aside>
+
+                            <!-- Content Wrapper. Contains page content -->
+
+
+                            <!-- Main content -->
+                            <div class="container">
+                                <center>
+                                    <h4>Import user Ke Database</h4>
+
+                                </center>
+
+                                {{-- notifikasi form validasi --}}
+                                @if ($errors->has('file'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('file') }}</strong>
+                                </span>
+                                @endif
+
+                                {{-- notifikasi sukses --}}
+                                @if ($sukses = Session::get('sukses'))
+                                <div class="alert alert-success alert-block">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <strong>{{ $sukses }}</strong>
+                                </div>
+                                @endif
+
+                                <button type="button" class="btn btn-primary mr-5" data-toggle="modal"
+                                    data-target="#importExcel">
+                                    IMPORT EXCEL
+                                </button>
+
+                                <!-- Import Excel -->
+                                <div class="modal fade" id="importExcel" tabindex="-1" role="dialog"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <form method="post" action="/e-vote/admin/user/import-excel"
+                                            enctype="multipart/form-data">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Import Excel</h5>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    {{ csrf_field() }}
+
+                                                    <label>Pilih file excel</label>
+                                                    <div class="form-group">
+                                                        <input type="file" name="file" required="required">
+                                                    </div>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary">Import</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <!-- Default box -->
+                                <div class="card">
+
+
+                                    <!-- /.card-body -->
+                                    <!-- /.card-footer-->
+                                </div>
+                                <!-- /.card -->
+
+            </section>
+            <!-- /.content -->
         </div>
-        <!-- /.card -->
+        <!-- /.content-wrapper -->
 
-        </section>
-        <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="float-right d-none d-sm-block">
+                <b>Version</b> 3.1.0
+            </div>
+            <strong>Copyright &copy; 2021 <a href="https://adminlte.io">CAN Cr{{ asset('/style/')}}</a>.</strong> All
+            rights reserved.
+        </footer>
 
-    <footer class="main-footer">
-        <div class="float-right d-none d-sm-block">
-            <b>Version</b> 3.1.0
-        </div>
-        <strong>Copyright &copy; 2021 <a href="https://can.co.id/">Can Creative</a>.</strong> All rights reserved.
-    </footer>
-
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
 

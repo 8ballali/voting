@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'AuthenticateController@index');
 
+Route::get('/', 'AuthenticateController@index');
 
 
 Auth::routes();
@@ -38,6 +39,8 @@ Route::group(['middleware' => 'admin'], function (){
     Route::get('/e-vote/admin/user/edit/{id}', 'UserController@edit');
     Route::put('/e-vote/admin/user/update/{id}', 'UserController@update');
     Route::get('/e-vote/admin/user/delete/{id}', 'UserController@delete');
+    Route::get('/e-vote/admin/user/import', 'ImportUserController@import');
+    Route::post('/e-vote/admin/user/import-excel', 'ImportUserController@import_excel');
     Route::get('/e-vote/admin/community', 'CommunityController@index');
     Route::get('/e-vote/admin/community/add', 'CommunityController@add');
     Route::post('/e-vote/admin/community/store', 'CommunityController@store');
@@ -50,8 +53,9 @@ Route::group(['middleware' => 'admin'], function (){
 });
 
 
+
 Route::group(['middleware' => 'user'], function(){
-    Route::get('/e-vote/user', 'UserController@index');
+    Route::get('/e-vote/user', 'HomeController@index');
     Route::get('/e-vote/user/candidate', 'CandidateUserController@index');
     Route::get('/e-vote/user/candidate/register', 'CandidateUserController@register');
     Route::post('/e-vote/user/candidate/store', 'CandidateUserController@store');

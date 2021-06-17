@@ -201,8 +201,8 @@
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                        <li class="nav-item menu-open">
-                            <a href="/e-vote/admin" class="nav-link active">
+                        <li class="nav-item ">
+                            <a href="/e-vote/admin" class="nav-link ">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -211,7 +211,7 @@
                             </a>
 
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item menu-open">
                             <a href="/e-vote/admin/community" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
@@ -236,6 +236,12 @@
                                     <a href="#" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Edit Community</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/e-vote/admin/community/import" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Import Community</p>
                                     </a>
                                 </li>
                             </ul>
@@ -286,7 +292,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/add" class="nav-link">
+                                    <a href="/e-vote/admin/user/add" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add User</p>
                                     </a>
@@ -295,6 +301,12 @@
                                     <a href="#" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Edit User</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/e-vote/admin/user/import" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Import User</p>
                                     </a>
                                 </li>
                             </ul>
@@ -482,9 +494,9 @@
 
         <footer class="main-footer">
             <div class="float-right d-none d-sm-block">
-                <b>Version</b> 3.1.0
+                <b>Version</b> 1.0
             </div>
-            <strong>Copyright &copy; 2021 <a href="https://adminlte.io">CAN Cr{{ asset('/style/')}}</a>.</strong> All
+            <strong>Copyright &copy; 2021 <a href="https://can.co.id/">CAN Creative</a>.</strong> All
             rights reserved.
         </footer>
 

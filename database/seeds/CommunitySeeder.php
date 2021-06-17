@@ -12,9 +12,9 @@ class CommunitySeeder extends Seeder
     public function run()
     {
         DB::table('community')->insert([
-            'name' => 'WOW JATENG',
-            'description' => 'WULING OWNER JAWA TENGAH',
-            'phone' => '082240541121'
+            'name' => 'ACS',
+            'description' => 'Admin Kosmos',
+            'phone' => '082223326818'
         ]);
     }
 }

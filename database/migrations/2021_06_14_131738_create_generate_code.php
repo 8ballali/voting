@@ -16,6 +16,7 @@ class CreateGenerateCode extends Migration
         Schema::create('generate_code', function (Blueprint $table) {
             $table->id();
             $table->string('code');
+            $table->integer('reg_id');
             $table->softDeletes();
             $table->timestamps();
         });
