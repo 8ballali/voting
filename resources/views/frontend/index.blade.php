@@ -18,7 +18,7 @@
     <!-- navigasi -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="/"><img src="images/kosmos.png" width="80" height="60" alt=""></a>
+            <a class="navbar-brand" href="{{url('/')}}"><img src="images/kosmos.png" width="80" height="60" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -26,13 +26,13 @@
             <div class="collapse navbar-collapse text-right" id="navbarText">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="{{url('/')}}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/syarat">Syarat</a>
+                        <a class="nav-link" href="{{url('syarat')}}">Syarat</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/registrasi">Registrasi</a>
+                        <a class="nav-link" href="{{url('registrasi')}}">Registrasi</a>
                     </li>
                 </ul>
             </div>

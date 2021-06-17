@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Poling;
+use App\Candidate;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,24 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $poling = Poling::with('candidate')->get();
+        return view('index', compact('poling'));
     }
+
+    public function visi1()
+    {
+        $candidate = Candidate::get();
+        return view('visi1', compact('candidate'));
+    }
+
+
+    public function test(Request $request)
+    {
+        $code = $request->code;
+        return $code;
+    }
+//    public function index()
+//    {
+//        return view('home');
+//    }
 }

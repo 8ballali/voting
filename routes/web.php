@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'AuthenticateController@index');
 
-Route::get('/', 'AuthenticateController@index');
 
 
 Auth::routes();
@@ -63,3 +62,16 @@ Route::group(['middleware' => 'user'], function(){
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/', 'HomeController@index');
+Route::get('/registrasi', function () {
+    return view('registrasi');
+});
+Route::get('/syarat', function () {
+    return view('syarat');
+});
+Route::get('/visi1', 'HomeController@visi1', function () {
+    return view('visi1');
+});
+Route::post('voting', 'HomeController@test');

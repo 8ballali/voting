@@ -13,4 +13,9 @@ class poling extends Model
         'start_at',
         'stop_at'
     ];
+
+    public function candidate()
+    {
+        return $this->hasMany(Candidate::class, 'poling_id', 'id');
+    }
 }
