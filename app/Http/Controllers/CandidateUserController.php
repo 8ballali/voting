@@ -10,6 +10,7 @@ class CandidateUserController extends Controller
     public function index()
     {
         $candidate = candidate::All();
+        dd($candidate);
         return view('users.candidate', ['candidate' => $candidate]);
     }
 
@@ -34,21 +35,9 @@ class CandidateUserController extends Controller
             'poling_id' => 'required'
         ]);
 
-        $file = $request->file('file');
+        $file = $request->file('file')->store('file');
 
-        $nama_file = time() . "_" . $file->getClientOriginalName();
-
-        // isi dengan nama folder tempat kemana file diupload
-        $tujuan_upload = 'data_file';
-        $file->move($tujuan_upload, $nama_file);
-
-        $avatar = $request->file('avatar');
-
-        $nama_avatar = time() . "_" . $avatar->getClientOriginalName();
-
-        // isi dengan nama folder tempat kemana file diupload
-        $tujuan_upload = 'data_file';
-        $avatar->move($tujuan_upload, $nama_file);
+        $avatar = $request->file('avatar')->store('file');
         Candidate::create([
             'name' => $request->name,
             'visi' => $request->visi,
@@ -58,8 +47,8 @@ class CandidateUserController extends Controller
             'gender' => $request->gender,
             'user_phone' => $request->user_phone,
             'community_id' => $request->community_id,
-            'file' => $nama_file,
-            'avatar' => $nama_avatar,
+            'file' => $file,
+            'avatar' => $avatar,
             'poling_id' => $request->poling_id
 
         ]);
