@@ -414,7 +414,7 @@
                                     <td>{{ $ca->alamat }}</td>
                                     <td>{{ $ca->user_phone }}</td>
                                     <td>{{ $ca->user_id }}</td>
-                                    <td><img src="{{ url('storage').'/'.$c->avatar }}" height="30px" width="30px" />
+                                    <td><img src="{{ url('storage').'/'.$ca->avatar }}" height="30px" width="30px" />
                                     </td>
 
                                     <td>
