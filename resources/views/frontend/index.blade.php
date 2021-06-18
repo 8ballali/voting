@@ -63,7 +63,7 @@
                 <div class="card">
                     <div class="img">
                         <a href="{{url('e-vote/user/candidate/').'/'.$c->id}}"><img
-                                src="{{ url('/').'/data_file/'.$c->avatar }}" alt=""></a>
+                                src="{{ url('storage').'/'.$c->avatar }}" alt=""></a>
                     </div>
                     <div class="content">
                         <div class="title">
