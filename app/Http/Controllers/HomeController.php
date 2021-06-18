@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Poling;
 use App\Candidate;
-
+use Auth;
 class HomeController extends Controller
 {
     /**
@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $poling = Poling::with('candidate')->get();
-        return view('index', compact('poling'));
+        return view('frontend.index', compact('poling'));
     }
 
     public function visi1()

@@ -25,7 +25,7 @@ Auth::routes();
 
 Route::group(['middleware' => 'admin'], function (){
     Route::get('/e-vote/admin', 'AdminController@index');
-//    Route::get('/e-vote/admin/dashboard', 'AdminController@dashboard');
+    // Route::get('/e-vote/admin/dashboard', 'AdminController@dashboard');
     Route::get('/e-vote/admin/candidate', 'CandidateAdminController@index');
     Route::get('/e-vote/admin/candidate/add', 'CandidateAdminController@add');
     Route::post('/e-vote/admin/candidate/store', 'CandidateAdminController@store');
@@ -54,7 +54,7 @@ Route::group(['middleware' => 'admin'], function (){
 
 
 Route::group(['middleware' => 'user'], function(){
-    Route::get('/e-vote/user', 'HomeController@index');
+    Route::get('/e-vote/user', 'HomeController@index')->name('home');
     Route::get('/e-vote/user/candidate', 'CandidateUserController@index');
     Route::get('/e-vote/user/candidate/register', 'CandidateUserController@register');
     Route::post('/e-vote/user/candidate/store', 'CandidateUserController@store');
@@ -64,7 +64,7 @@ Route::group(['middleware' => 'user'], function(){
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/', 'HomeController@index');
+// Route::get('/', 'HomeController@index');
 Route::get('/registrasi', function () {
     return view('registrasi');
 });

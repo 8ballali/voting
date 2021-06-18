@@ -16,8 +16,8 @@ class CreateCommunityTable extends Migration
         Schema::create('community', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
-            $table->text('phone');
+            $table->text('description');
+            $table->string('phone');
             $table->timestamps();
         });
     }

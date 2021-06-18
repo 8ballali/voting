@@ -56,7 +56,7 @@
                             {{$c->name}}
                         </div>
                         <div class="sub-title">
-                            {{\DB::table('community')->where('id', \App\User::find($c->user_id)->community_id)->first()->name}}
+                            {{\DB::table('community')->where('id', $c->community_id)->first()->name}}
                         </div>
                     </div>
                 </div>

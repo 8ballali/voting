@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use Faker\Factory as Faker;
 class CommunitySeeder extends Seeder
 {
     /**
@@ -11,10 +11,13 @@ class CommunitySeeder extends Seeder
      */
     public function run()
     {
-        DB::table('community')->insert([
-            'name' => 'ACS',
-            'description' => 'Admin Kosmos',
-            'phone' => '082223326818'
-        ]);
+        $faker = Faker::create();
+        foreach (range(1, 3) as $value) {
+            DB::table('community')->insert([
+                'name' => $faker->company,
+                'description' => $faker->paragraph,
+                'phone' => $faker->e164PhoneNumber,
+            ]);
+        }
     }
 }

@@ -21,20 +21,17 @@ class CreateCandidateTable extends Migration
             $table->text('alamat');
             $table->text('ttl');
             $table->text('gender');
-            $table->unsignedBigInteger('user_phone');
-            $table->unsignedBigInteger('user_id');
+            $table->string('user_phone');
             $table->string('file');
             $table->string('avatar');
+            $table->unsignedBigInteger('community_id');
             $table->unsignedBigInteger('poling_id');
             $table->timestamps();
-            $table->foreign('user_phone')
-            ->references('phone')->on('users')
-            ->onDelete('cascade');
-            $table->foreign('user_id')
-            ->references('id')->on('users')
-            ->onDelete('cascade');
             $table->foreign('poling_id')
             ->references('id')->on('poling')
+            ->onDelete('cascade');
+            $table->foreign('community_id')
+            ->references('id')->on('community')
             ->onDelete('cascade');
         });
     }

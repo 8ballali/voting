@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use Faker\Factory as Faker;
+use Illuminate\Support\Facades\Hash;
 class UserSeeder extends Seeder
 {
     /**
@@ -11,10 +12,16 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
- //    DB::table('users')->insert([
- //           'name' => 'iqbal',
- //           'email' => 'iqbal@admin.com',
- //           'phone'
- //       ]); 
+        $faker = Faker::create();
+        foreach (range(1, 10) as $value) {
+            DB::table('users')->insert([
+               'name' => $faker->name,
+               'email' => $faker->email,
+               'phone' => $faker->e164PhoneNumber,
+               'community_id' => rand(1,3),
+               'role'  => $faker->randomElement(['admin', 'user']),
+               'password' => Hash::make('12345678'),
+            ]); 
+        }
     }
 }

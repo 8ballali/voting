@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use Faker\Factory as Faker;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 class CandidateSeeder extends Seeder
 {
     /**
@@ -11,17 +13,22 @@ class CandidateSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('candidate')->insert([
-            'name' => 'Pak Budi',
-            'visi' => 'RaacscsacCS',
-            'misi' => 'ascsacsc',
-            'alamat' => 'dimanasaja',
-            'ttl' => "Mars",
-            'gender' => "Laki",
-            'user_phone' => '21351245',
-            'user_id' => '2',
-            'file' => 'pendafataran.txt',
-            'poling_id'=> '1'
-        ]);
+        $avatar = Storage::fake('avatars');
+        $faker = Faker::create();
+        foreach (range(1, 3) as $value) {
+            DB::table('candidate')->insert([
+                'name' => $faker->name,
+                'visi' => $faker->paragraph,
+                'misi' => $faker->paragraph,
+                'alamat' => $faker->address,
+                'ttl' => $faker->city .', '.$faker->date($format = 'Y-m-d', $max = 'now'),
+                'gender' => $faker->randomElement(['laki-laki', 'perempuan']),
+                'user_phone' => $faker->e164PhoneNumber,
+                'file' => '-',
+                'avatar' => '-',
+                'poling_id'=> 1,
+                'community_id'=> rand(1, 3)
+            ]);
+        }
     }
 }
