@@ -37,6 +37,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('e-vote/user/registrasi')}}">Registrasi</a>
                     </li>
+                    <li class="nav-item">
+                        <div class=" " aria-labelledby="navbarDropdown">
+                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -51,7 +63,7 @@
 
             <div class="row">
                 <div class="col-lg-4">
-                    <img src="{{url('assets/images/satu.jpg')}}" class="img-fluid" alt="">
+                    <img src="{{ url('/').'/data_file/'.$candidate->avatar }}" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-8 pt-4 pt-lg-0 content">
                     <div class="row">

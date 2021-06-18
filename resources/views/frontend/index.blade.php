@@ -27,13 +27,25 @@
             <div class="collapse navbar-collapse text-right" id="navbarText">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('/')}}">Home</a>
+                        <a class="nav-link" href="{{url('/e-vote/user/')}}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('e-vote/user/syarat')}}">Syarat</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('e-vote/user/registrasi')}}">Registrasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class=" " aria-labelledby="navbarDropdown">
+                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -51,7 +63,7 @@
                 <div class="card">
                     <div class="img">
                         <a href="{{url('e-vote/user/candidate/').'/'.$c->id}}"><img
-                                src="{{url('assets/images/satu.jpg')}}" alt=""></a>
+                                src="{{ url('/').'/data_file/'.$c->avatar }}" alt=""></a>
                     </div>
                     <div class="content">
                         <div class="title">
