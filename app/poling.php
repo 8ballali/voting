@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class poling extends Model
+class Poling extends Model
 {
     protected $table = "poling";
     protected $fillable = [
