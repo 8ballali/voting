@@ -7,17 +7,20 @@ use App\Candidate;
 
 class CandidateUserController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $candidate = candidate::All();
-        return view('users.candidate', ['candidate'=> $candidate]);
+        return view('users.candidate', ['candidate' => $candidate]);
     }
 
-    public function register(){
+    public function register()
+    {
         return view('users.form_register_candidate');
     }
 
-    public function store(Request $request){
-        $this->validate($request,[
+    public function store(Request $request)
+    {
+        $this->validate($request, [
             'name' => 'required',
             'visi' => 'required',
             'misi' => 'required',
@@ -25,18 +28,27 @@ class CandidateUserController extends Controller
             'ttl' => 'required',
             'gender' => 'required',
             'user_phone' => 'required',
-            'user_id' => 'required',
-            'file' => 'required',
-            'poling_id'=> 'required',
+            'community_id' => 'required',
+            'file' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
+            'avatar' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
+            'poling_id' => 'required'
         ]);
 
+        $file = $request->file('file');
 
-//        $file = $request->file('file'); 
-//        // Insert Folder name 
-//        $tujuan_upload = 'data_file';
-//        $file->move($tujuan_upload);
+        $nama_file = time() . "_" . $file->getClientOriginalName();
 
+        // isi dengan nama folder tempat kemana file diupload
+        $tujuan_upload = 'data_file';
+        $file->move($tujuan_upload, $nama_file);
 
+        $avatar = $request->file('avatar');
+
+        $nama_avatar = time() . "_" . $avatar->getClientOriginalName();
+
+        // isi dengan nama folder tempat kemana file diupload
+        $tujuan_upload = 'data_file';
+        $file->move($tujuan_upload, $nama_file);
         Candidate::create([
             'name' => $request->name,
             'visi' => $request->visi,
@@ -45,11 +57,18 @@ class CandidateUserController extends Controller
             'ttl' => $request->ttl,
             'gender' => $request->gender,
             'user_phone' => $request->user_phone,
-            'user_id' => $request->user_id,
-            'file' => $request->file,
-            'poling_id'=> $request->poling_id,
-        ]);
+            'community_id' => $request->community_id,
+            'file' => $nama_file,
+            'avatar' => $nama_avatar,
+            'poling_id' => $request->poling_id
 
-        return redirect('/e-vote/user/candidate');
+        ]);
+        return redirect('e-vote/user/home');
+    }
+
+    public function candidate($id)
+    {
+        $candidate = Candidate::find($id);
+        return view('frontend.visi1', ['candidate' => $candidate]);
     }
 }

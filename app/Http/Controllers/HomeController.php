@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Poling;
 use App\Candidate;
 use Auth;
+
 class HomeController extends Controller
 {
     /**
@@ -41,8 +42,8 @@ class HomeController extends Controller
         $code = $request->code;
         return $code;
     }
-//    public function index()
-//    {
-//        return view('home');
-//    }
+    //    public function index()
+    //    {
+    //        return view('home');
+    //    }
 }

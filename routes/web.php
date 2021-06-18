@@ -23,7 +23,7 @@ Route::get('/', 'AuthenticateController@index');
 
 Auth::routes();
 
-Route::group(['middleware' => 'admin'], function (){
+Route::group(['middleware' => 'admin'], function () {
     Route::get('/e-vote/admin', 'AdminController@index');
     // Route::get('/e-vote/admin/dashboard', 'AdminController@dashboard');
     Route::get('/e-vote/admin/candidate', 'CandidateAdminController@index');
@@ -53,25 +53,20 @@ Route::group(['middleware' => 'admin'], function (){
 
 
 
-Route::group(['middleware' => 'user'], function(){
+Route::group(['middleware' => 'user'], function () {
     Route::get('/e-vote/user', 'HomeController@index')->name('home');
-    Route::get('/e-vote/user/candidate', 'CandidateUserController@index');
+    Route::get('/e-vote/user/candidate/{id}', 'CandidateUserController@candidate');
     Route::get('/e-vote/user/candidate/register', 'CandidateUserController@register');
     Route::post('/e-vote/user/candidate/store', 'CandidateUserController@store');
-
+    Route::get('e-vote/user/syarat', function () {
+        return view('frontend/syarat');
+    });
+    Route::get('e-vote/user/registrasi', function () {
+        return view('frontend/registrasi');
+    });
+    Route::get('e-vote/user/visi1', function () {
+        return view('frontend/visi1');
+    });
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-
-// Route::get('/', 'HomeController@index');
-Route::get('/registrasi', function () {
-    return view('registrasi');
-});
-Route::get('/syarat', function () {
-    return view('syarat');
-});
-Route::get('/visi1', 'HomeController@visi1', function () {
-    return view('visi1');
-});
-Route::post('voting', 'HomeController@test');
