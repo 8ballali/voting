@@ -21,7 +21,8 @@
     <!-- navigasi -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="{{url('e-vote/user/')}}"><img src="{{url('assets/images/kosmos.png')}}" width="80" height="60" alt=""></a>
+            <a class="navbar-brand" href="{{url('e-vote/user/')}}"><img src="{{url('assets/images/kosmos.png')}}"
+                    width="80" height="60" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -46,17 +47,17 @@
             <h2>Registrasi</h2>
         </div>
         @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif
+                @endforeach
+            </ul>
+        </div>
+        @endif
         <div class="content">
-            <form action="{{url('e-vote/user/candidate/store')}}" method="POST" enctype="multipart/form-data" >
-                @csrf 
+            <form action="{{url('e-vote/user/candidate/store')}}" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="user-details">
                     <div class="input-box">
                         <span class="details">Nama Lengkap</span>
@@ -70,8 +71,8 @@
                             <select id="select-state" name="community_id">
                                 <option value="">Select a Club</option>
                                 @foreach (\DB::table ('community')->get() as $c )
-                                <option value="{{$c->id}}">{{$c->name}}</option>    
-                                @endforeach 
+                                <option value="{{$c->id}}">{{$c->name}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -100,8 +101,8 @@
                             <select id="select-state" name="poling_id">
                                 <option value="">Select a poling</option>
                                 @foreach (\DB::table ('poling')->get() as $c )
-                                <option value="{{$c->id}}">{{$c->title}}</option>    
-                                @endforeach 
+                                <option value="{{$c->id}}">{{$c->title}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -140,15 +141,15 @@
                 </center>
                 <div class="wrapper" style="color: transparent;">
                     <div class="file-upload-wrapper" data-text="Select your file">
-                        <input name="file" id="upload" type="file" class="file-upload-field" value=""
-                            multiple required oninvalid="this.setCustomValidity('data tidak boleh kosong')"
+                        <input name="file" id="upload" type="file" class="file-upload-field" value="" multiple required
+                            oninvalid="this.setCustomValidity('data tidak boleh kosong')"
                             oninput="setCustomValidity('')">
                     </div>
                 </div>
                 <div class="wrapper" style="color: transparent;">
                     <div class="file-upload-wrapper" data-text="Upload your photo">
-                        <input name="avatar" id="upload" type="file" class="file-upload-field" value=""
-                            multiple required oninvalid="this.setCustomValidity('data tidak boleh kosong')"
+                        <input name="avatar" id="upload" type="file" class="file-upload-field" value="" multiple
+                            required oninvalid="this.setCustomValidity('data tidak boleh kosong')"
                             oninput="setCustomValidity('')">
                     </div>
                 </div>

@@ -48,7 +48,7 @@ class CandidateUserController extends Controller
 
         // isi dengan nama folder tempat kemana file diupload
         $tujuan_upload = 'data_file';
-        $file->move($tujuan_upload, $nama_file);
+        $avatar->move($tujuan_upload, $nama_file);
         Candidate::create([
             'name' => $request->name,
             'visi' => $request->visi,
@@ -63,7 +63,7 @@ class CandidateUserController extends Controller
             'poling_id' => $request->poling_id
 
         ]);
-        return redirect('e-vote/user/home');
+        return redirect('e-vote/user/');
     }
 
     public function candidate($id)

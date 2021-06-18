@@ -18,7 +18,8 @@
     <!-- navigasi -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="{{url('e-vote/user/index')}}"><img src="{{url('assets/images/kosmos.png')}}" width="80" height="60" alt=""></a>
+            <a class="navbar-brand" href="{{url('e-vote/user/index')}}"><img src="{{url('assets/images/kosmos.png')}}"
+                    width="80" height="60" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -49,14 +50,15 @@
                 @foreach ($p->candidate as $c)
                 <div class="card">
                     <div class="img">
-                        <a href="{{url('e-vote/user/candidate/').'/'.$c->id}}"><img src="{{url('assets/images/satu.jpg')}}" alt=""></a>
+                        <a href="{{url('e-vote/user/candidate/').'/'.$c->id}}"><img
+                                src="{{url('assets/images/satu.jpg')}}" alt=""></a>
                     </div>
                     <div class="content">
                         <div class="title">
                             {{$c->name}}
                         </div>
                         <div class="sub-title">
-                            
+
                         </div>
                     </div>
                 </div>
@@ -72,27 +74,28 @@
             </div>
             <div class="brand-carousel section-padding owl-carousel mt-5">
                 <div class="single-logo">
-                    <img src="{{url('assets/images/logo1-removebg-preview.png')}}" width="100" height="110" style="border-radius: 50%;"
-                        alt="">
+                    <img src="{{url('assets/images/logo1-removebg-preview.png')}}" width="100" height="110"
+                        style="border-radius: 50%;" alt="">
                 </div>
                 <div class="single-logo">
                     <img src="{{url('assets/images/logo2.jpg')}}" width="100" height="110" style="border-radius: 50%;"
                         alt="">
                 </div>
                 <div class="single-logo">
-                    <img src="{{url('assets/images/logo4-removebg-preview.png')}}" width="100" height="110" style="border-radius: 50%;"
-                        alt="">
+                    <img src="{{url('assets/images/logo4-removebg-preview.png')}}" width="100" height="110"
+                        style="border-radius: 50%;" alt="">
                 </div>
                 <div class="single-logo">
-                    <img src="{{url('assets/images/logo5-removebg-preview.png')}}" width="100" height="110" style="border-radius: 50%;"
-                        alt="">
+                    <img src="{{url('assets/images/logo5-removebg-preview.png')}}" width="100" height="110"
+                        style="border-radius: 50%;" alt="">
                 </div>
                 <div class="single-logo">
-                    <img src="{{url('assets/images/logo6-removebg-preview.png')}}" width="100" height="110" style="border-radius: 50%;"
-                        alt="">
+                    <img src="{{url('assets/images/logo6-removebg-preview.png')}}" width="100" height="110"
+                        style="border-radius: 50%;" alt="">
                 </div>
                 <div class="single-logo">
-                    <img src="{{url('assets/images/logo7-removebg-preview.png')}}" width="100" height="110" style="border-radius: 50%;" alt="">
+                    <img src="{{url('assets/images/logo7-removebg-preview.png')}}" width="100" height="110"
+                        style="border-radius: 50%;" alt="">
                 </div>
             </div>
         </section>
