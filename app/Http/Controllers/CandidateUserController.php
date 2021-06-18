@@ -35,9 +35,9 @@ class CandidateUserController extends Controller
             'poling_id' => 'required'
         ]);
 
-        $file = $request->file('file')->store('public/file');
+        $file = $request->file('file')->store('file');
 
-        $avatar = $request->file('avatar')->store('public/file');
+        $avatar = $request->file('avatar')->store('file');
         Candidate::create([
             'name' => $request->name,
             'visi' => $request->visi,
