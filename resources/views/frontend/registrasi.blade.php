@@ -136,50 +136,43 @@
                 </div>
                 <div class="input-box">
                     <span class="details">Visi</span>
-                    <textarea class="textarea" name="visi" id="visi" required
-                        oninvalid="this.setCustomValidity('data tidak boleh kosong')"
-                        oninput="setCustomValidity('')"></textarea>
-                </div>
-                <div class="input-box">
+                    <textarea class="textarea" id="visi" name="visi" required oninvalid="this.setCustomValidity('data tidak boleh kosong')"
+                      oninput="setCustomValidity('')"></textarea>
+                  </div>
+                  <div class="input-box">
                     <span class="details">Misi</span>
-                    <textarea class="textarea" name="misi" id="misi" required
-                        oninvalid="this.setCustomValidity('data tidak boleh kosong')"
-                        oninput="setCustomValidity('')"></textarea>
-                </div>
-                <center>
+                    <textarea class="textarea" id="misi" name="misi" required oninvalid="this.setCustomValidity('data tidak boleh kosong')"
+                      oninput="setCustomValidity('')"></textarea>
+                  </div>
+                  <center>
                     <div>
-                        <input type="checkbox" id="" name="" value="">
-                        <label for=""><a href="{{url('e-vote/user/syarat')}}" target="_blank"
-                                style="text-decoration: none;">
-                                <p>Syarat-Syarat Kandidat</p>
-                            </a></label>
-                    </div>
-                </center>
-                <div class="wrapper" style="color: transparent;">
-                    <div class="custom-file-upload">
+                      <input type="checkbox">
+                      <label for=""><a href="{{url('e-vote/user/syarat')}}" target="_blank"
+                              style="text-decoration: none;">
+                              <p>Syarat-Syarat Kandidat</p>
+                          </a></label>
+                  </div>
+                  </center>
+                  <center>
+                    <div class="container">
+                      <div class="custom-file-upload" >
                         <label for="file" class="mt-5">File berbentuk png, jpg </label>
-                        <input type="file" id="file" name="file" multiple required
-                            oninvalid="this.setCustomValidity('data tidak boleh kosong')"
-                            oninput="setCustomValidity('')" />
-                    </div>
-                    <div class="custom-file-upload">
-                        <label for="file" class="mt-5">Profil Foto </label>
-                        <center>
-                            <img id="image-preview" alt="image preview" />
-                        </center>
-                        <br />
-                        <input type="file" id="image-source" name="avatar" onchange="previewImage();" required
-                            oninvalid="this.setCustomValidity('data tidak boleh kosong')"
-                            oninput="setCustomValidity('')" />
-                    </div>
-                </div>
-        </div>
-        <center>
-            <input type="submit" value="Registrasi" name="submit" id="submit" class="btn btn-outline-warning mt-5 mb-5"
-                style="color:white; background-color: orangered;">
-        </center>
-        </form>
-
+                        <input type="file" id="file" name="file" multiple/>
+                      </div>
+                  </center>
+          <center>
+            <label for="file" class="mt-5">Profil Foto </label>
+          <img id="image-preview" alt="image preview" />
+            <br />
+            <input type="file" id="image-source" name="avatar" onchange="previewImage();" />
+          </center>
+          </div>
+              <center>
+                <input type="submit" name="submit" value="Registrasi" id="submit" class="btn btn-outline-warning mt-5 mb-5"
+                  style="color:white; background-color: orangered;">
+              </center>
+              </form>
+            </div>       
     </div>
     <script src="{{url('assets/js/script.js')}}"></script>
     <script src="{{url('assets/js/owl.carousel.min.js')}}"></script>
