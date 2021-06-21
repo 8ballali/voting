@@ -54,10 +54,10 @@ Route::group(['middleware' => 'admin'], function () {
 
 
 Route::group(['middleware' => 'user'], function () {
-    Route::get('/e-vote/user', 'HomeController@index')->name('home');
     Route::get('/e-vote/user/candidate/{id}', 'CandidateUserController@candidate');
     Route::get('/e-vote/user/candidate/register', 'CandidateUserController@register');
     Route::post('/e-vote/user/candidate/store', 'CandidateUserController@store');
+    Route::get('/e-vote/user', 'HomeController@index')->name('home');
     Route::get('e-vote/user/syarat', function () {
         return view('frontend/syarat');
     });

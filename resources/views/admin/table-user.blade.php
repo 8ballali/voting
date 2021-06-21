@@ -29,7 +29,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="../../index3.html" class="nav-link">Home</a>
+                    <a href="/e-vote/admin" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">User</a>
@@ -235,12 +235,6 @@
                                         <p>Add Community</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Edit Community</p>
-                                    </a>
-                                </li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -263,12 +257,6 @@
                                     <a href="/e-vote/admin/candidate/add" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add Candidate</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Edit Candidate</p>
                                     </a>
                                 </li>
                             </ul>
@@ -294,12 +282,6 @@
                                         <p>Add User</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Edit User</p>
-                                    </a>
-                                </li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -310,14 +292,6 @@
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="/e-vote/admin/quick-count" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Quick Count</p>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                         <li class="nav-item">
                             <a href="/e-vote/admin/generate" class="nav-link">
@@ -343,6 +317,18 @@
                             </ul>
                         </li>
                     </ul>
+                    <li class="nav-item">
+                        <div class=" " aria-labelledby="navbarDropdown">
+                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
                     </li>
                     <!-- /.sidebar-menu -->
             </div>
@@ -402,7 +388,7 @@
 
                                     <td>
                                         <a href="/e-vote/admin/user/delete/{{ $u->id }}"
-                                            class="btn btn-danger btn-sm">Hapus</a>
+                                            onClick="confirm('Delete entry?')" class="btn btn-danger btn-sm">Hapus</a>
                                         <a href="/e-vote/admin/user/edit/{{ $u->id }}" class="btn btn-warning">Edit</a>
                                     </td>
 

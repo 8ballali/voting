@@ -183,12 +183,6 @@
         <!-- /.navbar -->
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
-            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
-                Logout
-            </a>    
-            <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
-                {{ csrf_field() }}
-            </form>
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
                 <img src="{{ url('/style/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo"
@@ -260,12 +254,6 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Edit Community</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
                                     <a href="/e-vote/admin/community/import" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Import Community</p>
@@ -295,12 +283,6 @@
                                         <p>Add Candidate</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Edit Candidate</p>
-                                    </a>
-                                </li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -322,12 +304,6 @@
                                     <a href="/e-vote/admin/add" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add User</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Edit User</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -377,6 +353,18 @@
                                     </a>
                                 </li>
                             </ul>
+                        <li class="nav-item">
+                            <div class=" " aria-labelledby="navbarDropdown">
+                                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
                 </nav>
                 <!-- /.sidebar-menu -->
             </div>

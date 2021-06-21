@@ -29,10 +29,10 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="../../index3.html" class="nav-link">Home</a>
+                    <a href="/e-vote/admin" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Contact</a>
+                    <a href="#" class="nav-link">Community</a>
                 </li>
             </ul>
 
@@ -204,20 +204,22 @@
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                        <li class="nav-item">
-                            <a href="/e-vote/admin" class="nav-link">
+                        <li class="nav-item menu">
+                            <a href="/e-vote/admin" class="nav-link ">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
+
+                        </li>
                         <li class="nav-item menu-open">
                             <a href="/e-vote/admin/community" class="nav-link active">
-                                <i class="nav-icon fas fa-table"></i>
+                                <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Community
-                                    <i class="fas fa-angle-left right"></i>
+                                    <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -234,120 +236,108 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/community/edit" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Edit Community</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
                                     <a href="/e-vote/admin/community/import" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Import Community</p>
                                     </a>
                                 </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/e-vote/admin/candidate" class="nav-link">
+                                <i class="nav-icon fas fa-copy"></i>
+                                <p>
+                                    candidate
+                                    <i class="fas fa-angle-left right"></i>
+                                    <span class="badge badge-info right"></span>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="/e-vote/admin/candidate" class="nav-link">
-                                        <i class="nav-icon fas fa-copy"></i>
-                                        <p>
-                                            Candidate
-                                            <i class="right fas fa-angle-left"></i>
-                                        </p>
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List Candidate</p>
                                     </a>
-                                    <ul class="nav nav-treeview">
-                                        <li class="nav-item">
-                                            <a href="/e-vote/admin/candidate" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>List Candidate</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="/e-vote/admin/candidate/add" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Add Candidate</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Edit Candidate</p>
-                                            </a>
-                                        </li>
-                                    </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/user" class="nav-link">
-                                        <i class="nav-icon  fas fa-table"></i>
-                                        <p>
-                                            User
-                                            <i class="fas fa-angle-left right"></i>
-                                        </p>
+                                    <a href="/e-vote/admin/candidate/add" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Candidate</p>
                                     </a>
-                                    <ul class="nav nav-treeview">
-                                        <li class="nav-item">
-                                            <a href="/e-vote/admin/user" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>List User</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="/e-vote/admin/user/add" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Add User</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Edit User</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="/e-vote/admin/user/import" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Import User</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/e-vote/admin/quic-count" class="nav-link">
-                                        <i class="nav-icon fas fa-edit"></i>
-                                        <p>
-                                            Quick Count
-                                            <i class="fas fa-angle-left right"></i>
-                                        </p>
-                                    </a>
-                                    <ul class="nav nav-treeview">
-                                        <li class="nav-item">
-                                            <a href="/e-vote/admin/quic-count" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Quick Count</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                <li class="nav-item">
-                                    <a href="/e-vote/admin/generate" class="nav-link">
-                                        <i class="nav-icon fas fa-edit"></i>
-                                        <p>
-                                            Generate Code
-                                            <i class="right fas fa-angle-left"></i>
-                                        </p>
-                                    </a>
-                                    <ul class="nav nav-treeview">
-                                        <li class="nav-item">
-                                            <a href="/e-vote/admin/generate" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>List Code</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="/e-vote/admin/generate/create" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Create Code</p>
-                                            </a>
-                                        </li>
                                 </li>
                             </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/e-vote/admin/user" class="nav-link">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    User
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/e-vote/admin/user" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List User</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/e-vote/admin/user/add" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add User</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/e-vote/admin/user/import" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Import User</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>
+                                    Quick Count
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>
+                                    Generate Code
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/e-vote/admin/generate" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List Code</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/e-vote/admin/generate/create" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Create Code</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        <li class="nav-item">
+                            <div class=" " aria-labelledby="navbarDropdown">
+                                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
                         </li>
                         <!-- /.sidebar-menu -->
             </div>
@@ -405,7 +395,7 @@
 
                                     <td>
                                         <a href="/e-vote/admin/community/delete/{{ $co->id }}"
-                                            class="btn btn-danger btn-sm">Hapus</a>
+                                            onClick="confirm('Delete entry?')" class="btn btn-danger btn-sm">Hapus</a>
                                         <a href="/e-vote/admin/community/edit/{{ $co->id }}"
                                             class="btn btn-warning">Edit</a>
                                     </td>

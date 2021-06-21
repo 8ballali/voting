@@ -29,10 +29,10 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="../../index3.html" class="nav-link">Home</a>
+                    <a href="/e-vote/admin" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Contact</a>
+                    <a href="#" class="nav-link">Token</a>
                 </li>
             </ul>
 
@@ -236,12 +236,6 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Edit Community</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
                                     <a href="/e-vote/admin/community/import" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Import Community</p>
@@ -271,12 +265,6 @@
                                         <p>Add Candidate</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Edit Candidate</p>
-                                    </a>
-                                </li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -301,12 +289,6 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Edit User</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
                                     <a href="/e-vote/admin/user/import" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Import User</p>
@@ -322,14 +304,6 @@
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="/e-vote/admin/quick-count" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Quick Count</p>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                         <li class="nav-item menu-open">
                             <a href="/e-vote/admin/generate" class="nav-link active">
@@ -353,6 +327,18 @@
                                     </a>
                                 </li>
                             </ul>
+                        <li class="nav-item">
+                            <div class=" " aria-labelledby="navbarDropdown">
+                                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
                 </nav>
                 <!-- /.sidebar-menu -->
             </div>

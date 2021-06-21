@@ -109,7 +109,6 @@
             <li class="list-group-item"></li>
             <li class="list-group-item"></li>
         </ul>
-
         <center>
             <button id="click" type="button" class="btn btn-outline-warning mt-5 mb-5"
                 style="color:white; background-color: orangered;">Vote</button>

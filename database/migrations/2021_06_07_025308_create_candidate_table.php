@@ -19,7 +19,8 @@ class CreateCandidateTable extends Migration
             $table->text('visi');
             $table->text('misi');
             $table->text('alamat');
-            $table->text('ttl');
+            $table->text('tempatlahir');
+            $table->date('tanggallahir');
             $table->text('gender');
             $table->string('user_phone');
             $table->string('file');
