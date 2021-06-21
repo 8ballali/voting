@@ -21,7 +21,8 @@
     <!-- navigasi -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="{{url('e-vote/user/')}}"><img src="{{url('assets/images/kosmos.png')}}" width="80" height="60" alt=""></a>
+            <a class="navbar-brand" href="{{url('e-vote/user/')}}"><img src="{{url('assets/images/kosmos.png')}}"
+                    width="80" height="60" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -59,13 +60,13 @@
 
             <div class="row">
                 <div class="col-lg-4">
-                    <img src="{{ url('storage').'/'.$candidate->avatar }}" class="img-fluid" alt="">
+                    <img src="{{url('assets/images/satu.jpg')}}" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-8 pt-4 pt-lg-0 content">
                     <div class="row">
                         <div class="col-lg-6">
                             <ul>
-                            
+
                                 <li><i class="bi bi-chevron-right"></i> <strong> Nama Lengkap :</strong>
                                     <span>{{$candidate->name}}</span></li>
                                 <li><i class="bi bi-chevron-right"></i> <strong> Komunitas :</strong>
@@ -98,13 +99,8 @@
         <div class="section-title mt-5">
             <h2>Misi</h2>
         </div>
-        <ul class="list-group">
-            <li class="list-group-item">{{$candidate->misi}}</li>
-            <li class="list-group-item"></li>
-            <li class="list-group-item"></li>
-            <li class="list-group-item"></li>
-            <li class="list-group-item"></li>
-        </ul>
+        <textarea class="textarea">{{$candidate->misi}}</textarea>
+
         <center>
             <button id="click" type="button" class="btn btn-outline-warning mt-5 mb-5"
                 style="color:white; background-color: orangered;">Vote</button>

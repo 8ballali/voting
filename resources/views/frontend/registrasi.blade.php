@@ -85,12 +85,17 @@
                         </div>
                     </div>
                     <div class="input-box">
-                        <span class="details">Tempat/Tanggal lahir</span>
+                        <span class="details">Tempat lahir</span>
                         <input type="text" id="place" name="ttl" placeholder="Enter your birthplace" required
                             oninvalid="this.setCustomValidity('data tidak boleh kosong')"
                             oninput="setCustomValidity('')">
                     </div>
-
+                    <div class="input-box">
+                        <span class="details">Tanggal Lahir</span>
+                        <input type="date" id="date" min="1971-01-01" max="2000-12-31" name="ttl" placeholder="Enter your birthdate" required
+                            oninvalid="this.setCustomValidity('data tidak boleh kosong')"
+                            oninput="setCustomValidity('')">
+                    </div>
                     <div class="input-box">
                         <span class="details">Telepon</span>
                         <input type="text" id="telephone" name="user_phone" placeholder="Enter your telephone" required
@@ -104,10 +109,9 @@
                             oninput="setCustomValidity('')">
                     </div>
                     <div class="input-box">
-                        <span class="details">Poling Id</span>
+                        <span class="details">Jenis Pemilihan</span>
                         <div class="custom_select">
                             <select id="select-state" name="poling_id">
-                                <option value="">Select a poling</option>
                                 @foreach (\DB::table ('poling')->get() as $c )
                                 <option value="{{$c->id}}">{{$c->title}}</option>
                                 @endforeach
@@ -143,33 +147,42 @@
                         oninput="setCustomValidity('')"></textarea>
                 </div>
                 <center>
-                    <a href="{{url('e-vote/user/syarat')}}" target="_blank">
-                        <p>Syarat-Syarat Kandidat</p>
-                    </a>
+                    <div>
+                        <input type="checkbox" id="" name="" value="">
+                        <label for=""><a href="{{url('e-vote/user/syarat')}}" target="_blank"
+                                style="text-decoration: none;">
+                                <p>Syarat-Syarat Kandidat</p>
+                            </a></label>
+                    </div>
                 </center>
                 <div class="wrapper" style="color: transparent;">
-                    <div class="file-upload-wrapper" data-text="Select your file">
-                        <input name="file" id="upload" type="file" class="file-upload-field" value="" multiple required
+                    <div class="custom-file-upload">
+                        <label for="file" class="mt-5">File berbentuk png, jpg </label>
+                        <input type="file" id="file" name="file" multiple required
                             oninvalid="this.setCustomValidity('data tidak boleh kosong')"
-                            oninput="setCustomValidity('')">
+                            oninput="setCustomValidity('')" />
+                    </div>
+                    <div class="custom-file-upload">
+                        <label for="file" class="mt-5">Profil Foto </label>
+                        <center>
+                            <img id="image-preview" alt="image preview" />
+                        </center>
+                        <br />
+                        <input type="file" id="image-source" name="avatar" onchange="previewImage();" required
+                            oninvalid="this.setCustomValidity('data tidak boleh kosong')"
+                            oninput="setCustomValidity('')" />
                     </div>
                 </div>
-                <div class="wrapper" style="color: transparent;">
-                    <div class="file-upload-wrapper" data-text="Upload your photo">
-                        <input name="avatar" id="upload" type="file" class="file-upload-field" value="" multiple
-                            required oninvalid="this.setCustomValidity('data tidak boleh kosong')"
-                            oninput="setCustomValidity('')">
-                    </div>
-                </div>
-                <center>
-                    <input type="submit" value="Registrasi" name="submit" id="submit"
-                        class="btn btn-outline-warning mt-5 mb-5" style="color:white; background-color: orangered;">
-                </center>
-            </form>
-
         </div>
-        <script src="{{url('assets/js/script.js')}}"></script>
-        <script src="{{url('assets/js/owl.carousel.min.js')}}"></script>
+        <center>
+            <input type="submit" value="Registrasi" name="submit" id="submit" class="btn btn-outline-warning mt-5 mb-5"
+                style="color:white; background-color: orangered;">
+        </center>
+        </form>
+
+    </div>
+    <script src="{{url('assets/js/script.js')}}"></script>
+    <script src="{{url('assets/js/owl.carousel.min.js')}}"></script>
 </body>
 
 </html>
