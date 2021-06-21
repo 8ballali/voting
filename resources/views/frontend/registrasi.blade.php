@@ -149,13 +149,13 @@
                 </center>
                 <div class="wrapper" style="color: transparent;">
                     <div class="custom-file-upload">
-                        <!--<label for="file">File: </label>-->
+                        <label for="file" class="mt-5">File berbentuk png, jpg </label>
                         <input type="file" id="file" name="file" multiple required
                             oninvalid="this.setCustomValidity('data tidak boleh kosong')"
                             oninput="setCustomValidity('')" />
                     </div>
                     <div class="custom-file-upload">
-                        <!--<label for="file">File: </label>-->
+                        <label for="file" class="mt-5">Profil Foto </label>
                         <center>
                             <img id="image-preview" alt="image preview" />
                         </center>
