@@ -84,7 +84,7 @@
                     </div>
                     <div class="input-box">
                         <span class="details">Tanggal Lahir</span>
-                        <input type="date" id="date" name="ttl" placeholder="Enter your birthdate" required
+                        <input type="date" id="date" min="1971-01-01" max="2000-12-31" name="ttl" placeholder="Enter your birthdate" required
                             oninvalid="this.setCustomValidity('data tidak boleh kosong')"
                             oninput="setCustomValidity('')">
                     </div>
