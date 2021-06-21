@@ -40,14 +40,10 @@
                     </li>
                     <li class="nav-item">
                         <div class=" " aria-labelledby="navbarDropdown">
-                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                            <a class="nav-link" href="{{ route('login') }}">
+                                {{ __('Login') }}
                             </a>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
                         </div>
                     </li>
                 </ul>

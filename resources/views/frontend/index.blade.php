@@ -18,7 +18,7 @@
     <!-- navigasi -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="{{url('e-vote/user/index')}}"><img src="{{url('assets/images/kosmos.png')}}"
+            <a class="navbar-brand" href="{{url('e-vote/user')}}"><img src="{{url('assets/images/kosmos.png')}}"
                     width="80" height="60" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,14 +37,10 @@
                     </li>
                     <li class="nav-item">
                         <div class=" " aria-labelledby="navbarDropdown">
-                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                            <a class="nav-link" href="{{ route('login') }}">
+                                {{ __('Login') }}
                             </a>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
                         </div>
                     </li>
                 </ul>

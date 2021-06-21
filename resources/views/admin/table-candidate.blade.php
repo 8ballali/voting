@@ -223,12 +223,7 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="/e-vote/admin/community" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>List Community</p>
-                                    </a>
-                                </li>
+
                                 <li class="nav-item">
                                     <a href="/e-vote/admin/community/add" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
@@ -254,12 +249,6 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/candidate" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>List Candidate</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
                                     <a href="/e-vote/admin/candidate/add" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add Candidate</p>
@@ -276,12 +265,6 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="/e-vote/admin/user" class="nav-link ">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>List User</p>
-                                    </a>
-                                </li>
                                 <li class="nav-item">
                                     <a href="/e-vote/admin/user/add" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>

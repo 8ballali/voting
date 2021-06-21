@@ -16,7 +16,7 @@ class CandidateUserController extends Controller
 
     public function register()
     {
-        return view('users.form_register_candidate');
+        return view('frontend.registrasi');
     }
 
     public function store(Request $request)
@@ -26,7 +26,8 @@ class CandidateUserController extends Controller
             'visi' => 'required',
             'misi' => 'required',
             'alamat' => 'required',
-            'ttl' => 'required',
+            'tempatlahir' => 'required',
+            'tanggallahir' => 'required',
             'gender' => 'required',
             'user_phone' => 'required',
             'community_id' => 'required',
@@ -43,7 +44,8 @@ class CandidateUserController extends Controller
             'visi' => $request->visi,
             'misi' => $request->misi,
             'alamat' => $request->alamat,
-            'ttl' => $request->ttl,
+            'tempatlahir' => $request->tempatlahir,
+            'tanggallahir' => $request->tanggallahir,
             'gender' => $request->gender,
             'user_phone' => $request->user_phone,
             'community_id' => $request->community_id,
