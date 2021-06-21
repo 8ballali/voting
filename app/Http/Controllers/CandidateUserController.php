@@ -9,8 +9,7 @@ class CandidateUserController extends Controller
 {
     public function index()
     {
-        $candidate = candidate::All();
-        dd($candidate);
+        $candidate = Candidate::All();
         return view('users.candidate', ['candidate' => $candidate]);
     }
 
@@ -34,6 +33,7 @@ class CandidateUserController extends Controller
             'file' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
             'avatar' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
             'poling_id' => 'required'
+            
         ]);
 
         $file = $request->file('file')->store('file');
@@ -52,6 +52,7 @@ class CandidateUserController extends Controller
             'file' => $file,
             'avatar' => $avatar,
             'poling_id' => $request->poling_id
+            
 
         ]);
         return redirect('e-vote/user/');

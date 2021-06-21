@@ -25,6 +25,7 @@ class CreateCandidateTable extends Migration
             $table->string('user_phone');
             $table->string('file');
             $table->string('avatar');
+            $table->string('status')->default('UNCONFIRMED');
             $table->unsignedBigInteger('community_id');
             $table->unsignedBigInteger('poling_id');
             $table->timestamps();

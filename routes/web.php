@@ -31,12 +31,14 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('/e-vote/admin/candidate/store', 'CandidateAdminController@store');
     Route::get('/e-vote/admin/candidate/edit/{id}', 'CandidateAdminController@edit');
     Route::put('/e-vote/admin/candidate/update/{id}', 'CandidateAdminController@update');
+    Route::get('/e-vote/admin/candidate-status/edit/{id}', 'StatusController@edit');
+    Route::put('/e-vote/admin/candidate-status/update/{id}', 'StatusController@update');
     Route::get('/e-vote/admin/candidate/delete/{id}', 'CandidateAdminController@delete');
     Route::get('/e-vote/admin/user', 'UserController@index');
     Route::get('/e-vote/admin/user/add', 'UserController@add');
     Route::post('/e-vote/admin/user/store', 'UserController@store');
-    Route::get('/e-vote/admin/user/edit/{id}', 'UserController@edit');
-    Route::put('/e-vote/admin/user/update/{id}', 'UserController@update');
+    Route::get('/e-vote/admin/user/edit/{id}', 'StatusController@edit');
+    Route::put('/e-vote/admin/user/update/{id}', 'StatusController@update');
     Route::get('/e-vote/admin/user/delete/{id}', 'UserController@delete');
     Route::get('/e-vote/admin/user/import', 'ImportUserController@import');
     Route::post('/e-vote/admin/user/import-excel', 'ImportUserController@import_excel');
