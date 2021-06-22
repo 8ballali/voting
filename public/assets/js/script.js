@@ -45,25 +45,27 @@ $('#click').on('click', function () {
         input: 'text'
     }).then(function (text) {
         console.log(text.value)
-        if(text.value != ""){
+        if (text.value != "") {
             $.ajax({
                 type: "POST",
                 url: "http://127.0.0.1:8000/e-vote/user/validate",
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-
-                success:  function () {
+                data: {
+                    candidate_id: $('#candidate_id').val()
+                },
+                success: function () {
                     Swal.fire({
                         title: 'Voting anda telah masuk',
                         icon: 'success'
                     })
                 },
-                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
                     alert("some error");
-                 }
+                }
             })
-        }else{
+        } else {
             Swal.fire({
                 title: 'Data masih kosong',
                 icon: 'warning'

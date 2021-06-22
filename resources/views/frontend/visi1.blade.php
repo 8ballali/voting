@@ -106,6 +106,7 @@
         <center>
             <button id="click" type="button" value="{{$candidate->id}}" class="btn btn-outline-warning mt-5 mb-5"
                 style="color:white; background-color: orangered;">Vote</button>
+            <input type="hidden" name="candidate_id" id="candidate_id" type="text" value="{{$candidate->id}}">
         </center>
         <script src="{{url('assets/js/owl.carousel.min.js')}}"></script>
         <script src="{{url('assets/js/script.js')}}"></script>

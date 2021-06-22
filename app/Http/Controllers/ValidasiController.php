@@ -11,7 +11,7 @@ class ValidasiController extends Controller
 {
     public function store(Request $request){
         Vote::create([
-            'candidate_id' => "1",
+            'candidate_id' => $request->candidate_id,
             'user_id' => "1",
             'status' => 1
 
