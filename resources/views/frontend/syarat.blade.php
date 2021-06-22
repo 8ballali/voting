@@ -52,7 +52,7 @@
     </nav>
     <!-- ======= About Section ======= -->
     <div class="container">
-        <div class="section-title">
+        <div class="section-title mt-5 pt-5">
             <h2>Syarat</h2>
         </div>
         <ul class="list-group">

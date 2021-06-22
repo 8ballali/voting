@@ -30,10 +30,10 @@ class CandidateUserController extends Controller
             'gender' => 'required',
             'user_phone' => 'required',
             'community_id' => 'required',
-            'file' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
-            'avatar' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
+            'file' => 'required|file|image|mimes:jpeg,png,jpg|max:20480',
+            'avatar' => 'required|file|image|mimes:jpeg,png,jpg|max:20480',
             'poling_id' => 'required'
-            
+
         ]);
 
         $file = $request->file('file')->store('file');
@@ -52,7 +52,7 @@ class CandidateUserController extends Controller
             'file' => $file,
             'avatar' => $avatar,
             'poling_id' => $request->poling_id
-            
+
 
         ]);
         return redirect('e-vote/user/');

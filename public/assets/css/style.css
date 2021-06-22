@@ -16,12 +16,13 @@ body {
 
 .banner {
     background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
-        url(../../images/background.jpg);
+        url(../images/background.jpg);
     background-size: cover;
     padding-top: 20%;
     padding-bottom: 20%;
     color: #fff;
 }
+
 
 /* Kandidat */
 .wrapper {

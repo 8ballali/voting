@@ -48,6 +48,19 @@
         </div>
     </nav>
     <div class="container">
+        <!--Kandidat Kosong-->
+        <div class="container-fluid banner">
+            <div class="container text-center">
+                <h4 class="display-4 mt-5 pt-5">Selamat Datang</h4>
+                <h4 class="display-8">Pemilu Ketua Kosmos</h4>
+                <a href="{{url('e-vote/user/registrasi')}}">
+                    <button type="button" class="btn btn-danger btn-lg mt-2">
+                        Registrasi
+                    </button>
+                </a>
+            </div>
+        </div>
+
         <!--Kandidat-->
         @foreach ($poling as $p)
         <section>
