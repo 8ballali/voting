@@ -63,6 +63,8 @@ Route::get('/e-vote/user', 'HomeController@index')->name('home');
 
 Route::get('/e-vote/user/candidate/{id}', 'CandidateUserController@candidate');
 
+Route::post('/e-vote/user/validate', 'ValidasiController@store');
+
 Route::get('/e-vote/user/candidate/register', 'CandidateUserController@register');
 
 Route::post('/e-vote/user/candidate/store', 'CandidateUserController@store');

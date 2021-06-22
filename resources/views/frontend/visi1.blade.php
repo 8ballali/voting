@@ -15,6 +15,7 @@
     <script src="{{url('assets/js/sweetalert2.js')}}"></script>
     <script src="{{url('assets/js/selectize.min.js')}}"></script>
     <link rel="stylesheet" href="{{url('assets/css/selectize.bootstrap3.min.css')}}" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 </head>
 
 <body>
@@ -101,8 +102,9 @@
         </div>
         <textarea class="textarea">{{$candidate->misi}}</textarea>
 
+
         <center>
-            <button id="click" type="button" class="btn btn-outline-warning mt-5 mb-5"
+            <button id="click" type="button" value="{{$candidate->id}}" class="btn btn-outline-warning mt-5 mb-5"
                 style="color:white; background-color: orangered;">Vote</button>
         </center>
         <script src="{{url('assets/js/owl.carousel.min.js')}}"></script>

@@ -39,14 +39,37 @@ $('.brand-carousel').owlCarousel({
 });
 
 $('#click').on('click', function () {
+    console.log($(this).val())
     Swal.fire({
         title: 'Masukkan kode pemilihan',
         input: 'text'
     }).then(function (text) {
-        Swal.fire({
-            title: 'Voting anda telah masuk',
-            icon: 'success'
-        })
+        console.log(text.value)
+        if(text.value != ""){
+            $.ajax({
+                type: "POST",
+                url: "http://127.0.0.1:8000/e-vote/user/validate",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+
+                success:  function () {
+                    Swal.fire({
+                        title: 'Voting anda telah masuk',
+                        icon: 'success'
+                    })
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("some error");
+                 }
+            })
+        }else{
+            Swal.fire({
+                title: 'Data masih kosong',
+                icon: 'warning'
+            })
+        }
+
     })
 });
 
@@ -56,7 +79,7 @@ $(document).ready(function () {
     });
 });
 
-//Reference: 
+//Reference:
 //https://www.onextrapixel.com/2012/12/10/how-to-create-a-custom-file-input-with-jquery-css3-and-php/
 ;
 (function ($) {
