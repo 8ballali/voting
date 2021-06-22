@@ -61,7 +61,7 @@ Route::group(['middleware' => 'user'], function () {
 Route::get('/e-vote/user', 'HomeController@index')->name('home');
 
 
-Route::get('/e-vote/user/candidate/{id}', 'CandidateUserController@candidate');
+Route::get('/e-vote/user/candidate/{candidate}', 'CandidateUserController@candidate');
 
 Route::post('/e-vote/user/validate', 'ValidasiController@store');
 

@@ -53,13 +53,26 @@ $('#click').on('click', function () {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 data: {
-                    candidate_id: $('#candidate_id').val()
+                    candidate_id: $('#candidate_id').val(),
+                    reg_id: text.value,
                 },
-                success: function () {
-                    Swal.fire({
-                        title: 'Voting anda telah masuk',
-                        icon: 'success'
-                    })
+                success: function (data) {
+                    if(data == 0){
+                        Swal.fire({
+                            title: 'Kode Yang Dimasukkan Salah',
+                            icon: 'warning'
+                        })
+                    }else if(data == 1){
+                        Swal.fire({
+                            title: 'Anda Sudah Memilih',
+                            icon: 'info'
+                        })
+                    }else {
+                        Swal.fire({
+                            title: 'Voting anda telah masuk',
+                            icon: 'success'
+                        })
+                    }
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                     alert("some error");

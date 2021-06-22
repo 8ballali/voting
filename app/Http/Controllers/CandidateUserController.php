@@ -58,9 +58,9 @@ class CandidateUserController extends Controller
         return redirect('e-vote/user/');
     }
 
-    public function candidate($id)
+    public function candidate(Candidate $candidate)
     {
-        $candidate = Candidate::find($id);
+
         return view('frontend.visi1', ['candidate' => $candidate]);
     }
 }
