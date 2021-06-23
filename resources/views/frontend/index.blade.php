@@ -49,6 +49,7 @@
     </nav>
     <div class="container">
         <!--Kandidat Kosong-->
+        @if(!@$poling[0]->candidate->isNotEmpty())
         <div class="container-fluid banner">
             <div class="container text-center">
                 <h4 class="display-4 mt-5 pt-5">Selamat Datang</h4>
@@ -60,7 +61,7 @@
                 </a>
             </div>
         </div>
-
+        @endif
         <!--Kandidat-->
         @foreach ($poling as $p)
         <section>

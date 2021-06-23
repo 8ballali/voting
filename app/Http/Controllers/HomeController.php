@@ -26,11 +26,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $poling = Poling::with('candidate')->whereHas("candidate", function ($query)
-        {
-            $query->where("status", "!=", "UNCONFIRMED");
-        })->get();
-        return view('frontend.index', compact('poling'));
+        $poling = Poling::with(['candidate'=>function($query) {
+            $query->where("status", "CONFIRMED");
+           }])->get();
+                   return view('frontend.index', compact('poling'));
     }
 
     public function visi1()
