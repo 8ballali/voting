@@ -24,14 +24,14 @@ class UserController extends Controller
             'community_id'=>'required',
             'role'=>'required'
         ]);
-    
+
         User::create([
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
             'community_id' => $request->community_id,
             'role' => $request->role
-            
+
         ]);
         return redirect('/e-vote/admin/user');
         }
@@ -52,7 +52,7 @@ class UserController extends Controller
 
             $user = User::find($id);
             $user->name = $request->name;
-            $user->description = $request->email;
+            $user->email = $request->email;
             $user->phone = $request->phone;
             $user->community_id = $request->community_id;
             $user->role = $request->role;

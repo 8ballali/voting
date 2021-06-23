@@ -13,7 +13,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        foreach (range(1, 10) as $value) {
+        foreach (range(1, 3) as $value) {
             DB::table('users')->insert([
                'name' => $faker->name,
                'email' => $faker->email,
@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
                'community_id' => rand(1,3),
                'role'  => $faker->randomElement(['admin', 'user']),
                'password' => Hash::make('12345678'),
-            ]); 
+            ]);
         }
     }
 }

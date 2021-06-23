@@ -48,7 +48,8 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/e-vote/admin/community/edit/{id}', 'CommunityController@edit');
     Route::put('/e-vote/admin/community/update/{id}', 'CommunityController@update');
     Route::get('/e-vote/admin/community/delete/{id}', 'CommunityController@delete');
-    Route::get('/e-vote/admin/community/import', 'ImportCommunityController@import');
+    Route::get('/e-vote/admin/community/delete/{id}', 'CommunityController@delete');
+    Route::get('/e-vote/admin/quick-count', 'QuickCountController@index');
     Route::post('/e-vote/admin/community/import-excel', 'ImportCommunityController@import_excel');
     Route::resource('/e-vote/admin/generate', 'generate_codeController');
 });
