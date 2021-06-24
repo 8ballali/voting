@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Profil</title>
     <link rel="stylesheet" href="{{url('assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/awesome.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/style.css')}}" />
@@ -65,30 +65,33 @@
                 </div>
                 <div class="col-lg-8 pt-4 pt-lg-0 content">
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-9">
                             <ul>
-
-                                <li><i class="bi bi-chevron-right"></i> <strong> Nama Lengkap :</strong>
+                                <li style="list-style: disc outside none; display: list-item; margin-left: 1em;">
+                                    <strong> Nama Lengkap :</strong>
                                     <span>{{$candidate->name}}</span></li>
-                                <li><i class="bi bi-chevron-right"></i> <strong> Komunitas :</strong>
+                                <li style="list-style: disc outside none; display: list-item; margin-left: 1em;">
+                                    <strong> Komunitas :</strong>
                                     <span>{{\DB::table('community')->where('id', $candidate->community_id)->first()->name}}</span>
                                 </li>
-                                <li><i class="bi bi-chevron-right"></i> <strong> Alamat :</strong>
+                                <li style="list-style: disc outside none; display: list-item; margin-left: 1em;">
+                                    </i>
+                                    <strong> Alamat :</strong>
                                     <span>{{$candidate->alamat}}</span></li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-6">
-                            <ul>
-                                <li><i class="bi bi-chevron-right"></i> <strong>Tempat/Tgl Lahir :</strong>
-                                    <span>{{$candidate->ttl}}</span></li>
-                                <li><i class="bi bi-chevron-right"></i> <strong>Jenis Kelamin :</strong>
+                                <li style="list-style: disc outside none; display: list-item; margin-left: 1em;">
+                                    </i>
+                                    <strong>Tempat/Tanggal Lahir :</strong>
+                                    <span>{{$candidate->tempatlahir}}, {{$candidate->tanggallahir}}</span></li>
+                                <li style="list-style: disc outside none; display: list-item; margin-left: 1em;">
+                                    </i>
+                                    <strong>Jenis Kelamin :</strong>
                                     <span>{{$candidate->gender}}</span></li>
-                                <li><i class="bi bi-chevron-right"></i> <strong>Telepon :</strong>
+                                <li style="list-style: disc outside none; display: list-item; margin-left: 1em;">
+                                    </i>
+                                    <strong>Telepon :</strong>
                                     <span>{{$candidate->user_phone}}</span></li>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </section>

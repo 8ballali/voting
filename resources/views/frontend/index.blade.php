@@ -36,12 +36,9 @@
                         <a class="nav-link" href="{{url('e-vote/user/registrasi')}}">Registrasi</a>
                     </li>
                     <li class="nav-item">
-                        <div class=" " aria-labelledby="navbarDropdown">
                             <a class="nav-link" href="{{ route('login') }}">
                                 {{ __('Login') }}
                             </a>
-
-                        </div>
                     </li>
                 </ul>
             </div>

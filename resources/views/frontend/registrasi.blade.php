@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Registrasi</title>
     <link rel="stylesheet" href="{{url('assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/awesome.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/style.css')}}" />
@@ -86,19 +86,22 @@
                     </div>
                     <div class="input-box">
                         <span class="details">Tempat lahir</span>
-                        <input type="text" id="place" name="ttl" placeholder="Enter your birthplace" required
+                        <input type="text" id="place" name="tempatlahir" placeholder="Enter your birthplace" required
                             oninvalid="this.setCustomValidity('data tidak boleh kosong')"
                             oninput="setCustomValidity('')">
                     </div>
                     <div class="input-box">
                         <span class="details">Tanggal Lahir</span>
-                        <input type="date" id="date" min="1971-01-01" max="2000-12-31" name="ttl" placeholder="Enter your birthdate" required
+                        <input type="date" id="date" min="1971-01-01" max="2000-12-31" name="tanggallahir"
+                            placeholder="Enter your birthdate" required
                             oninvalid="this.setCustomValidity('data tidak boleh kosong')"
                             oninput="setCustomValidity('')">
                     </div>
                     <div class="input-box">
                         <span class="details">Telepon</span>
-                        <input type="text" id="telephone" name="user_phone" placeholder="Enter your telephone" required
+                        <input type="text" id="telephone"
+                            onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+                            name="user_phone" placeholder="Enter your telephone" required
                             oninvalid="this.setCustomValidity('data tidak boleh kosong')"
                             oninput="setCustomValidity('')">
                     </div>
@@ -136,43 +139,45 @@
                 </div>
                 <div class="input-box">
                     <span class="details">Visi</span>
-                    <textarea class="textarea" id="visi" name="visi" required oninvalid="this.setCustomValidity('data tidak boleh kosong')"
-                      oninput="setCustomValidity('')"></textarea>
-                  </div>
-                  <div class="input-box">
+                    <textarea class="textarea" id="visi" name="visi" required
+                        oninvalid="this.setCustomValidity('data tidak boleh kosong')"
+                        oninput="setCustomValidity('')"></textarea>
+                </div>
+                <div class="input-box">
                     <span class="details">Misi</span>
-                    <textarea class="textarea" id="misi" name="misi" required oninvalid="this.setCustomValidity('data tidak boleh kosong')"
-                      oninput="setCustomValidity('')"></textarea>
-                  </div>
-                  <center>
+                    <textarea class="textarea" id="misi" name="misi" required
+                        oninvalid="this.setCustomValidity('data tidak boleh kosong')"
+                        oninput="setCustomValidity('')"></textarea>
+                </div>
+                <center>
                     <div>
-                      <input type="checkbox">
-                      <label for=""><a href="{{url('e-vote/user/syarat')}}" target="_blank"
-                              style="text-decoration: none;">
-                              <p>Syarat-Syarat Kandidat</p>
-                          </a></label>
-                  </div>
-                  </center>
-                  <center>
+                        <input type="checkbox">
+                        <label for=""><a href="{{url('e-vote/user/syarat')}}" target="_blank"
+                                style="text-decoration: none;">
+                                <p>Syarat-Syarat Kandidat</p>
+                            </a></label>
+                    </div>
+                </center>
+                <center>
                     <div class="container">
-                      <div class="custom-file-upload" >
-                        <label for="file" class="mt-5">File berbentuk png, jpg </label>
-                        <input type="file" id="file" name="file" multiple/>
-                      </div>
-                  </center>
-          <center>
-            <label for="file" class="mt-5">Profil Foto </label>
-          <img id="image-preview" alt="image preview" />
-            <br />
-            <input type="file" id="image-source" name="avatar" onchange="previewImage();" />
-          </center>
-          </div>
-              <center>
-                <input type="submit" name="submit" value="Registrasi" id="submit" class="btn btn-outline-warning mt-5 mb-5"
-                  style="color:white; background-color: orangered;">
-              </center>
-              </form>
-            </div>       
+                        <div class="custom-file-upload">
+                            <label for="file" class="mt-5">File berbentuk png, jpg </label>
+                            <input type="file" id="file" name="file" multiple />
+                        </div>
+                </center>
+                <center>
+                    <label for="file" class="mt-5">Profil Foto </label>
+                    <img id="image-preview" alt="image preview" />
+                    <br />
+                    <input type="file" id="image-source" name="avatar" onchange="previewImage();" />
+                </center>
+        </div>
+        <center>
+            <input type="submit" name="submit" value="Registrasi" id="submit" class="btn btn-outline-warning mt-5 mb-5"
+                style="color:white; background-color: orangered;">
+        </center>
+        </form>
+    </div>
     </div>
     <script src="{{url('assets/js/script.js')}}"></script>
     <script src="{{url('assets/js/owl.carousel.min.js')}}"></script>
