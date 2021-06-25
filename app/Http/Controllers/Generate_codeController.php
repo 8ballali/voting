@@ -18,14 +18,14 @@ class Generate_codeController extends Controller
         $user = User::where("role","user")->get();
         $poling = poling::get();
         return view('admin.add-generate-code', compact('user', 'poling'));
-        
+
     }
 
     public function generate_random(){
         $characters = '0123456789';
         $charactersLength = strlen($characters);
         $randomString = '';
-        $length = 5;
+        $length = 6;
         for ($i = 0; $i < $length; $i++) {
         $randomString .= $characters[rand(0, $charactersLength - 1)];
         }
@@ -37,11 +37,11 @@ class Generate_codeController extends Controller
             'user_id'=> 'required',
             'poling_id'=> 'required'
              ]);
-        
+
         generate_code::create([
             'code' => encrypt($code),
             'reg_id'=> $this->generate_random()
-            
+
         ]);
         return redirect('/e-vote/admin/generate');
     }
