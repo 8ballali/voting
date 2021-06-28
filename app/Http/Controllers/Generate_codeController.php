@@ -25,7 +25,7 @@ class Generate_codeController extends Controller
         $characters = '0123456789';
         $charactersLength = strlen($characters);
         $randomString = '';
-        $length = 6;
+        $length = 3;
         for ($i = 0; $i < $length; $i++) {
         $randomString .= $characters[rand(0, $charactersLength - 1)];
         }

@@ -378,6 +378,7 @@
                                 <tr>
                                     <th>Reg ID</th>
                                     <th>Token</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -386,6 +387,7 @@
 
                                     <td>{{ $g->reg_id }}</td>
                                     <td>{{ $g->code }}</td>
+
 
                                 </tr>
                                 @endforeach
