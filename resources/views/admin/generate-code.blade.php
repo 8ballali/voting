@@ -377,7 +377,8 @@
                             <thead>
                                 <tr>
                                     <th>Reg ID</th>
-                                    <th>Token</th>
+
+                                    <th>Created at</th>
 
                                 </tr>
                             </thead>
@@ -386,7 +387,8 @@
                                 <tr>
 
                                     <td>{{ $g->reg_id }}</td>
-                                    <td>{{ $g->code }}</td>
+
+                                    <td>{{ $g->created_at }}</td>
 
 
                                 </tr>

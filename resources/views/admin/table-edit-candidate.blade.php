@@ -29,7 +29,7 @@
                     <a href="/e-vote/admin" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Edit Candidate</a>
+                    <a href="#" class="nav-link active">Edit Candidate</a>
                 </li>
             </ul>
 

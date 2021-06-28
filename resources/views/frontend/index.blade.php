@@ -36,10 +36,25 @@
                         <a class="nav-link" href="{{url('e-vote/user/registrasi')}}">Registrasi</a>
                     </li>
                     <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">
-                                {{ __('Login') }}
-                            </a>
+                        <a class="nav-link" href="{{ route('login') }}">
+                            {{ __('Login') }}
+                        </a>
                     </li>
+                    @auth
+
+                    <li class="nav-item">
+                        <div class=" " aria-labelledby="navbarDropdown">
+                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                    @endauth
                 </ul>
             </div>
         </div>

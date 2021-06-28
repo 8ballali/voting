@@ -32,7 +32,7 @@
                     <a href="/e-vote/admin" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Community</a>
+                    <a href="/e-vote/admin/community" class="nav-link active">Community</a>
                 </li>
             </ul>
 
