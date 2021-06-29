@@ -495,6 +495,10 @@
                                     <input type="file" name="file">
                                 </div>
                                 <div class="form-group">
+                                    <b>Avatar</b><br />
+                                    <input type="file" name="avatar">
+                                </div>
+                                <div class="form-group">
                                     <input type="submit" class="btn btn-success" value="Simpan">
                                 </div>
                             </form>

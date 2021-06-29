@@ -14,10 +14,11 @@ class QuickCountController extends Controller
             return $x->name;
             });
 
-            $data = DB::table('candidate')->join('vote', 'vote.candidate_id', 'candidate.id')->select('candidate.name')->orderBy('candidate.id', 'asc')->get(
+            $data = DB::table('candidate')->join('vote', 'vote.candidate_id', 'candidate.id')->groupBy('name')->select('candidate.name')->orderBy('candidate.id', 'asc')->get(
             )->map(function($x) {
             return $x->name;
             });
+
 
 
         return view('admin.quick-count', ['label' => $label, 'data' => $data]);

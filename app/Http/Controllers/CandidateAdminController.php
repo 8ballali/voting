@@ -30,6 +30,7 @@ class CandidateAdminCOntroller extends Controller
             'user_phone' => 'required',
             'user_id' => 'required',
             'file' => 'required|file|image|mimes:jpeg,png,jpg|max:20480',
+            'avatar' => 'required|file|image|mimes:jpeg,png,jpg|max:20480',
             'poling_id' => 'required'
         ]);
 
@@ -50,6 +51,7 @@ class CandidateAdminCOntroller extends Controller
             'user_phone' => $request->user_phone,
             'user_id' => $request->user_id,
             'file' => $nama_file,
+            'avatar'=>$nama_file,
             'poling_id' => $request->poling_id,
 
         ]);
@@ -73,7 +75,8 @@ class CandidateAdminCOntroller extends Controller
             'gender' => 'required',
             'user_phone' => 'required',
             'user_id' => 'required',
-            'file' => 'file|image|mimes:jpeg,png,jpg|max:20480'
+            'file' => 'file|image|mimes:jpeg,png,jpg|max:20480',
+            'avatar' => 'file|image|mimes:jpeg,png,jpg|max:20480'
 
         ]);
         $candidate = Candidate::find($id);
@@ -97,6 +100,7 @@ class CandidateAdminCOntroller extends Controller
         $candidate->user_phone = $request->user_phone;
         $candidate->user_id = $request->user_id;
         $candidate->file = $nama_file;
+        $candidate->avatar = $nama_file;
         $candidate->save();
         return redirect('/e-vote/admin/candidate');
     }

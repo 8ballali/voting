@@ -455,7 +455,7 @@
       datasets: [
         {
           data: {!! $label !!},
-          backgroundColor : ['#f56954', '#00a65a', '#0287F9'],
+          backgroundColor : ['#f56954', '#00a65a'],
         }
       ]
     }
