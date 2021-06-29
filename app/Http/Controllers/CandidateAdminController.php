@@ -90,6 +90,16 @@ class CandidateAdminCOntroller extends Controller
             $file->move($tujuan_upload, $nama_file);
             @unlink(public_path('/') . '/data_file/' . $candidate->file);
         }
+        if ($request->avatar) {
+            $file = $request->avatar('avatar');
+
+            $nama_file = time() . "_" . $file->getClientOriginalName();
+
+            // isi dengan nama folder tempat kemana file diupload
+            $tujuan_upload = 'data_file';
+            $file->move($tujuan_upload, $nama_file);
+            @unlink(public_path('/') . '/data_file/' . $candidate->avatar);
+        }
 
         $candidate->name = $request->name;
         $candidate->visi = $request->visi;
