@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\generate_code;
 use App\user;
-use App\poling;
+use App\Poling;
 
 class Generate_codeController extends Controller
 {
