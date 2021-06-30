@@ -52,7 +52,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/e-vote/admin/quick-count', 'QuickCountController@index');
     Route::post('/e-vote/admin/community/import-excel', 'ImportCommunityController@import_excel');
     Route::get('/e-vote/admin/community/import', 'ImportCommunityController@import');
-    Route::resource('/e-vote/admin/generate', 'generate_codeController');
+    Route::resource('/e-vote/admin/generate', 'Generate_codeController');
 });
 
 
