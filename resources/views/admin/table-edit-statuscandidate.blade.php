@@ -301,7 +301,22 @@
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
-
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/e-vote/admin/quick-count" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Quick Count</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/e-vote/admin/vote" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List Suara</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a href="/e-vote/admin/generate" class="nav-link">
@@ -441,11 +456,11 @@
                                 </div>
                                 <div>
                                     <label>File Persyaratan</label>
-                                    <img src="{{ url('storage').'/'.$candidate->files }}" height="30px" width="30px" />
+                                    <img src="{{ url('data_file').'/'.$candidate->file }}" height="30px" width="30px" />
                                 </div>
                                 <div>
                                     <label>Avatar</label>
-                                    <img src="{{ url('storage').'/'.$candidate->avatar }}" height="30px" width="30px" />
+                                    <img src="{{ url('data_file').'/'.$candidate->avatar }}" height="30px" width="30px" />
                                 </div>
                                     <div class="form-group">
                                         <label>Status</label>

@@ -175,7 +175,8 @@
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="{{ url('/style/dist/img/user1-128x128.jpg')}}" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{ url('/style/dist/img/user1-128x128.jpg')}}" class="img-circle elevation-2"
+                            alt="User Image">
                     </div>
                     <div class="info">
                         <a href="/e-vote/admin/" class="d-block">CAN CREATIVE</a>
@@ -301,7 +302,22 @@
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
-
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/e-vote/admin/quick-count" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Quick Count</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/e-vote/admin/vote" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List Suara</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item menu-open">
                             <a href="/e-vote/admin/generate" class="nav-link active">

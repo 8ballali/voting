@@ -11,4 +11,10 @@ class Vote extends Model
     protected $fillable = [
         'candidate_id', 'user_id', 'status',
     ];
+    public function candidate(){
+    	return $this->belongsTo('App\Candidate');
+    }
+    public function user(){
+    	return $this->belongsTo('App\User');
+    }
 }

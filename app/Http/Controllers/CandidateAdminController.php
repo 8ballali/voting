@@ -35,24 +35,29 @@ class CandidateAdminCOntroller extends Controller
         ]);
 
         $file = $request->file('file');
-
         $nama_file = time() . "_" . $file->getClientOriginalName();
-
-        // isi dengan nama folder tempat kemana file diupload
         $tujuan_upload = 'data_file';
         $file->move($tujuan_upload, $nama_file);
+
+
+        $avatar = $request->file('avatar');
+        $nama_avatar = time() . "_" . $avatar->getClientOriginalName();
+        $tujuan_upload = 'data_file';
+        $avatar->move($tujuan_upload, $nama_avatar);
+
         Candidate::create([
             'name' => $request->name,
             'visi' => $request->visi,
             'misi' => $request->misi,
             'alamat' => $request->alamat,
-            'ttl' => $request->ttl,
+            'tempatlahir' => $request->tempatlahir,
+            'tanggallahir' => $request->tanggallahir,
             'gender' => $request->gender,
             'user_phone' => $request->user_phone,
-            'user_id' => $request->user_id,
+            'community_id' => $request->community_id,
             'file' => $nama_file,
-            'avatar'=>$nama_file,
-            'poling_id' => $request->poling_id,
+            'avatar' => $nama_avatar,
+            'poling_id' => $request->poling_id
 
         ]);
         return redirect('/e-vote/admin/candidate');
@@ -71,12 +76,14 @@ class CandidateAdminCOntroller extends Controller
             'visi' => 'required',
             'misi' => 'required',
             'alamat' => 'required',
-            'ttl' => 'required',
+            'tempatlahir' => 'required',
+            'tanggallahir' => 'required',
             'gender' => 'required',
             'user_phone' => 'required',
-            'user_id' => 'required',
-            'file' => 'file|image|mimes:jpeg,png,jpg|max:20480',
-            'avatar' => 'file|image|mimes:jpeg,png,jpg|max:20480'
+            'community_id' => 'required',
+            'file' => 'required|file|image|mimes:jpeg,png,jpg|max:20480',
+            'avatar' => 'required|file|image|mimes:jpeg,png,jpg|max:20480',
+            'poling_id' => 'required'
 
         ]);
         $candidate = Candidate::find($id);
@@ -91,13 +98,13 @@ class CandidateAdminCOntroller extends Controller
             @unlink(public_path('/') . '/data_file/' . $candidate->file);
         }
         if ($request->avatar) {
-            $file = $request->avatar('avatar');
+            $avatar = $request->file('avatar');
 
-            $nama_file = time() . "_" . $file->getClientOriginalName();
+            $nama_avatar= time() . "_" . $avatar->getClientOriginalName();
 
             // isi dengan nama folder tempat kemana file diupload
             $tujuan_upload = 'data_file';
-            $file->move($tujuan_upload, $nama_file);
+            $avatar->move($tujuan_upload, $nama_avatar);
             @unlink(public_path('/') . '/data_file/' . $candidate->avatar);
         }
 
@@ -105,12 +112,14 @@ class CandidateAdminCOntroller extends Controller
         $candidate->visi = $request->visi;
         $candidate->misi = $request->misi;
         $candidate->alamat = $request->alamat;
-        $candidate->ttl = $request->ttl;
+        $candidate->tempatlahir = $request->tempatlahir;
+        $candidate->tanggallahir = $request->tanggallahir;
         $candidate->gender = $request->gender;
         $candidate->user_phone = $request->user_phone;
-        $candidate->user_id = $request->user_id;
+        $candidate->community_id = $request->community_id;
         $candidate->file = $nama_file;
-        $candidate->avatar = $nama_file;
+        $candidate->avatar = $nama_avatar;
+        $candidate->poling_id = $request->poling_id;
         $candidate->save();
         return redirect('/e-vote/admin/candidate');
     }

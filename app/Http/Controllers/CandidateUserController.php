@@ -35,10 +35,17 @@ class CandidateUserController extends Controller
             'poling_id' => 'required'
 
         ]);
+        $file = $request->file('file');
+        $nama_file = time() . "_" . $file->getClientOriginalName();
+        $tujuan_upload = 'data_file';
+        $file->move($tujuan_upload, $nama_file);
 
-        $file = $request->file('file')->store('file');
 
-        $avatar = $request->file('avatar')->store('file');
+        $avatar = $request->file('avatar');
+        $nama_avatar = time() . "_" . $avatar->getClientOriginalName();
+        $tujuan_upload = 'data_file';
+        $avatar->move($tujuan_upload, $nama_avatar);
+
         Candidate::create([
             'name' => $request->name,
             'visi' => $request->visi,
@@ -49,8 +56,8 @@ class CandidateUserController extends Controller
             'gender' => $request->gender,
             'user_phone' => $request->user_phone,
             'community_id' => $request->community_id,
-            'file' => $file,
-            'avatar' => $avatar,
+            'file' => $nama_file,
+            'avatar' => $nama_avatar,
             'poling_id' => $request->poling_id
 
 

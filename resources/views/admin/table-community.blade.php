@@ -297,13 +297,29 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/e-vote/admin/quick-count" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>
                                     Quick Count
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/e-vote/admin/quick-count" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Quick Count</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/e-vote/admin/vote" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List Suara</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">

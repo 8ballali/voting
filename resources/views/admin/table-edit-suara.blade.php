@@ -238,7 +238,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item menu-open">
+                        <li class="nav-item">
                             <a href="/e-vote/admin/candidate" class="nav-link">
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
@@ -279,7 +279,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item menu-open">
                             <a href="/e-vote/admin/quick-count" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>
@@ -297,7 +297,7 @@
                             </ul>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/vote" class="nav-link">
+                                    <a href="/e-vote/admin/vote" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List Suara</p>
                                     </a>
@@ -353,12 +353,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Candidate</h1>
+                            <h1>Suara</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Data kandidat</li>
+                                <li class="breadcrumb-item active">Data Suara</li>
                             </ol>
                         </div>
                     </div>
@@ -378,43 +378,29 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Tempat Lahir</th>
-                                    <th>Tanggal Lahir</th>
-                                    <th>Status</th>
-                                    <th>Phone</th>
-                                    <th>Persyaratan</th>
-                                    <th>Foto Profil</th>
+                                    <th>User</th>
+                                    <th>Kandidat</th>
                                     <th>Created At</th>
                                     <th>Updated At</th>
                                     <th>Option</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($candidate as $ca)
+                                @foreach($vote as $v)
                                 <tr>
 
-                                    <td>{{ $ca->id }}</td>
-                                    <td>{{ $ca->name }}</td>
-                                    <td>{{ $ca->tempatlahir }}</td>
-                                    <td>{{ $ca->tanggallahir }}</td>
-                                    <td>{{ $ca->status }}</td>
-                                    <td>{{ $ca->user_phone }}</td>
-                                    <td><img src="{{ url('data_file').'/'.$ca->file }}" height="30px" width="30px" />
-                                    <td><img src="{{ url('data_file').'/'.$ca->avatar }}" height="30px" width="30px" />
-                                    <td>{{ $ca->created_at }}</td>
-                                    <td>{{ $ca->updated_at }}</td>
+                                    <td>{{ $v->id }}</td>
+                                    <td>{{ $v->user->name}}</td>
+                                    <td>{{ $v->candidate->name }}</td>
+                                    <td>{{ $v->created_at }}</td>
+                                    <td>{{ $v->updated_at }}</td>
 
 
                                     </td>
 
                                     <td>
-                                        <a href="/e-vote/admin/candidate/delete/{{ $ca->id }}"
+                                        <a href="/e-vote/admin/vote/delete/{{ $v->id }}"
                                             onClick="confirm('Delete entry?')" class="btn btn-danger btn-sm">Hapus</a>
-                                        <a href="/e-vote/admin/candidate/edit/{{ $ca->id }}"
-                                            class="btn btn-warning">Edit</a>
-                                        <a href="/e-vote/admin/candidate-status/edit/{{ $ca->id }}"
-                                            class="btn btn-success">Konfirmasi</a>
                                     </td>
 
                                 </tr>

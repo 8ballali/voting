@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Edit Community</title>
+    <title>Edit Kandidat</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -301,7 +301,22 @@
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
-
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/e-vote/admin/quick-count" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Quick Count</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/e-vote/admin/vote" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List Suara</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a href="/e-vote/admin/generate" class="nav-link">
@@ -440,13 +455,25 @@
 
                                 </div>
                                 <div class="form-group">
-                                    <label>TTL</label>
-                                    <textarea name="ttl" class="form-control"
-                                        placeholder="TTL Kandidat"> {{ $candidate->ttl }} </textarea>
+                                    <label>Tempat Lahir</label>
+                                    <textarea name="tempatlahir" class="form-control"
+                                        placeholder="TTL Kandidat"> {{ $candidate->tempatlahir}} </textarea>
 
-                                    @if($errors->has('ttl'))
+                                    @if($errors->has('tempatlahir'))
                                     <div class="text-danger">
-                                        {{ $errors->first('ttl')}}
+                                        {{ $errors->first('tempatlahir')}}
+                                    </div>
+                                    @endif
+
+                                </div>
+                                <div class="form-group">
+                                    <label>Tanggal Lahir</label>
+                                    <textarea name="tanggallahir" class="form-control"
+                                        placeholder="TTL Kandidat"> {{ $candidate->tanggallahir }} </textarea>
+
+                                    @if($errors->has('tanggallahir'))
+                                    <div class="text-danger">
+                                        {{ $errors->first('tanggallahir')}}
                                     </div>
                                     @endif
 
@@ -476,18 +503,17 @@
 
                                 </div>
                                 <div class="form-group">
-                                    <label>User ID</label>
-                                    <textarea name="user_id" class="form-control"
-                                        placeholder="User ID"> {{ $candidate->user_id}} </textarea>
+                                    <label>Komunitas</label>
+                                    <textarea name="community_id" class="form-control"
+                                        placeholder="Komunitas Kandidat"> {{ $candidate->community_id }} </textarea>
 
-                                    @if($errors->has('user_id'))
+                                    @if($errors->has('community_id'))
                                     <div class="text-danger">
-                                        {{ $errors->first('user_id')}}
+                                        {{ $errors->first('community_id')}}
                                     </div>
                                     @endif
 
                                 </div>
-
                                 {{ csrf_field() }}
 
                                 <div class="form-group">
@@ -500,6 +526,18 @@
                                 </div>
                                 <div class="form-group">
                                     <input type="submit" class="btn btn-success" value="Simpan">
+                                </div>
+                                <div class="form-group">
+                                    <label>Poling ID</label>
+                                    <textarea name="poling_id" class="form-control"
+                                        placeholder="Jenis Pemilihan"> {{ $candidate->poling_id }} </textarea>
+
+                                    @if($errors->has('poling_id'))
+                                    <div class="text-danger">
+                                        {{ $errors->first('poling_id')}}
+                                    </div>
+                                    @endif
+
                                 </div>
                             </form>
 

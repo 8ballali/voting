@@ -294,13 +294,29 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/e-vote/admin/quick-count" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>
                                     Quick Count
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/e-vote/admin/quick-count" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Quick Count</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/e-vote/admin/vote" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List Suara</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
@@ -425,12 +441,23 @@
 
                                 </div>
                                 <div class="form-group">
-                                    <label>Tempat & Tanggal Lahir</label>
-                                    <textarea name="ttl" class="form-control" placeholder="TTL Anda"></textarea>
+                                    <label>Tempat  Lahir</label>
+                                    <textarea name="tempatlahir" class="form-control" placeholder="Tempat Lahir Anda"></textarea>
 
-                                    @if($errors->has('ttl'))
+                                    @if($errors->has('tempatlahir'))
                                     <div class="text-danger">
-                                        {{ $errors->first('ttl')}}
+                                        {{ $errors->first('tempatlahir')}}
+                                    </div>
+                                    @endif
+
+                                </div>
+                                <div class="form-group">
+                                    <label>Tanggal Lahir</label>
+                                    <textarea name="tanggallahir" class="form-control" placeholder="Tanggal Lahir Anda"></textarea>
+
+                                    @if($errors->has('tanggallahir'))
+                                    <div class="text-danger">
+                                        {{ $errors->first('tanggallahir')}}
                                     </div>
                                     @endif
 
@@ -462,19 +489,23 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <b>File Persyaratan</b><br />
+                                    <input type="file" name="file">
+                                </div>
+                                <div class="form-group">
+                                    <b>Avatar</b><br />
+                                    <input type="file" name="avatar">
+                                </div>
+                                <div class="form-group">
                                     <label>Nomor Urut</label>
-                                    <textarea name="user_id" class="form-control" placeholder="Nomor Urut"></textarea>
+                                    <textarea name="community_id" class="form-control" placeholder="Nomor Urut"></textarea>
 
-                                    @if($errors->has('user_id'))
+                                    @if($errors->has('community_id'))
                                     <div class="text-danger">
-                                        {{ $errors->first('user_id')}}
+                                        {{ $errors->first('community_id')}}
                                     </div>
                                     @endif
 
-                                </div>
-                                <div class="form-group">
-                                    <b>File Persyaratan</b><br />
-                                    <input type="file" name="file">
                                 </div>
                                 <div class="form-group">
                                     <label>Poling ID</label>

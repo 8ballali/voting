@@ -16,6 +16,9 @@ class User extends Authenticatable
      *
      * @var array
      */
+    public function vote(){
+    	return $this->hasMany('App\Vote');
+    }
     protected $fillable = [
         'name', 'email', 'phone', 'community_id', 'role', 'password',
     ];

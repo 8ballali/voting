@@ -13,4 +13,9 @@ class Candidate extends Model
     {
         return $this->belongsTo(Community::class, 'community_id');
     }
+    public function vote()
+    {
+        return $this->hasMany('App\Vote');
+    }
+
 }
