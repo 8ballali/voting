@@ -37,13 +37,13 @@ class CandidateUserController extends Controller
         ]);
         $file = $request->file('file');
         $nama_file = time() . "_" . $file->getClientOriginalName();
-        $tujuan_upload = 'data_file';
+        $tujuan_upload = 'storage';
         $file->move($tujuan_upload, $nama_file);
 
 
         $avatar = $request->file('avatar');
         $nama_avatar = time() . "_" . $avatar->getClientOriginalName();
-        $tujuan_upload = 'data_file';
+        $tujuan_upload = 'storage';
         $avatar->move($tujuan_upload, $nama_avatar);
 
         Candidate::create([

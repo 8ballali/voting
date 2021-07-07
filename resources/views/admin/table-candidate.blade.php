@@ -400,8 +400,8 @@
                                     <td>{{ $ca->tanggallahir }}</td>
                                     <td>{{ $ca->status }}</td>
                                     <td>{{ $ca->user_phone }}</td>
-                                    <td><img src="{{ url('data_file').'/'.$ca->file }}" height="30px" width="30px" />
-                                    <td><img src="{{ url('data_file').'/'.$ca->avatar }}" height="30px" width="30px" />
+                                    <td><img src="{{ url('storage').'/'.$ca->file }}" height="30px" width="30px" />
+                                    <td><img src="{{ url('storage').'/'.$ca->avatar }}" height="30px" width="30px" />
                                     <td>{{ $ca->created_at }}</td>
                                     <td>{{ $ca->updated_at }}</td>
 

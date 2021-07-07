@@ -456,11 +456,11 @@
                                 </div>
                                 <div>
                                     <label>File Persyaratan</label>
-                                    <img src="{{ url('data_file').'/'.$candidate->file }}" height="30px" width="30px" />
+                                    <img src="{{ url('storage').'/'.$candidate->file }}" height="30px" width="30px" />
                                 </div>
                                 <div>
                                     <label>Avatar</label>
-                                    <img src="{{ url('data_file').'/'.$candidate->avatar }}" height="30px" width="30px" />
+                                    <img src="{{ url('storage').'/'.$candidate->avatar }}" height="30px" width="30px" />
                                 </div>
                                     <div class="form-group">
                                         <label>Status</label>

@@ -377,7 +377,6 @@
                             <thead>
                                 <tr>
                                     <th>Reg ID</th>
-
                                     <th>Created at</th>
 
                                 </tr>
