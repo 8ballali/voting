@@ -45,6 +45,7 @@ $('#click').on('click', function () {
         input: 'text'
     }).then(function (text) {
         console.log(text.value)
+        console.log('oke')
         if (text.value != "" && text.value !== 'undefined') {
             $.ajax({
                 type: "POST",
