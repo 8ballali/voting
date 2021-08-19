@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,7 +60,7 @@
                 <p>Kenali Kandidatmu Sebelum memilih</p>
             </div>
 
-            <div class="row">
+<div class="row">
                 <div class="col-lg-4">
                     <img src="{{ url('storage').'/'.$candidate->avatar }}" class="img-fluid" alt="">
                 </div>
@@ -103,7 +104,7 @@
         <div class="section-title mt-5">
             <h2>Misi</h2>
         </div>
-        <textarea class="textarea">{{$candidate->misi}}</textarea>
+        <textarea readonly class="textarea">{{$candidate->misi}}</textarea>
 
 
         <center>
