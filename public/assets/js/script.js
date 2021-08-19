@@ -76,7 +76,7 @@ $('#click').on('click', function () {
                     }
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    alert("some error");
+                    alert("Anda belum masukan kode");
                 }
             })
         } else {
