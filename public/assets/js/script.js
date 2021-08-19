@@ -46,7 +46,7 @@ $('#click').on('click', function () {
     }).then(function (text) {
         console.log(text.value)
         console.log('oke')
-        if (text.value != "" && text.value !== 'undefined') {
+        if (text.value) {
             $.ajax({
                 type: "POST",
                 url: "http://127.0.0.1:8000/e-vote/user/validate",
