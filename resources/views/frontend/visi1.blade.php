@@ -103,8 +103,8 @@
         
         <div class="section-title mt-5">
             <h2>Misi</h2>
+            <p>{{$candidate->misi}}</p>
         </div>
-        <p>{{$candidate->misi}}</p>
 
 
         <center>
