@@ -100,11 +100,11 @@
             <h2>Visi</h2>
             <p>{{$candidate->visi}}</p>
         </div>
-
+        
         <div class="section-title mt-5">
             <h2>Misi</h2>
+            <p>{{$candidate->misi}}</p>
         </div>
-        <textarea readonly class="textarea">{{$candidate->misi}}</textarea>
 
 
         <center>

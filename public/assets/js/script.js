@@ -45,7 +45,8 @@ $('#click').on('click', function () {
         input: 'text'
     }).then(function (text) {
         console.log(text.value)
-        if (text.value != "") {
+        console.log('oke')
+        if (text.value) {
             $.ajax({
                 type: "POST",
                 url: "http://127.0.0.1:8000/e-vote/user/validate",
@@ -87,7 +88,7 @@ $('#click').on('click', function () {
                     }
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    alert("some error");
+                    alert("Anda belum masukan kode");
                 }
             })
         } else {
