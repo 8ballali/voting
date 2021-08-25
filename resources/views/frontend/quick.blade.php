@@ -52,58 +52,21 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav>  
     <div class="chart-container">
-        <div class="section-title">
-            <h2>Hasil Pemilihan</h2>
-        </div>
-        <div class="card card-danger">
-            <div class="card-header">
-              <h3 class="card-title">Hasil Suara</h3>
-
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                  <i class="fas fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-tool" data-card-widget="remove">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
+      <div class="section-title">
+          <h2>Hasil Pemilihan</h2>
+      </div>
+      <center>
+            <div class="pie-chart-container">
+              <canvas id="pieChart"></canvas>
             </div>
-            <div class="card-body">
-              <canvas id="pieChart" style="min-height: 500px; height: 500px; max-height: 500px; max-width: 100%;"></canvas>
-            </div>
-            <!-- /.card-body -->
+          </center>
           </div>
-          <!-- /.card -->
-
-        </div>
-        {{-- <center>
-                <div class="pie-chart-container">
-                <canvas id="pie-chartcanvas-1"></canvas>
-            </div>
-    </center> --}}
-        </div>
         <script>
             $(function () {
-              /* ChartJS
-               * -------
-               * Here we will create a few charts using ChartJS
-               */
-
-              //--------------
-              //- AREA CHART -
-              //--------------
-
-              // Get context with jQuery - using jQuery's .get() method.
-
-
-              //-------------
-              //- DONUT CHART -
-              //-------------
-              // Get context with jQuery - using jQuery's .get() method.
-
-
+              Chart.defaults.global.defaultFontFamily = "Lato";
+              Chart.defaults.global.defaultFontSize = 18;
               var donutData        = {
                 labels: {!! $data !!},
                 datasets: [
@@ -123,6 +86,10 @@
               var pieOptions     = {
                 maintainAspectRatio : false,
                 responsive : true,
+                legend: {
+                  display: true,
+                  position: "bottom"
+                }
               }
               //Create pie or douhnut chart
               // You can switch between pie and douhnut using the method below.
