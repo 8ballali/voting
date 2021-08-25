@@ -222,6 +222,23 @@
                                     </a>
                                 </li>
                             </ul>
+                            <li class="nav-item">
+                                <a href="/e-vote/admin/poling" class="nav-link ">
+                                    <i class="nav-icon fas fa-edit"></i>
+                                    <p>
+                                        Poling
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="/e-vote/admin/poling" class="nav-link ">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>List Poling</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
                         <li class="nav-item">
                             <div class=" " aria-labelledby="navbarDropdown">
                                 <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();

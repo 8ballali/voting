@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Edit Candidate</title>
+    <title>Edit Kandidat</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -57,7 +57,8 @@
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="{{ url('/style/dist/img/user1-128x128.jpg')}}" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{ url('/style/dist/img/user1-128x128.jpg')}}" class="img-circle elevation-2"
+                            alt="User Image">
                     </div>
                     <div class="info">
                         <a href="/e-vote/admin/" class="d-block">CAN CREATIVE</a>
@@ -105,7 +106,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/community/import" class="nav-link active">
+                                    <a href="/e-vote/admin/community/import" class="nav-link ">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Import Community</p>
                                     </a>
@@ -113,7 +114,7 @@
                             </ul>
                         </li>
                         <li class="nav-item menu">
-                            <a href="/e-vote/admin/candidate" class="nav-link active">
+                            <a href="/e-vote/admin/candidate" class="nav-link ">
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
                                     candidate
@@ -206,23 +207,23 @@
                                     </a>
                                 </li>
                             </ul>
-                            <li class="nav-item">
-                                <a href="/e-vote/admin/poling" class="nav-link ">
-                                    <i class="nav-icon fas fa-edit"></i>
-                                    <p>
-                                        Poling
-                                        <i class="right fas fa-angle-left"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="/e-vote/admin/poling" class="nav-link ">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>List Poling</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
+                        <li class="nav-item">
+                            <a href="/e-vote/admin/poling" class="nav-link active">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>
+                                    Poling
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/e-vote/admin/poling" class="nav-link ">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List Poling</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         <li class="nav-item">
                             <div class=" " aria-labelledby="navbarDropdown">
                                 <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -248,12 +249,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Edit Candidate</h1>
+                            <h1>Edit Poling</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Edit Candidate</li>
+                                <li class="breadcrumb-item active">Edit Poling</li>
                             </ol>
                         </div>
                     </div>
@@ -277,101 +278,82 @@
                         </div>
                         @endif
                         <div class="card-body">
-                            <a href="/e-vote/admin/candidate" class="btn btn-primary">Back</a>
+                            <a href="/e-vote/admin/poling" class="btn btn-primary">Back</a>
                             <br />
                             <br />
 
-                            <form method="post" action="/e-vote/admin/candidate-status/update/{{ $candidate->id }}"
+                            <form method="post" action="/e-vote/admin/poling/update/{{ $poling->id }}"
                                 enctype="multipart/form-data">
 
                                 {{ csrf_field() }}
                                 {{ method_field('PUT') }}
 
                                 <div class="form-group">
-                                    <label>Nama</label>
-                                    <p>{{ $candidate->name }}</p>
+                                    <label>Title</label>
+                                    <input type="text" name="title" class="form-control" placeholder="Nama Kandidat"
+                                        value=" {{ $poling->title }}">
 
-
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Visi</label>
-                                    <p>{{ $candidate->visi }}</p>
-
-
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Misi</label>
-                                    <p>{{ $candidate->misi }}</p>
-
-
-
-                                </div>
-                                <div class="form-group">
-                                    <label>Alamat</label>
-                                    <p>{{ $candidate->alamat }}</p>
-
-
-
-                                </div>
-                                <div class="form-group">
-                                    <label>Tempat Lahir</label>
-                                    <p>{{ $candidate->tempatlahir }}</p>
-
-
-
-                                </div>
-                                <div class="form-group">
-                                    <label>Tanggal Lahir</label>
-                                    <p>{{ $candidate->tanggallahir }}</p>
-
-                                </div>
-                                <div class="form-group">
-                                    <label>Jenis Kelamin</label>
-                                    <p>{{ $candidate->gender }}</p>
-
-                                </div>
-                                <div class="form-group">
-                                    <label>Nomor Telepon</label>
-                                    <p>{{ $candidate->user_phone }}</p>
-
-                                </div>
-                                <div>
-                                    <label>File Persyaratan</label>
-                                    <img src="{{ url('storage').'/'.$candidate->file }}" height="30px" width="30px" />
-                                </div>
-                                <div>
-                                    <label>Avatar</label>
-                                    <img src="{{ url('storage').'/'.$candidate->avatar }}" height="30px" width="30px" />
-                                </div>
-                                    <div class="form-group">
-                                        <label>Status</label>
-                                        <select name="status" >
-                                            <option value="UNCONFIRMED">UNCONFIRMED</option>
-                                            <option value="CONFIRMED">CONFIRMED</option>
-                                        </select>
-                                        @if($errors->has('status'))
-                                        <div class="text-danger">
-                                            {{ $errors->first('status')}}
-                                        </div>
-                                        @endif
-
+                                    @if($errors->has('title'))
+                                    <div class="text-danger">
+                                        {{ $errors->first('title')}}
                                     </div>
-                                    <div class="form-group">
-                                    <input type="submit" class="btn btn-success" value="Simpan">
-                                    </div>
-                            </form>
+                                    @endif
 
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <textarea name="description" class="form-control"
+                                        placeholder="Deskripsi Poling"> {{ $poling->description }} </textarea>
+
+                                    @if($errors->has('description'))
+                                    <div class="text-danger">
+                                        {{ $errors->first('description')}}
+                                    </div>
+                                    @endif
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Start At ( Y-m-d )</label>
+                                    <textarea name="start_at" class="form-control"
+                                        placeholder="Start At"> {{ $poling->start_at }} </textarea>
+
+                                    @if($errors->has('start_at'))
+                                    <div class="text-danger">
+                                        {{ $errors->first('start_at')}}
+                                    </div>
+                                    @endif
+
+                                </div>
+                                <div class="form-group">
+                                    <label>Stopped At ( Y-m-d )</label>
+                                    <textarea name="stop_at" class="form-control"
+                                        placeholder="Stopped At"> {{ $poling->stop_at }} </textarea>
+
+                                    @if($errors->has('stop_at'))
+                                    <div class="text-danger">
+                                        {{ $errors->first('stop_at')}}
+                                    </div>
+                                    @endif
+
+                                </div>
                         </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-success" value="Simpan">
+                        </div>
+
+                        </form>
+
                     </div>
                 </div>
-                <!-- /.card-footer-->
         </div>
-        <!-- /.card -->
+        <!-- /.card-footer-->
+    </div>
+    <!-- /.card -->
 
-        </section>
-        <!-- /.content -->
+    </section>
+    <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
 

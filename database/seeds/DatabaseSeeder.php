@@ -12,12 +12,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
          $this->call(CommunitySeeder::class);
-        //  $this->call(PolingSeeder::class);
+          $this->call(PolingSeeder::class);
         DB::table('poling')->insert([
             'title' => 'Pemilihan Ketua',
             'description' => 'Pemilihan',
-            'start_at' => '2021-06-14',
-            'stop_at' => '2021-06-15'
+            'start_at' => '2021-08-24',
+            'stop_at' => '2021-08-25'
         ]);
          $this->call(UserSeeder::class);
          $this->call(CandidateSeeder::class);

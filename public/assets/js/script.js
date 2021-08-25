@@ -57,6 +57,8 @@ $('#click').on('click', function () {
                     reg_id: text.value,
                 },
                 success: function (data) {
+
+                    console.log(data);
                     if(data == 0){
                         Swal.fire({
                             title: 'Kode Yang Dimasukkan Salah',
@@ -67,10 +69,20 @@ $('#click').on('click', function () {
                             title: 'Anda Sudah Memilih',
                             icon: 'info'
                         })
-                    }else {
+                    }else if(data == 3){
+                        Swal.fire({
+                            title: 'Poling Belum dimulai',
+                            icon: 'warning'
+                        })
+                    }else if( data == 2){
                         Swal.fire({
                             title: 'Voting anda telah masuk',
                             icon: 'success'
+                        })
+                    }else{
+                        Swal.fire({
+                            title: 'Kode Salah',
+                            icon: 'warning'
                         })
                     }
                 },

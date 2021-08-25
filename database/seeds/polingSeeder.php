@@ -14,8 +14,8 @@ class PolingSeeder extends Seeder
         DB::table('poling')->insert([
             'title' => 'Pemilihan Ketua',
             'description' => 'Pemilihan',
-            'start_at' => '2021-06-14',
-            'stop_at' => '2021-06-15'
+            'start_at' => '2021-08-27',
+            'stop_at' => '2021-08-28'
         ]);
     }
 }

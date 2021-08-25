@@ -4,13 +4,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Edit Candidate</title>
+    <title>User</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('/style/plugins/fontawesome-free/css/all.min.css')}}">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{{ asset('/style/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('/style/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('/style/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('/style/dist/css/adminlte.min.css')}}">
 </head>
@@ -28,7 +32,7 @@
                     <a href="/e-vote/admin" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="/e-vote/admin/community" class="nav-link active">Community</a>
+                    <a href="/e-vote/admin/user" class="nav-link active">Data User</a>
                 </li>
             </ul>
 
@@ -83,8 +87,8 @@
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                        <li class="nav-item ">
-                            <a href="/e-vote/admin/community" class="nav-link ">
+                        <li class="nav-item">
+                            <a href="/e-vote/admin/community" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Community
@@ -99,21 +103,21 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/community/add" class="nav-link ">
+                                    <a href="/e-vote/admin/community/add" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add Community</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/community/import" class="nav-link active">
+                                    <a href="/e-vote/admin/community/import" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Import Community</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item menu">
-                            <a href="/e-vote/admin/candidate" class="nav-link active">
+                        <li class="nav-item">
+                            <a href="/e-vote/admin/candidate" class="nav-link">
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
                                     candidate
@@ -123,7 +127,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/candidate" class="nav-link ">
+                                    <a href="/e-vote/admin/candidate" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List Candidate</p>
                                     </a>
@@ -136,8 +140,8 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a href="/e-vote/admin/user" class="nav-link">
+                        <li class="nav-item menu-open">
+                            <a href="/e-vote/admin/user" class="nav-link ">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
                                     User
@@ -146,13 +150,15 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/user" class="nav-link">
+                                    <a href="/e-vote/admin/user" class="nav-link ">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List User</p>
                                     </a>
                                 </li>
+                            </ul>
+                            <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/user/import" class="nav-link">
+                                    <a href="/e-vote/admin/user/import" class="nav-link ">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Import User</p>
                                     </a>
@@ -206,37 +212,39 @@
                                     </a>
                                 </li>
                             </ul>
-                            <li class="nav-item">
-                                <a href="/e-vote/admin/poling" class="nav-link ">
-                                    <i class="nav-icon fas fa-edit"></i>
-                                    <p>
-                                        Poling
-                                        <i class="right fas fa-angle-left"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="/e-vote/admin/poling" class="nav-link ">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>List Poling</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        <li class="nav-item">
-                            <div class=" " aria-labelledby="navbarDropdown">
-                                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
                         </li>
-                </nav>
-                <!-- /.sidebar-menu -->
+                        <li class="nav-item">
+                            <a href="/e-vote/admin/generate" class="nav-link active">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>
+                                    Poling
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/e-vote/admin/generate" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List Poling</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <li class="nav-item">
+                        <div class=" " aria-labelledby="navbarDropdown">
+                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                    </li>
+                    <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->
         </aside>
@@ -248,12 +256,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Edit Candidate</h1>
+                            <h1>Poling</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Edit Candidate</li>
+                                <li class="breadcrumb-item active">Data Poling</li>
                             </ol>
                         </div>
                     </div>
@@ -262,119 +270,60 @@
 
             <!-- Main content -->
             <section class="content">
-                <div class="container">
-                    <div class="card mt-5">
-                        <div class="card-header text-center">
-                            Edit Candidate
-                        </div>
-                        @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                        @endif
-                        <div class="card-body">
-                            <a href="/e-vote/admin/candidate" class="btn btn-primary">Back</a>
-                            <br />
-                            <br />
 
-                            <form method="post" action="/e-vote/admin/candidate-status/update/{{ $candidate->id }}"
-                                enctype="multipart/form-data">
-
-                                {{ csrf_field() }}
-                                {{ method_field('PUT') }}
-
-                                <div class="form-group">
-                                    <label>Nama</label>
-                                    <p>{{ $candidate->name }}</p>
-
-
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Visi</label>
-                                    <p>{{ $candidate->visi }}</p>
-
-
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Misi</label>
-                                    <p>{{ $candidate->misi }}</p>
-
-
-
-                                </div>
-                                <div class="form-group">
-                                    <label>Alamat</label>
-                                    <p>{{ $candidate->alamat }}</p>
-
-
-
-                                </div>
-                                <div class="form-group">
-                                    <label>Tempat Lahir</label>
-                                    <p>{{ $candidate->tempatlahir }}</p>
-
-
-
-                                </div>
-                                <div class="form-group">
-                                    <label>Tanggal Lahir</label>
-                                    <p>{{ $candidate->tanggallahir }}</p>
-
-                                </div>
-                                <div class="form-group">
-                                    <label>Jenis Kelamin</label>
-                                    <p>{{ $candidate->gender }}</p>
-
-                                </div>
-                                <div class="form-group">
-                                    <label>Nomor Telepon</label>
-                                    <p>{{ $candidate->user_phone }}</p>
-
-                                </div>
-                                <div>
-                                    <label>File Persyaratan</label>
-                                    <img src="{{ url('storage').'/'.$candidate->file }}" height="30px" width="30px" />
-                                </div>
-                                <div>
-                                    <label>Avatar</label>
-                                    <img src="{{ url('storage').'/'.$candidate->avatar }}" height="30px" width="30px" />
-                                </div>
-                                    <div class="form-group">
-                                        <label>Status</label>
-                                        <select name="status" >
-                                            <option value="UNCONFIRMED">UNCONFIRMED</option>
-                                            <option value="CONFIRMED">CONFIRMED</option>
-                                        </select>
-                                        @if($errors->has('status'))
-                                        <div class="text-danger">
-                                            {{ $errors->first('status')}}
-                                        </div>
-                                        @endif
-
-                                    </div>
-                                    <div class="form-group">
-                                    <input type="submit" class="btn btn-success" value="Simpan">
-                                    </div>
-                            </form>
-
-                        </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Data Poling</h3>
                     </div>
-                </div>
-                <!-- /.card-footer-->
-        </div>
-        <!-- /.card -->
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th>Start At</th>
+                                    <th>Stopped At</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($poling as $p)
+                                <tr>
 
-        </section>
-        <!-- /.content -->
+                                    <td>{{ $p->id }}</td>
+                                    <td>{{ $p->title }}</td>
+                                    <td>{{ $p->description }}</td>
+                                    <td>{{ $p->start_at }}</td>
+                                    <td>{{ $p->stop_at }}</td>
+
+
+                                    <td>
+                                        <a href="/e-vote/admin/poling/delete/{{ $p->id }}"
+                                            onClick="confirm('Delete entry?')" class="btn btn-danger btn-sm">Hapus</a>
+                                        <a href="/e-vote/admin/poling/edit/{{ $p->id }}" class="btn btn-warning">Edit</a>
+                                    </td>
+
+                                </tr>
+                                @endforeach
+                            </tbody>
+                            <tfoot>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-
     <footer class="main-footer">
         <strong>Copyright &copy; 2021 <a href="https://can.co.id/">CAN Creative</a>.</strong>
         All rights reserved.
@@ -395,10 +344,43 @@
     <script src="{{ asset('/style/plugins/jquery/jquery.min.js')}}"></script>
     <!-- Bootstrap 4 -->
     <script src="{{ asset('/style/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <!-- DataTables  & Plugins -->
+    <script src="{{ asset('/style/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{ asset('/style/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{ asset('/style/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+    <script src="{{ asset('/style/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+    <script src="{{ asset('/style/plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
+    <script src="{{ asset('/style/plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
+    <script src="{{ asset('/style/plugins/jszip/jszip.min.js')}}"></script>
+    <script src="{{ asset('/style/plugins/pdfmake/pdfmake.min.js')}}"></script>
+    <script src="{{ asset('/style/plugins/pdfmake/vfs_fonts.js')}}"></script>
+    <script src="{{ asset('/style/plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
+    <script src="{{ asset('/style/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
+    <script src="{{ asset('/style/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('/style/dist/js/adminlte.min.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('/style/dist/js/demo.js')}}"></script>
-</body>
+    <!-- Page specific script -->
+    <script>
+        $(function () {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
 
-</html>
+    </script>
+</body>
+</{{ asset('/style/')}}

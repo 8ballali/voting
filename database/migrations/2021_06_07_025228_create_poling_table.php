@@ -19,6 +19,7 @@ class CreatePolingTable extends Migration
             $table->text('description');
             $table->date('start_at');
             $table->date('stop_at');
+            $table->timestamps();
         });
     }
 

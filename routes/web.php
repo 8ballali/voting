@@ -34,6 +34,9 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/e-vote/admin/candidate-status/edit/{id}', 'StatusController@edit');
     Route::put('/e-vote/admin/candidate-status/update/{id}', 'StatusController@update');
     Route::get('/e-vote/admin/candidate/delete/{id}', 'CandidateAdminController@delete');
+    Route::get('/e-vote/admin/poling', 'PolingController@index');
+    Route::get('/e-vote/admin/poling/edit/{id}', 'PolingController@edit');
+    Route::put('/e-vote/admin/poling/update/{id}', 'PolingController@update');
     Route::get('/e-vote/admin/user', 'UserController@index');
     Route::get('/e-vote/admin/user/add', 'UserController@add');
     Route::post('/e-vote/admin/user/store', 'UserController@store');
@@ -66,6 +69,8 @@ Route::get('/e-vote/user', 'HomeController@index')->name('home');
 
 
 Route::get('/e-vote/user/candidate/{candidate}', 'CandidateUserController@candidate');
+
+Route::get('/e-vote/user/quick', 'QuickUserController@index');
 
 Route::post('/e-vote/user/validate', 'ValidasiController@store');
 
