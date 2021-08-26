@@ -33,6 +33,9 @@
                         <a class="nav-link" href="{{url('e-vote/user/')}}">Home</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{url('e-vote/user/quick')}}">Quick</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{url('e-vote/user/syarat')}}">Syarat</a>
                     </li>
                     <li class="nav-item">
@@ -111,7 +114,7 @@
                             oninvalid="this.setCustomValidity('data tidak boleh kosong')"
                             oninput="setCustomValidity('')">
                     </div>
-                    <div class="input-box">
+                    <div class="input-box" style="visibility: hidden; margin-top:-200px">
                         <span class="details">Jenis Pemilihan</span>
                         <div class="custom_select">
                             <select id="select-state" name="poling_id">

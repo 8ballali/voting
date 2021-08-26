@@ -33,6 +33,9 @@
                         <a class="nav-link" href="{{url('e-vote/user/')}}">Home</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{url('e-vote/user/quick')}}">Quick</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{url('e-vote/user/syarat')}}">Syarat</a>
                     </li>
                     <li class="nav-item">

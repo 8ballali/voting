@@ -52,16 +52,15 @@
                 </ul>
             </div>
         </div>
-    </nav>  
+    </nav>
+
     <div class="chart-container">
       <div class="section-title">
           <h2>Hasil Pemilihan</h2>
       </div>
-      <center>
             <div class="pie-chart-container">
               <canvas id="pieChart"></canvas>
             </div>
-          </center>
           </div>
         <script>
             $(function () {

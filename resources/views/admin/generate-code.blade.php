@@ -239,8 +239,7 @@
                                 </form>
                             </div>
                         </li>
-                </nav>
-                <!-- /.sidebar-menu -->
+                        <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->
         </aside>
@@ -268,30 +267,35 @@
             <section class="content">
 
                 <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Code</h3>
+                    <div class="card-heade\r">
+                        <h3 class="card-title"></h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
+                                    <th>ID</th>
                                     <th>Reg ID</th>
+                                    <th>User ID</th>
                                     <th>Created at</th>
+
 
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($generate as $g)
                                 <tr>
+                                    <td>{{ $g->id }}</td>
 
                                     <td>{{ $g->reg_id }}</td>
 
+                                    <td>{{App\User::find(decrypt($g->code)['user_id'])->name}}</td>
+
                                     <td>{{ $g->created_at }}</td>
+                                        </tr>
+                                        @endforeach
 
-
-                                </tr>
-                                @endforeach
                             </tbody>
                             <tfoot>
                             </tfoot>
@@ -366,7 +370,6 @@
                 "responsive": true,
             });
         });
-
     </script>
 </body>
 </{{ asset('/style/')}}

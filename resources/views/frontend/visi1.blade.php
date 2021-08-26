@@ -35,6 +35,9 @@
                         <a class="nav-link" href="{{url('e-vote/user/')}}">Home</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{url('e-vote/user/quick')}}">Quick</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{url('e-vote/user/syarat')}}">Syarat</a>
                     </li>
                     <li class="nav-item">
@@ -100,7 +103,7 @@
             <h2>Visi</h2>
             <p>{{$candidate->visi}}</p>
         </div>
-        
+
         <div class="section-title mt-5">
             <h2>Misi</h2>
             <p>{{$candidate->misi}}</p>

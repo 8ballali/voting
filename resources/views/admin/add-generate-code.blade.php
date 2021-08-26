@@ -11,6 +11,7 @@
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('/style/plugins/fontawesome-free/css/all.min.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('/style/dist/css/adminlte.min.css')}}">
 </head>
@@ -207,23 +208,23 @@
                                     </a>
                                 </li>
                             </ul>
-                            <li class="nav-item">
-                                <a href="/e-vote/admin/poling" class="nav-link ">
-                                    <i class="nav-icon fas fa-edit"></i>
-                                    <p>
-                                        Poling
-                                        <i class="right fas fa-angle-left"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="/e-vote/admin/poling" class="nav-link ">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>List Poling</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
+                        <li class="nav-item">
+                            <a href="/e-vote/admin/poling" class="nav-link ">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>
+                                    Poling
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/e-vote/admin/poling" class="nav-link ">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List Poling</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         <li class="nav-item">
                             <div class=" " aria-labelledby="navbarDropdown">
                                 <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -275,26 +276,32 @@
                             <form method="post" action="{{ url('/e-vote/admin/generate')}}">
 
                                 {{ csrf_field() }}
+                                <div id="dynamic_field">
 
-                                <div class="form-group">
-                                    <label>User</label>
-                                    <select name="user_id" class="form-control">
+                                    <div class="form-group">
+                                        <label>User</label>
+                                        <select name="user_id[]" class="form-control">
 
-                                        @foreach($user as $u)
-                                        <Option value='{{ $u ->id}}'>{{ $u->name}}</Option>
-                                        @endforeach
-                                    </select>
+                                            @foreach($user as $u)
+                                            <Option value='{{ $u ->id}}'>{{ $u->name}}</Option>
+                                            @endforeach
+                                        </select>
 
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Poling</label>
+                                        <select name="poling_id[]" class="form-control">
+
+                                            @foreach($poling as $p)
+                                            <Option value='{{ $p ->id}}'>{{ $p->title}}</Option>
+                                            @endforeach
+                                        </select>
+
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <label>Poling</label>
-                                    <select name="poling_id" class="form-control">
-
-                                        @foreach($poling as $p)
-                                        <Option value='{{ $p ->id}}'>{{ $p->title}}</Option>
-                                        @endforeach
-                                    </select>
-
+                                    <td><button type="button" name="add" id="add" class="btn btn-success">Add
+                                            More</button></td>
                                 </div>
                                 <div class="form-group">
                                     <input type="submit" class="btn btn-success" value="Simpan">
@@ -329,7 +336,35 @@
     <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
+    <script>
+        $(document).ready(function () {
+            var i = 1;
+            $('#add').click(function () {
+                i++;
+                $('#dynamic_field').append(` <div class="form-group">
+                                    <label>User</label>
+                                    <select name="user_id[]" class="form-control">
 
+                                        @foreach($user as $u)
+                                        <Option value='{{ $u ->id}}'>{{ $u->name}}</Option>
+                                        @endforeach
+                                    </select>
+
+                                </div>
+                                <div class="form-group">
+                                    <label>Poling</label>
+                                    <select name="poling_id[]" class="form-control">
+
+                                        @foreach($poling as $p)
+                                        <Option value='{{ $p ->id}}'>{{ $p->title}}</Option>
+                                        @endforeach
+                                    </select>
+
+                                </div>`);
+            });
+        });
+
+    </script>
     <!-- jQuery -->
     <script src="{{ asset('/style/plugins/jquery/jquery.min.js')}}"></script>
     <!-- Bootstrap 4 -->

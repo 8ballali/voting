@@ -12,6 +12,7 @@ class Generate_codeController extends Controller
     public function index(){
         $generate = generate_code::All();
         return view('admin.generate-code', ['generate'=> $generate]);
+
     }
 
     public function create(){
@@ -34,15 +35,21 @@ class Generate_codeController extends Controller
 
     public function store(Request $request){
         $code = $this->validate($request,[
-            'user_id'=> 'required',
-            'poling_id'=> 'required'
+            'user_id'=> 'required|array',
+            'poling_id'=> 'required|array'
              ]);
+            for ($i=0; $i < count($code['user_id']); $i++) {
+                $code_encrypt = [
+                  "user_id" =>  $code['user_id'][$i],
+                   "poling_id" => $code['poling_id'][$i],
+                ];
+                // dd($code_encrypt);
+                generate_code::create([
+                    'code' => encrypt($code_encrypt),
+                    'reg_id'=> $this->generate_random()
 
-        generate_code::create([
-            'code' => encrypt($code),
-            'reg_id'=> $this->generate_random()
-
-        ]);
+                ]);
+            }
         return redirect('/e-vote/admin/generate');
     }
 }

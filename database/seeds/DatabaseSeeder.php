@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
          $this->call(CommunitySeeder::class);
-          $this->call(PolingSeeder::class);
+        //   $this->call(PolingSeeder::class);
         DB::table('poling')->insert([
             'title' => 'Pemilihan Ketua',
             'description' => 'Pemilihan',
