@@ -294,8 +294,9 @@
                                     <td>{{ $p->id }}</td>
                                     <td>{{ $p->title }}</td>
                                     <td>{{ $p->description }}</td>
-                                    <td>{{ $p->start_at }}</td>
-                                    <td>{{ $p->stop_at }}</td>
+                                    <td>{{ Carbon\Carbon::parse($p->start_at)->format('d-m-Y') }}</td>
+                                    <td>{{ Carbon\Carbon::parse($p->stop_at)->format('d-m-Y') }}</td>
+
 
 
                                     <td>

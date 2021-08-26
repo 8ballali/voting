@@ -277,7 +277,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Reg ID</th>
-                                    <th>User ID</th>
+                                    <th>Nama User</th>
                                     <th>Created at</th>
 
 

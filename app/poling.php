@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
+
 class Poling extends Model
 {
     protected $table = "poling";
@@ -13,6 +15,7 @@ class Poling extends Model
         'start_at',
         'stop_at'
     ];
+
 
     public function candidate()
     {

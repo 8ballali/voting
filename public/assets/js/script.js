@@ -75,6 +75,11 @@ $('#click').on('click', function () {
                             title: 'Poling Belum dimulai',
                             icon: 'warning'
                         })
+                    }else if(data == 4){
+                        Swal.fire({
+                            title: 'Poling Sudah Selesai',
+                            icon: 'warning'
+                        })
                     }else if( data == 2){
                         Swal.fire({
                             title: 'Voting anda telah masuk',
