@@ -54,20 +54,73 @@
         </div>
     </nav>
     <!-- ======= About Section ======= -->
-    <div class="container">
-        <div class="section-title mt-5 pt-5">
-            <h2>Syarat</h2>
+    <div id="body">>
+        <div class="container">
+            <div class="section-title mt-5 pt-5">
+                <h2>Syarat</h2>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item">Berketuhanan Yang Maha Esa</li>
+                <li class="list-group-item">Warga Negara Indonesia (melampirkan E-KTP)</li>
+                <li class="list-group-item">Sehat Jasmani</li>
+                <li class="list-group-item">Member Aktif di Club/Komunitasnya. Dibuktikan dengan Member Card / Surat
+                    Rekomendasi dari Ketua Club/Komunitas. </li>
+                <li class="list-group-item">Mengisi dan menyerahkan Formulir Pendaftaran Calon Ketua KOSMOS</li>
+                <li class="list-group-item">Berkomitmen untuk memajukan KOSMOS</li>
+            </ul>
         </div>
-        <ul class="list-group">
-            <li class="list-group-item">Berketuhanan Yang Maha Esa</li>
-            <li class="list-group-item">Warga Negara Indonesia (melampirkan E-KTP)</li>
-            <li class="list-group-item">Sehat Jasmani</li>
-            <li class="list-group-item">Member Aktif di Club/Komunitasnya. Dibuktikan dengan Member Card / Surat
-                Rekomendasi dari Ketua Club/Komunitas. </li>
-            <li class="list-group-item">Mengisi dan menyerahkan Formulir Pendaftaran Calon Ketua KOSMOS</li>
-            <li class="list-group-item">Berkomitmen untuk memajukan KOSMOS</li>
-        </ul>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 footer-about wow fadeInUp">
+                        <img class="logo-footer" src="{{url('assets/images/logo-can.png')}}" alt="logo-footer"
+                            data-at2x="assets/img/logo.png">
+                        <p>
+                            We always looking for new and creative ideas to help you with our products in your everyday
+                            work.
+                        </p>
+                    </div>
+                    <div class="col-md-4 offset-md-1 footer-contact wow fadeInDown">
+                        <h3>Contact</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Jl. Sentyaki Raya No.7 Bulu Lor, Semarang</p>
+                        <p><i class="fas fa-phone"></i> 0822-2332-6818</p>
+                        <p><i class="fas fa-envelope"></i> hallo@can.co.id</p>
+                    </div>
+                    <div class="col-md-4 footer-links wow fadeInUp">
+                        <div class="row">
+                            <div class="col">
+                                <h3>Links</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><a class="a" href="#top-content">Home</a></p>
+                                <p><a class="a" href="#">Syarat</a></p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><a class="a" href="#">Quick</a></p>
+                                <p><a class="a" href="#">Registrasi</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 footer-copyright">
+                        &copy; Copyright 2021 by <a href="https://can.co.id/">Can Creative</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script src="{{url('assets/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{url('assets/js/script.js')}}"></script>
 </body>

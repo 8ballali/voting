@@ -53,135 +53,189 @@
             </div>
         </div>
     </nav>
-    <div class="container">
-        <div class="section-title mt-5 pt-5">
-            <h2>Registrasi</h2>
-        </div>
-        @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
-        <div class="content">
-            <form action="{{url('e-vote/user/candidate/store')}}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="user-details">
-                    <div class="input-box">
-                        <span class="details">Nama Lengkap</span>
-                        <input type="text" name="name" id="name" placeholder="Enter your name" required
-                            oninvalid="this.setCustomValidity('data tidak boleh kosong')"
-                            oninput="setCustomValidity('')">
+    <div id="body">
+        <div class="container">
+            <div class="section-title mt-5 pt-5">
+                <h2>Registrasi</h2>
+            </div>
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+            <div class="content">
+                <form action="{{url('e-vote/user/candidate/store')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details">Nama Lengkap</span>
+                            <input type="text" name="name" id="name" placeholder="Enter your name" required
+                                oninvalid="this.setCustomValidity('data tidak boleh kosong')"
+                                oninput="setCustomValidity('')">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Asal Klub</span>
+                            <div class="custom_select">
+                                <select id="select-state" name="community_id">
+                                    <option value="">Select a Club</option>
+                                    @foreach (\DB::table ('community')->get() as $c )
+                                    <option value="{{$c->id}}">{{$c->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Tempat lahir</span>
+                            <input type="text" id="place" name="tempatlahir" placeholder="Enter your birthplace"
+                                required oninvalid="this.setCustomValidity('data tidak boleh kosong')"
+                                oninput="setCustomValidity('')">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Tanggal Lahir</span>
+                            <input type="date" id="date" min="1971-01-01" max="2000-12-31" name="tanggallahir"
+                                placeholder="Enter your birthdate" required
+                                oninvalid="this.setCustomValidity('data tidak boleh kosong')"
+                                oninput="setCustomValidity('')">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Telepon</span>
+                            <input type="text" id="telephone"
+                                onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+                                name="user_phone" placeholder="Enter your telephone" required
+                                oninvalid="this.setCustomValidity('data tidak boleh kosong')"
+                                oninput="setCustomValidity('')">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Alamat</span>
+                            <input type="text" id="address" name="alamat" placeholder="Enter your address" required
+                                oninvalid="this.setCustomValidity('data tidak boleh kosong')"
+                                oninput="setCustomValidity('')">
+                        </div>
+                        <div class="input-box" style="visibility: hidden; margin-top:-200px">
+                            <span class="details">Jenis Pemilihan</span>
+                            <div class="custom_select">
+                                <select id="select-state" name="poling_id">
+                                    @foreach (\DB::table ('poling')->get() as $c )
+                                    <option value="{{$c->id}}">{{$c->title}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input-box">
-                        <span class="details">Asal Klub</span>
-                        <div class="custom_select">
-                            <select id="select-state" name="community_id">
-                                <option value="">Select a Club</option>
-                                @foreach (\DB::table ('community')->get() as $c )
-                                <option value="{{$c->id}}">{{$c->name}}</option>
-                                @endforeach
-                            </select>
+                    <div class="gender-details">
+                        <input type="radio" name="gender" id="dot-1" value="laki-laki">
+                        <input type="radio" name="gender" id="dot-2" value="perempuan">
+                        <span class="gender-title">Jenis Kelamin</span>
+                        <div class="category">
+                            <label for="dot-1">
+                                <span class="dot one"></span>
+                                <span class="gender">Laki-Laki</span>
+                            </label>
+                            <label for="dot-2">
+                                <span class="dot two"></span>
+                                <span class="gender">Perempuan</span>
+                            </label>
                         </div>
                     </div>
                     <div class="input-box">
-                        <span class="details">Tempat lahir</span>
-                        <input type="text" id="place" name="tempatlahir" placeholder="Enter your birthplace" required
+                        <span class="details">Visi</span>
+                        <textarea class="textarea" id="visi" name="visi" required
                             oninvalid="this.setCustomValidity('data tidak boleh kosong')"
-                            oninput="setCustomValidity('')">
+                            oninput="setCustomValidity('')"></textarea>
                     </div>
                     <div class="input-box">
-                        <span class="details">Tanggal Lahir</span>
-                        <input type="date" id="date" min="1971-01-01" max="2000-12-31" name="tanggallahir"
-                            placeholder="Enter your birthdate" required
+                        <span class="details">Misi</span>
+                        <textarea class="textarea" id="misi" name="misi" required
                             oninvalid="this.setCustomValidity('data tidak boleh kosong')"
-                            oninput="setCustomValidity('')">
+                            oninput="setCustomValidity('')"></textarea>
                     </div>
-                    <div class="input-box">
-                        <span class="details">Telepon</span>
-                        <input type="text" id="telephone"
-                            onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
-                            name="user_phone" placeholder="Enter your telephone" required
-                            oninvalid="this.setCustomValidity('data tidak boleh kosong')"
-                            oninput="setCustomValidity('')">
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Alamat</span>
-                        <input type="text" id="address" name="alamat" placeholder="Enter your address" required
-                            oninvalid="this.setCustomValidity('data tidak boleh kosong')"
-                            oninput="setCustomValidity('')">
-                    </div>
-                    <div class="input-box" style="visibility: hidden; margin-top:-200px">
-                        <span class="details">Jenis Pemilihan</span>
-                        <div class="custom_select">
-                            <select id="select-state" name="poling_id">
-                                @foreach (\DB::table ('poling')->get() as $c )
-                                <option value="{{$c->id}}">{{$c->title}}</option>
-                                @endforeach
-                            </select>
+                    <center>
+                        <div>
+                            <input type="checkbox">
+                            <label for=""><a href="{{url('e-vote/user/syarat')}}" target="_blank"
+                                    style="text-decoration: none;">
+                                    <p>Syarat-Syarat Kandidat</p>
+                                </a></label>
                         </div>
-                    </div>
-                </div>
-                <div class="gender-details">
-                    <input type="radio" name="gender" id="dot-1" value="laki-laki">
-                    <input type="radio" name="gender" id="dot-2" value="perempuan">
-                    <span class="gender-title">Jenis Kelamin</span>
-                    <div class="category">
-                        <label for="dot-1">
-                            <span class="dot one"></span>
-                            <span class="gender">Laki-Laki</span>
-                        </label>
-                        <label for="dot-2">
-                            <span class="dot two"></span>
-                            <span class="gender">Perempuan</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="input-box">
-                    <span class="details">Visi</span>
-                    <textarea class="textarea" id="visi" name="visi" required
-                        oninvalid="this.setCustomValidity('data tidak boleh kosong')"
-                        oninput="setCustomValidity('')"></textarea>
-                </div>
-                <div class="input-box">
-                    <span class="details">Misi</span>
-                    <textarea class="textarea" id="misi" name="misi" required
-                        oninvalid="this.setCustomValidity('data tidak boleh kosong')"
-                        oninput="setCustomValidity('')"></textarea>
-                </div>
-                <center>
-                    <div>
-                        <input type="checkbox">
-                        <label for=""><a href="{{url('e-vote/user/syarat')}}" target="_blank"
-                                style="text-decoration: none;">
-                                <p>Syarat-Syarat Kandidat</p>
-                            </a></label>
-                    </div>
-                </center>
-                <center>
-                    <div class="container">
-                        <div class="custom-file-upload">
-                            <label for="file" class="mt-5">File berbentuk png, jpg </label>
-                            <input type="file" id="file" name="file" multiple />
-                        </div>
-                </center>
-                <center>
-                    <label for="file" class="mt-5">Profil Foto </label>
-                    <img id="image-preview" alt="image preview" />
-                    <br />
-                    <input type="file" id="image-source" name="avatar" onchange="previewImage();" />
-                </center>
+                    </center>
+                    <center>
+                        <div class="container">
+                            <div class="custom-file-upload">
+                                <label for="file" class="mt-5">File berbentuk png, jpg </label>
+                                <input type="file" id="file" name="file" multiple />
+                            </div>
+                    </center>
+                    <center>
+                        <label for="file" class="mt-5">Profil Foto </label>
+                        <img id="image-preview" alt="image preview" />
+                        <br />
+                        <input type="file" id="image-source" name="avatar" onchange="previewImage();" />
+                    </center>
+            </div>
+            <center>
+                <input type="submit" name="submit" value="Registrasi" id="submit"
+                    class="btn btn-outline-warning mt-5 mb-5" style="color:white; background-color: orangered;">
+            </center>
+            </form>
         </div>
-        <center>
-            <input type="submit" name="submit" value="Registrasi" id="submit" class="btn btn-outline-warning mt-5 mb-5"
-                style="color:white; background-color: orangered;">
-        </center>
-        </form>
     </div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 footer-about wow fadeInUp">
+                        <img class="logo-footer" src="{{url('assets/images/logo-can.png')}}" alt="logo-footer"
+                            data-at2x="assets/img/logo.png">
+                        <p>
+                            We always looking for new and creative ideas to help you with our products in your everyday
+                            work.
+                        </p>
+                    </div>
+                    <div class="col-md-4 offset-md-1 footer-contact wow fadeInDown">
+                        <h3>Contact</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Jl. Sentyaki Raya No.7 Bulu Lor, Semarang</p>
+                        <p><i class="fas fa-phone"></i> 0822-2332-6818</p>
+                        <p><i class="fas fa-envelope"></i> hallo@can.co.id</p>
+                    </div>
+                    <div class="col-md-4 footer-links wow fadeInUp">
+                        <div class="row">
+                            <div class="col">
+                                <h3>Links</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><a class="a" href="#top-content">Home</a></p>
+                                <p><a class="a" href="#">Syarat</a></p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><a class="a" href="#">Quick</a></p>
+                                <p><a class="a" href="#">Registrasi</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 footer-copyright">
+                        &copy; Copyright 2021 by <a href="https://can.co.id/">Can Creative</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
     <script src="{{url('assets/js/script.js')}}"></script>
     <script src="{{url('assets/js/owl.carousel.min.js')}}"></script>
 </body>

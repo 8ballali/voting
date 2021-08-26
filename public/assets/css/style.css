@@ -9,10 +9,43 @@
 
 body {
     min-height: 100vh;
+    background-color: whitesmoke;
+}
+
+#body {
+    min-height: 100vh;
     display: flex;
     align-items: center;
     background-color: whitesmoke;
 }
+
+strong {
+    font-weight: 600;
+}
+
+
+h3 {
+    font-size: 22px;
+    font-weight: 300;
+    color: #555;
+    line-height: 30px;
+}
+
+.a {
+    color: #79a05f;
+    border-bottom: 1px dashed #79a05f;
+    text-decoration: none;
+    transition: all .3s;
+}
+
+a:hover,
+a:focus {
+    color: #79a05f;
+    border: 0;
+    text-decoration: none;
+}
+
+
 
 .banner {
     background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
@@ -431,17 +464,102 @@ form .button input:hover {
 }
 
 .chart-container {
-	width:  100%;
-	height: 480px;
+    width: 100%;
+    height: 480px;
 
 }
 
 .pie-chart-container {
-	width : 500px;
-	height : 500px;
+    width: 500px;
+    height: 500px;
     margin-top: -30px;
     margin-left: 518px;
 }
+
+/***** Footer *****/
+
+.footer-top {
+    padding: 60px 0;
+    background: #333;
+    text-align: left;
+    color: #aaa;
+}
+
+.footer-top h3 {
+    padding-bottom: 10px;
+    color: #fff;
+}
+
+.footer-about img.logo-footer {
+    max-width: 100px;
+    margin-top: 25px;
+    margin-bottom: 0px;
+    margin-left: -10px;
+}
+
+.footer-about p a {
+    border: 0;
+}
+
+.footer-about p a:hover,
+.footer-about p a:focus {
+    border: 0;
+}
+
+
+.footer-links a {
+    color: #aaa;
+    border: 0;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+    color: #fff;
+}
+
+.footer-bottom {
+    padding: 15px 0 17px 0;
+    background: #444;
+    text-align: left;
+    color: #aaa;
+}
+
+
+.footer-contact p {
+    word-wrap: break-word;
+}
+
+.footer-contact i {
+    padding-right: 10px;
+    font-size: 18px;
+    color: #666;
+}
+
+.footer-contact p a {
+    border: 0;
+}
+
+.footer-contact p a:hover,
+.footer-contact p a:focus {
+    border: 0;
+}
+
+
+.footer-copyright {
+    padding-top: 5px;
+}
+
+.footer-copyright a {
+    color: #fff;
+    border: 0;
+}
+
+.footer-copyright a:hover,
+.footer-copyright a:focus {
+    color: #aaa;
+    border: 0;
+}
+
 
 
 
@@ -470,12 +588,13 @@ form .button input:hover {
     }
 
     .pie-chart-container {
-        width : 300px;
-        height : 300px;
+        width: 300px;
+        height: 300px;
         margin-left: 30px;
     }
+
     .chart-container {
-        width:  100%;
+        width: 100%;
         height: 480px;
         margin-top: 100px;
 
@@ -488,29 +607,32 @@ form .button input:hover {
     }
 
     .chart-container {
-        width:  100%;
+        width: 100%;
         height: 480px;
         margin-top: 30px;
     }
+
     .pie-chart-container {
-        width : 300px;
-        height : 300px;
+        width: 300px;
+        height: 300px;
         margin-left: 60px;
     }
 }
+
 @media (max-width: 360px) {
     .container .content .category {
         flex-direction: column;
     }
 
     .chart-container {
-        width:  100%;
+        width: 100%;
         height: 480px;
         margin-top: 100px;
     }
+
     .pie-chart-container {
-        width : 300px;
-        height : 300px;
+        width: 300px;
+        height: 300px;
         margin-left: 30px;
     }
 }
