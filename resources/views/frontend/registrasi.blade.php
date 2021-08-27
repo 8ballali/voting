@@ -165,7 +165,7 @@
                     <center>
                         <div class="container">
                             <div class="custom-file-upload">
-                                <label for="file" class="mt-5">File berbentuk png, jpg </label>
+                                <label for="file" class="mt-5">Surat Rekomendasi dari Club</label>
                                 <input type="file" id="file" name="file" multiple />
                             </div>
                     </center>
