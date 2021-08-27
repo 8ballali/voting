@@ -3,6 +3,7 @@
 namespace App\Imports;
 
 use App\User;
+use Illuminate\Support\Facades\Log;
 use Maatwebsite\Excel\Concerns\ToModel;
 
 class UserImport implements ToModel
@@ -14,7 +15,7 @@ class UserImport implements ToModel
     */
     public function model(array $row)
     {
-        return new User([
+        $user = new User([
             'name' => $row[0],
             'email' => $row[1],
             'phone' => $row[2],
@@ -22,5 +23,6 @@ class UserImport implements ToModel
             'role' => $row[4],
             'password' => $row[5],
         ]);
+        return $user;
     }
 }

@@ -16,8 +16,8 @@ class DatabaseSeeder extends Seeder
         DB::table('poling')->insert([
             'title' => 'Pemilihan Ketua',
             'description' => 'Pemilihan',
-            'start_at' => '2021-08-24',
-            'stop_at' => '2021-08-25'
+            'start_at' => '2021-08-27',
+            'stop_at' => '2021-08-28'
         ]);
          $this->call(UserSeeder::class);
          $this->call(CandidateSeeder::class);
