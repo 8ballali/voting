@@ -33,7 +33,7 @@
                         <a class="nav-link" href="{{url('e-vote/user/')}}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('e-vote/user/quick')}}">Quick</a>
+                        <a class="nav-link" href="{{url('e-vote/user/quick')}}">Quick Count</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('e-vote/user/syarat')}}">Syarat</a>
