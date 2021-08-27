@@ -49,7 +49,7 @@ $('#click').on('click', function () {
         if (text.value) {
             $.ajax({
                 type: "POST",
-                url: "http://127.0.0.1:8000/e-vote/user/validate",
+                url: "/e-vote/user/validate",
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
