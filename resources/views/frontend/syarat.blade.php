@@ -61,7 +61,7 @@
             </div>
             <ul class="list-group">
                 <li class="list-group-item">Berketuhanan Yang Maha Esa</li>
-                <li class="list-group-item">Warga Negara Indonesia (melampirkan E-KTP)</li>
+                {{-- <li class="list-group-item">Warga Negara Indonesia (melampirkan E-KTP)</li> --}}
                 <li class="list-group-item">Sehat Jasmani</li>
                 <li class="list-group-item">Member Aktif di Club/Komunitasnya. Dibuktikan dengan Member Card / Surat
                     Rekomendasi dari Ketua Club/Komunitas. </li>
@@ -73,7 +73,7 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-top">
+        {{-- <div class="footer-top">
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 footer-about wow fadeInUp">
@@ -109,7 +109,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">

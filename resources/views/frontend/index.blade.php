@@ -83,7 +83,7 @@
         <!--Kandidat-->
         <!--Iklan-->
         <section>
-            <div class="brand-carousel section-padding owl-carousel mt-5 pt-5">
+            {{-- <div class="brand-carousel section-padding owl-carousel mt-5 pt-5">
                 <div class="single-logo">
                     <img src="{{url('assets/images/whatsapp.png')}}" width="50" height="80" alt=""
                         style="border-radius: 50%;">
@@ -104,7 +104,7 @@
                     <img src="{{url('assets/images/telegram.png')}}" width="50" height="80" style="border-radius: 50%;"
                         alt="">
                 </div>
-            </div>
+            </div> --}}
         </section>
     </div>
 
@@ -116,7 +116,7 @@
 
             <script>
                 // Set the date we're counting down to
-                var countDownDate = new Date("Aug 26, 2021 00:00:00").getTime();
+                var countDownDate = new Date("Aug 28, 2021 00:00:00").getTime();
 
                 // Update the count down every 1 second
                 var x = setInterval(function () {
@@ -203,10 +203,10 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-top">
+        {{-- <div class="footer-top">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-3 footer-about wow fadeInUp">
+                <div class="row"> --}}
+                    {{-- <div class="col-md-3 footer-about wow fadeInUp">
                         <img class="logo-footer" src="{{url('assets/images/logo-can.png')}}" alt="logo-footer"
                             data-at2x="assets/img/logo.png">
                         <p>
@@ -219,14 +219,14 @@
                         <p><i class="fas fa-map-marker-alt"></i> Jl. Sentyaki Raya No.7 Bulu Lor, Semarang</p>
                         <p><i class="fas fa-phone"></i> 0822-2332-6818</p>
                         <p><i class="fas fa-envelope"></i> hallo@can.co.id</p>
-                    </div>
-                    <div class="col-md-4 footer-links wow fadeInUp">
+                    </div> --}}
+                    {{-- <div class="col-md-4 footer-links wow fadeInUp">
                         <div class="row">
                             <div class="col">
                                 <h3>Links</h3>
                             </div>
-                        </div>
-                        <div class="row">
+                        </div> --}}
+                        {{-- <div class="row">
                             <div class="col-md-6">
                                 <p><a class="a" href="#top-content">Home</a></p>
                                 <p><a class="a" href="#">Syarat</a></p>
@@ -235,11 +235,11 @@
                                 <p><a class="a" href="#">Quick</a></p>
                                 <p><a class="a" href="#">Registrasi</a></p>
                             </div>
-                        </div>
-                    </div>
+                        </div> --}}
+                    {{-- </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">

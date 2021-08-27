@@ -65,54 +65,63 @@
         </div>
         <script>
             $(function () {
-                Chart.defaults.global.defaultFontFamily = "Lato";
-                Chart.defaults.global.defaultFontSize = 18;
-                var donutData = {
-                    labels: {
-                        !!$data!!
-                    },
-                    datasets: [{
-                        data: {
-                            !!$label!!
-                        },
-                        backgroundColor: ['#f56954', '#00a65a'],
-                    }]
-                }
-                var donutOptions = {
-                    maintainAspectRatio: false,
-                    responsive: true,
-                }
+              /* ChartJS
+               * -------
+               * Here we will create a few charts using ChartJS
+               */
 
-                var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
-                var pieData = donutData;
-                var pieOptions = {
-                    maintainAspectRatio: false,
-                    responsive: true,
-                    legend: {
-                        display: true,
-                        position: "bottom"
-                    }
-                }
-                //Create pie or douhnut chart
-                // You can switch between pie and douhnut using the method below.
-                new Chart(pieChartCanvas, {
-                    type: 'pie',
-                    data: pieData,
-                    options: pieOptions
-                })
-                //-------------
-                //- BAR CHART -
-                //-------------
+              //--------------
+              //- AREA CHART -
+              //--------------
+
+              // Get context with jQuery - using jQuery's .get() method.
+
+
+              //-------------
+              //- DONUT CHART -
+              //-------------
+              // Get context with jQuery - using jQuery's .get() method.
+
+
+              var donutData        = {
+                labels: {!! $data !!},
+                datasets: [
+                  {
+                    data: {!! $label !!},
+                    backgroundColor : ['#f56954', '#00a65a'],
+                  }
+                ]
+              }
+              var donutOptions     = {
+                maintainAspectRatio : false,
+                responsive : true,
+              }
+
+              var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+              var pieData        = donutData;
+              var pieOptions     = {
+                maintainAspectRatio : false,
+                responsive : true,
+              }
+              //Create pie or douhnut chart
+              // You can switch between pie and douhnut using the method below.
+              new Chart(pieChartCanvas, {
+                type: 'pie',
+                data: pieData,
+                options: pieOptions
+              })
+              //-------------
+              //- BAR CHART -
+              //-------------
 
 
 
             })
-
-        </script>
+          </script>
     </div>
     <!-- Footer -->
     <footer>
-        <div class="footer-top">
+        {{-- <div class="footer-top">
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 footer-about wow fadeInUp">
@@ -148,7 +157,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
