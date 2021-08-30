@@ -12,7 +12,7 @@
     <script src="{{url('assets/js/jquery-3.5.1.js')}}"></script>
     <script src="{{url('assets/js/owl.carousel.min.js')}}"></script>
     <link rel="stylesheet" href="{{url('assets/css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+    
 </head>
 
 <body>
@@ -82,71 +82,114 @@
         @endif
         <!--Kandidat-->
         <!--Iklan-->
-        <section>
-            {{-- <div class="brand-carousel section-padding owl-carousel mt-5 pt-5">
-                <div class="single-logo">
-                    <img src="{{url('assets/images/whatsapp.png')}}" width="50" height="80" alt=""
-                        style="border-radius: 50%;">
+        <section style="padding-top: 30px">
+            <div class="brand-carousel section-padding owl-carousel mt-5 pt-5">
+                <div class="iklan">
+                    <img src="{{url('assets/images/whatsapp.png')}}">
                 </div>
-                <div class="single-logo">
-                    <img src="{{url('assets/images/instagram.png')}}" width="50" height="80" style="border-radius: 50%;"
-                        alt="">
+                <div class="iklan">
+                    <img src="{{url('assets/images/instagram.png')}}">
                 </div>
-                <div class="single-logo">
-                    <img src="{{url('assets/images/line.png')}}" width="50" height="80" style="border-radius: 50%;"
-                        alt="">
+                <div class="iklan">
+                    <img src="{{url('assets/images/line.png')}}">
                 </div>
-                <div class="single-logo">
-                    <img src="{{url('assets/images/skype.png')}}" width="50" height="80" style="border-radius: 50%;"
-                        alt="">
+                <div class="iklan">
+                    <img src="{{url('assets/images/skype.png')}}">
                 </div>
-                <div class="single-logo">
-                    <img src="{{url('assets/images/telegram.png')}}" width="50" height="80" style="border-radius: 50%;"
-                        alt="">
+                <div class="iklan">
+                    <img src="{{url('assets/images/telegram.png')}}">
                 </div>
-            </div> --}}
+            </div>
         </section>
     </div>
 
     @foreach ($poling as $p)
-    <section>
+    <section style="margin-top: -80px">
         <div class="section-title">
             <h2 class="">{{$p->title}}</h2>
             <p id="demo"></p>
-
-            <script>
-                // Set the date we're counting down to
-                var countDownDate = new Date("Aug 28, 2021 00:00:00").getTime();
-
-                // Update the count down every 1 second
-                var x = setInterval(function () {
-
-                    // Get today's date and time
-                    var now = new Date().getTime();
-
-                    // Find the distance between now and the count down date
-                    var distance = countDownDate - now;
-
-                    // Time calculations for days, hours, minutes and seconds
-
-                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                    // Display the result in the element with id="demo"
-                    document.getElementById("demo").innerHTML = hours + "h " +
-                        minutes + "m " + seconds + "s ";
-
-                    // If the count down is finished, write some text
-                    if (distance < 0) {
-                        clearInterval(x);
-                        document.getElementById("demo").innerHTML = "EXPIRED";
-                    }
-                }, 1000);
-
-            </script>
+                <div class="countdown">
+                  <div class="bloc-time hours" data-init-value="23">
+                    <span class="count-title">Hours</span>
+                    <div class="figure hours hours-1">
+                      <span class="top">2</span>
+                      <span class="top-back">
+                        <span>2</span>
+                      </span>
+                      <span class="bottom">2</span>
+                      <span class="bottom-back">
+                        <span>2</span>
+                      </span>
+                    </div>
+              
+                    <div class="figure hours hours-2">
+                      <span class="top">4</span>
+                      <span class="top-back">
+                        <span>4</span>
+                      </span>
+                      <span class="bottom">4</span>
+                      <span class="bottom-back">
+                        <span>4</span>
+                      </span>
+                    </div>
+                  </div>
+              
+                  <div class="bloc-time min" data-init-value="0">
+                    <span class="count-title">Minutes</span>
+              
+                    <div class="figure min min-1">
+                      <span class="top">0</span>
+                      <span class="top-back">
+                        <span>0</span>
+                      </span>
+                      <span class="bottom">0</span>
+                      <span class="bottom-back">
+                        <span>0</span>
+                      </span>        
+                    </div>
+              
+                    <div class="figure min min-2">
+                     <span class="top">0</span>
+                      <span class="top-back">
+                        <span>0</span>
+                      </span>
+                      <span class="bottom">0</span>
+                      <span class="bottom-back">
+                        <span>0</span>
+                      </span>
+                    </div>
+                  </div>
+              
+                  <div class="bloc-time sec" data-init-value="0">
+                    <span class="count-title">Seconds</span>
+              
+                      <div class="figure sec sec-1">
+                      <span class="top">0</span>
+                      <span class="top-back">
+                        <span>0</span>
+                      </span>
+                      <span class="bottom">0</span>
+                      <span class="bottom-back">
+                        <span>0</span>
+                      </span>          
+                    </div>
+              
+                    <div class="figure sec sec-2">
+                      <span class="top">0</span>
+                      <span class="top-back">
+                        <span>0</span>
+                      </span>
+                      <span class="bottom">0</span>
+                      <span class="bottom-back">
+                        <span>0</span>
+                      </span>
+                    </div>
+                  </div>
+              </div>
         </div>
-        <div class="slider owl-carousel mt-5 pt-5">
+    </section>
+        <section style="margin-top: -80px">
+        <div class="slider owl-carousel">
             @foreach ($p->candidate as $c)
             <div class="card">
                 <div class="img">
@@ -158,7 +201,6 @@
                         {{$c->name}}
                     </div>
                     <div class="sub-title">
-
                     </div>
                 </div>
             </div>
@@ -168,11 +210,11 @@
     @endforeach
 
     <!--Logo-->
-    <section>
-        <div class="section-title mt-5">
-            <h2 class="mt-5">Partisipan</h2>
+    <section style="padding-bottom: 30px">
+        <div class="section-title" style="margin-top: -50px">
+            <h2>Partisipan</h2>
         </div>
-        <div class="brand-carousel section-padding owl-carousel mt-5">
+        <div class="brand-carousel section-padding owl-carousel" style="margin-top: -10px">
             <div class="single-logo">
                 <img src="{{url('assets/images/logo1-removebg-preview.png')}}" width="100" height="110"
                     style="border-radius: 50%;" alt="">
@@ -203,44 +245,7 @@
 
     <!-- Footer -->
     <footer>
-        {{-- <div class="footer-top">
-            <div class="container">
-                <div class="row"> --}}
-                    {{-- <div class="col-md-3 footer-about wow fadeInUp">
-                        <img class="logo-footer" src="{{url('assets/images/logo-can.png')}}" alt="logo-footer"
-                            data-at2x="assets/img/logo.png">
-                        <p>
-                            We always looking for new and creative ideas to help you with our products in your everyday
-                            work.
-                        </p>
-                    </div>
-                    <div class="col-md-4 offset-md-1 footer-contact wow fadeInDown">
-                        <h3>Contact</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> Jl. Sentyaki Raya No.7 Bulu Lor, Semarang</p>
-                        <p><i class="fas fa-phone"></i> 0822-2332-6818</p>
-                        <p><i class="fas fa-envelope"></i> hallo@can.co.id</p>
-                    </div> --}}
-                    {{-- <div class="col-md-4 footer-links wow fadeInUp">
-                        <div class="row">
-                            <div class="col">
-                                <h3>Links</h3>
-                            </div>
-                        </div> --}}
-                        {{-- <div class="row">
-                            <div class="col-md-6">
-                                <p><a class="a" href="#top-content">Home</a></p>
-                                <p><a class="a" href="#">Syarat</a></p>
-                            </div>
-                            <div class="col-md-6">
-                                <p><a class="a" href="#">Quick</a></p>
-                                <p><a class="a" href="#">Registrasi</a></p>
-                            </div>
-                        </div> --}}
-                    {{-- </div>
-                </div>
-            </div>
-        </div> --}}
-        <div class="footer-bottom">
+                <div class="footer-bottom">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 footer-copyright">
@@ -253,6 +258,7 @@
 
     <script src="{{url('assets/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{url('assets/js/script.js')}}"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script><script  src="./script.js"></script>
 </body>
 
 </html>
