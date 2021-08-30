@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Community;
 use App\User;
 
 use Illuminate\Http\Request;
@@ -9,7 +11,8 @@ class UserController extends Controller
 {
     public function index(){
         $user = User::All();
-        return view('admin.table-user', ['user'=> $user]);
+        $community = Community::All();
+        return view('admin.table-user', ['user'=> $user, 'community' => $community]);
     }
 
     public function add(){

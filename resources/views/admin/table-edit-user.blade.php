@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Edit Community</title>
+    <title>Edit User</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -28,7 +28,7 @@
                     <a href="/e-vote/admin" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="/e-vote/admin/community" class="nav-link active">Community</a>
+                    <a href="/e-vote/admin/community" class="nav-link active">User</a>
                 </li>
             </ul>
 
@@ -46,11 +46,11 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="/e-vote/admin/" class="brand-link">
+            {{-- <a href="/e-vote/admin/" class="brand-link">
                 <img src="{{ url('/style/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">CAN CREATIVE</span>
-            </a>
+            </a> --}}
 
             <!-- Sidebar -->
             <div class="sidebar">
@@ -99,13 +99,13 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/community/add" class="nav-link">
+                                    <a href="/e-vote/admin/community/add" class="nav-link ">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add Community</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/community/import" class="nav-link">
+                                    <a href="/e-vote/admin/community/import" class="nav-link ">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Import Community</p>
                                     </a>
@@ -146,15 +146,21 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/user" class="nav-link ">
+                                    <a href="/e-vote/admin/user" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List User</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/user/import" class="nav-link ">
+                                    <a href="/e-vote/admin/user/import" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Import User</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/e-vote/admin/community/edit/{id}" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Edit User</p>
                                     </a>
                                 </li>
                             </ul>
@@ -268,6 +274,10 @@
                             Edit User
                         </div>
                         <div class="card-body">
+                            <a href="/e-vote/admin/user" class="btn btn-primary">Back</a>
+                            <br />
+                            <br />
+
                             <form method="post" action="/e-vote/admin/user/update/{{ $user->id }}">
 
                                 {{ csrf_field() }}
@@ -275,7 +285,7 @@
 
                                 <div class="form-group">
                                     <label>Name</label>
-                                    <input type="text" name="name" class="form-control" placeholder="Nama Komunitas"
+                                    <input type="text" name="name" class="form-control" placeholder="Nama User"
                                         value=" {{ $user->name }}">
 
                                     @if($errors->has('name'))
@@ -289,7 +299,7 @@
                                 <div class="form-group">
                                     <label>Email</label>
                                     <textarea name="email" class="form-control"
-                                        placeholder="Deskripsi Komunitas"> {{ $user->email }} </textarea>
+                                        placeholder="Email User"> {{ $user->email }} </textarea>
 
                                     @if($errors->has('email'))
                                     <div class="text-danger">
@@ -312,9 +322,9 @@
 
                                 </div>
                                 <div class="form-group">
-                                    <label>Community ID</label>
+                                    <label>Community</label>
                                     <textarea name="community_id" class="form-control"
-                                        placeholder="Comunity ID"> {{ $user->community_id }} </textarea>
+                                        placeholder="Nomor Telepon"> {{ $user->community_id }} </textarea>
 
                                     @if($errors->has('community_id'))
                                     <div class="text-danger">
@@ -326,7 +336,7 @@
                                 <div class="form-group">
                                     <label>Role</label>
                                     <textarea name="role" class="form-control"
-                                        placeholder="Role"> {{ $user->role }} </textarea>
+                                        placeholder="Role User"> {{ $user->role }} </textarea>
 
                                     @if($errors->has('role'))
                                     <div class="text-danger">

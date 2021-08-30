@@ -46,11 +46,11 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="/e-vote/admin/" class="brand-link">
+            {{-- <a href="/e-vote/admin/" class="brand-link">
                 <img src="{{ url('/style/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo"
-                    class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">CAN CREATIVE</span>
-            </a>
+            class="brand-image img-circle elevation-3" style="opacity: .8">
+            <span class="brand-text font-weight-light">CAN CREATIVE</span>
+            </a> --}}
 
             <!-- Sidebar -->
             <div class="sidebar">
@@ -195,7 +195,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/generate" class="nav-link">
+                                    <a href="{{url('/e-vote/admin/generate')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List Code</p>
                                     </a>
@@ -316,9 +316,8 @@
 
                                 <div class="form-group">
                                     <label>Start At ( Y-m-d )</label>
-                                    <textarea name="start_at" class="form-control"
-                                        placeholder="Start At"> {{ $poling->start_at }} </textarea>
-
+                                    <input type="datetime-local" name="start_at" class="form-control" value="{{ date('Y-m-d H:i:s', strtotime($poling->start_at)) }}">
+                                    {{-- <input type="text" id="ndt"  onclick="mydate();" hidden /> --}}
                                     @if($errors->has('start_at'))
                                     <div class="text-danger">
                                         {{ $errors->first('start_at')}}
@@ -328,8 +327,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Stopped At ( Y-m-d )</label>
-                                    <textarea name="stop_at" class="form-control"
-                                        placeholder="Stopped At">{{ $poling->stop_at }} </textarea>
+                                    <input type="datetime-local" name="stop_at" class="form-control" value="{{ date('Y-m-d H:i:s', strtotime($poling->stop_at)) }}">
 
                                     @if($errors->has('stop_at'))
                                     <div class="text-danger">
@@ -372,7 +370,19 @@
     <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
+    <script>
+        function mydate1() {
+            d = new Date(document.getElementById("dt").value);
+            dt = d.getDate();
+            mn = d.getMonth();
+            mn++;
+            yy = d.getFullYear();
+            document.getElementById("ndt").value = dt + "/" + mn + "/" + yy
+            document.getElementById("ndt").hidden = false;
+            document.getElementById("dt").hidden = true;
+        }
 
+    </script>
     <!-- jQuery -->
     <script src="{{ asset('/style/plugins/jquery/jquery.min.js')}}"></script>
     <!-- Bootstrap 4 -->

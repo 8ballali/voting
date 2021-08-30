@@ -55,14 +55,14 @@
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                {{-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
                         <img src="{{ url('/style/dist/img/user1-128x128.jpg')}}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <a href="/e-vote/admin/" class="d-block">CAN CREATIVE</a>
                     </div>
-                </div>
+                </div> --}}
 
                 <!-- SidebarSearch Form -->
                 <div class="form-inline">

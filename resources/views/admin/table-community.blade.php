@@ -50,11 +50,11 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="/e-vote/admin" class="brand-link">
+            {{-- <a href="/e-vote/admin" class="brand-link">
                 <img src="{{ url('/style/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">CAN CREATIVE</span>
-            </a>
+            </a> --}}
 
             <!-- Sidebar -->
             <div class="sidebar">
@@ -64,7 +64,7 @@
                         <img src="{{ url('/style/dist/img/user1-128x128.jpg')}}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="/e-vote/admin/" class="d-block">Administrator</a>
+                        <a href="/e-vote/admin/" class="d-block">CAN CREATIVE</a>
                     </div>
                 </div>
 
