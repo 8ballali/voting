@@ -17,10 +17,10 @@
 
 <body>
     <!-- navigasi -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top" style="padding-bottom:0px">
         <div class="container">
             <a class="navbar-brand" href="{{url('e-vote/user')}}"><img src="{{url('assets/images/kosmos.png')}}"
-                    width="80" height="60" alt=""></a>
+                    width="100" height="100" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -82,22 +82,22 @@
         @endif
         <!--Kandidat-->
         <!--Iklan-->
-        <section style="padding-top: 30px">
+        <section style="padding-top: 50px">
             <div class="brand-carousel section-padding owl-carousel mt-5 pt-5">
                 <div class="iklan">
-                    <img src="{{url('assets/images/whatsapp.png')}}">
+                    <img src="{{url('assets/images/sponsor.png')}}">
                 </div>
                 <div class="iklan">
-                    <img src="{{url('assets/images/instagram.png')}}">
+                    <img src="{{url('assets/images/sponsor.png')}}">
                 </div>
                 <div class="iklan">
-                    <img src="{{url('assets/images/line.png')}}">
+                    <img src="{{url('assets/images/sponsor.png')}}">
                 </div>
                 <div class="iklan">
-                    <img src="{{url('assets/images/skype.png')}}">
+                    <img src="{{url('assets/images/sponsor.png')}}">
                 </div>
                 <div class="iklan">
-                    <img src="{{url('assets/images/telegram.png')}}">
+                    <img src="{{url('assets/images/sponsor.png')}}">
                 </div>
             </div>
         </section>
@@ -109,7 +109,7 @@
             <h2 class="">{{$p->title}}</h2>
             <p id="demo"></p>
                 <div class="countdown">
-                  <div class="bloc-time hours" data-init-value="23">
+                  <div class="bloc-time hours" data-init-value="11">
                     <span class="count-title">Hours</span>
                     <div class="figure hours hours-1">
                       <span class="top">2</span>
