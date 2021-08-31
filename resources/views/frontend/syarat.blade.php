@@ -19,7 +19,8 @@
 
 <body>
     <!-- navigasi -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top" style="padding-bottom:0px; padding-top:0px">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top"
+        style="padding-bottom:0px; padding-top:0px">
         <div class="container">
             <a class="navbar-brand" href="{{url('e-vote/user')}}"><img src="{{url('assets/images/kosmos.png')}}"
                     width="100" height="100" alt=""></a>

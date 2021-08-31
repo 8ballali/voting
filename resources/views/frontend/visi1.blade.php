@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +20,8 @@
 
 <body>
     <!-- navigasi -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top" style="padding-bottom:0px; padding-top:0px">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top"
+        style="padding-bottom:0px; padding-top:0px">
         <div class="container">
             <a class="navbar-brand" href="{{url('e-vote/user')}}"><img src="{{url('assets/images/kosmos.png')}}"
                     width="100" height="100" alt=""></a>
@@ -69,7 +69,7 @@
             </div>
         </div>
     </nav>
-    
+
     <!-- ======= About Section ======= -->
     <div class="container">
         <section id="about" class="about">
@@ -78,7 +78,7 @@
                 <p>Kenali Kandidatmu Sebelum memilih</p>
             </div>
 
-<div class="row">
+            <div class="row">
                 <div class="col-lg-4">
                     <img src="{{ url('storage').'/'.$candidate->avatar }}" class="img-fluid" alt="">
                 </div>

@@ -20,7 +20,8 @@
 
 <body>
     <!-- navigasi -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top" style="padding-bottom:0px; padding-top:0px">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top"
+        style="padding-bottom:0px; padding-top:0px">
         <div class="container">
             <a class="navbar-brand" href="{{url('e-vote/user')}}"><img src="{{url('assets/images/kosmos.png')}}"
                     width="100" height="100" alt=""></a>
@@ -68,7 +69,7 @@
             </div>
         </div>
     </nav>
-    
+
     <div id="body">
         <div class="chart-container">
             <div class="section-title">
@@ -80,59 +81,62 @@
         </div>
         <script>
             $(function () {
-              /* ChartJS
-               * -------
-               * Here we will create a few charts using ChartJS
-               */
+                /* ChartJS
+                 * -------
+                 * Here we will create a few charts using ChartJS
+                 */
 
-              //--------------
-              //- AREA CHART -
-              //--------------
+                //--------------
+                //- AREA CHART -
+                //--------------
 
-              // Get context with jQuery - using jQuery's .get() method.
-
-
-              //-------------
-              //- DONUT CHART -
-              //-------------
-              // Get context with jQuery - using jQuery's .get() method.
+                // Get context with jQuery - using jQuery's .get() method.
 
 
-              var donutData        = {
-                labels: {!! $data !!},
-                datasets: [
-                  {
-                    data: {!! $label !!},
-                    backgroundColor : ['#f56954', '#00a65a'],
-                  }
-                ]
-              }
-              var donutOptions     = {
-                maintainAspectRatio : false,
-                responsive : true,
-              }
+                //-------------
+                //- DONUT CHART -
+                //-------------
+                // Get context with jQuery - using jQuery's .get() method.
 
-              var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
-              var pieData        = donutData;
-              var pieOptions     = {
-                maintainAspectRatio : false,
-                responsive : true,
-              }
-              //Create pie or douhnut chart
-              // You can switch between pie and douhnut using the method below.
-              new Chart(pieChartCanvas, {
-                type: 'pie',
-                data: pieData,
-                options: pieOptions
-              })
-              //-------------
-              //- BAR CHART -
-              //-------------
+
+                var donutData = {
+                    labels: {
+                        !!$data!!
+                    },
+                    datasets: [{
+                        data: {
+                            !!$label!!
+                        },
+                        backgroundColor: ['#f56954', '#00a65a'],
+                    }]
+                }
+                var donutOptions = {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                }
+
+                var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+                var pieData = donutData;
+                var pieOptions = {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                }
+                //Create pie or douhnut chart
+                // You can switch between pie and douhnut using the method below.
+                new Chart(pieChartCanvas, {
+                    type: 'pie',
+                    data: pieData,
+                    options: pieOptions
+                })
+                //-------------
+                //- BAR CHART -
+                //-------------
 
 
 
             })
-          </script>
+
+        </script>
     </div>
     <!-- Footer -->
     <footer>

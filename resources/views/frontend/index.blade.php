@@ -12,12 +12,13 @@
     <script src="{{url('assets/js/jquery-3.5.1.js')}}"></script>
     <script src="{{url('assets/js/owl.carousel.min.js')}}"></script>
     <link rel="stylesheet" href="{{url('assets/css/owl.carousel.min.css')}}">
-    
+
 </head>
 
 <body>
     <!-- navigasi -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top" style="padding-bottom:0px; padding-top:0px">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top"
+        style="padding-bottom:0px; padding-top:0px">
         <div class="container">
             <a class="navbar-brand" href="{{url('e-vote/user')}}"><img src="{{url('assets/images/kosmos.png')}}"
                     width="100" height="100" alt=""></a>
@@ -107,88 +108,116 @@
     <section style="margin-top: -80px">
         <div class="section-title">
             <h2 class="">{{$p->title}}</h2>
-            <p id="demo"></p>
-                <div class="countdown">
-                  <div class="bloc-time hours" data-init-value="0">
+            <div class="countdown">
+                <!-- Days -->
+                <div class="bloc-time days" data-init-value="">
+                    <span class="count-title">Days</span>
+
+                    <div class="figure days days-1">
+                        <span class="top">0</span>
+                        <span class="top-back">
+                            <span>0</span>
+                        </span>
+                        <span class="bottom">0</span>
+                        <span class="bottom-back">
+                            <span>0</span>
+                        </span>
+                    </div>
+
+                    <div class="figure days days-2">
+                        <span class="top">0</span>
+                        <span class="top-back">
+                            <span>0</span>
+                        </span>
+                        <span class="bottom">0</span>
+                        <span class="bottom-back">
+                            <span>0</span>
+                        </span>
+                    </div>
+                </div>
+                <!-- Hours -->
+                <div class="bloc-time hours" data-init-value="">
                     <span class="count-title">Hours</span>
+
                     <div class="figure hours hours-1">
-                      <span class="top">0</span>
-                      <span class="top-back">
-                        <span>0</span>
-                      </span>
-                      <span class="bottom">0</span>
-                      <span class="bottom-back">
-                        <span>0</span>
-                      </span>
+                        <span class="top">0</span>
+                        <span class="top-back">
+                            <span>0</span>
+                        </span>
+                        <span class="bottom">0</span>
+                        <span class="bottom-back">
+                            <span>0</span>
+                        </span>
                     </div>
-              
+
                     <div class="figure hours hours-2">
-                      <span class="top">0</span>
-                      <span class="top-back">
-                        <span>0</span>
-                      </span>
-                      <span class="bottom">0</span>
-                      <span class="bottom-back">
-                        <span>0</span>
-                      </span>
+                        <span class="top">0</span>
+                        <span class="top-back">
+                            <span>0</span>
+                        </span>
+                        <span class="bottom">0</span>
+                        <span class="bottom-back">
+                            <span>0</span>
+                        </span>
                     </div>
-                  </div>
-              
-                  <div class="bloc-time min" data-init-value="0">
+                </div>
+                <!-- Minutes -->
+                <div class="bloc-time min" data-init-value="0">
                     <span class="count-title">Minutes</span>
-              
+
                     <div class="figure min min-1">
-                      <span class="top">0</span>
-                      <span class="top-back">
-                        <span>0</span>
-                      </span>
-                      <span class="bottom">0</span>
-                      <span class="bottom-back">
-                        <span>0</span>
-                      </span>        
+                        <span class="top">0</span>
+                        <span class="top-back">
+                            <span>0</span>
+                        </span>
+                        <span class="bottom">0</span>
+                        <span class="bottom-back">
+                            <span>0</span>
+                        </span>
                     </div>
-              
+
                     <div class="figure min min-2">
-                     <span class="top">0</span>
-                      <span class="top-back">
-                        <span>0</span>
-                      </span>
-                      <span class="bottom">0</span>
-                      <span class="bottom-back">
-                        <span>0</span>
-                      </span>
+                        <span class="top">0</span>
+                        <span class="top-back">
+                            <span>0</span>
+                        </span>
+                        <span class="bottom">0</span>
+                        <span class="bottom-back">
+                            <span>0</span>
+                        </span>
                     </div>
-                  </div>
-              
-                  <div class="bloc-time sec" data-init-value="0">
+                </div>
+                <!-- Second -->
+                <div class="bloc-time sec" data-init-value="0">
                     <span class="count-title">Seconds</span>
-              
-                      <div class="figure sec sec-1">
-                      <span class="top">0</span>
-                      <span class="top-back">
-                        <span>0</span>
-                      </span>
-                      <span class="bottom">0</span>
-                      <span class="bottom-back">
-                        <span>0</span>
-                      </span>          
+
+                    <div class="figure sec sec-1">
+                        <span class="top">0</span>
+                        <span class="top-back">
+                            <span>0</span>
+                        </span>
+                        <span class="bottom">0</span>
+                        <span class="bottom-back">
+                            <span>0</span>
+                        </span>
                     </div>
-              
+
                     <div class="figure sec sec-2">
-                      <span class="top">0</span>
-                      <span class="top-back">
-                        <span>0</span>
-                      </span>
-                      <span class="bottom">0</span>
-                      <span class="bottom-back">
-                        <span>0</span>
-                      </span>
+                        <span class="top">0</span>
+                        <span class="top-back">
+                            <span>0</span>
+                        </span>
+                        <span class="bottom">0</span>
+                        <span class="bottom-back">
+                            <span>0</span>
+                        </span>
                     </div>
-                  </div>
-              </div>
+                </div>
+            </div>
+
         </div>
     </section>
-        <section style="margin-top: -80px">
+    <section style="margin-top: -80px">
         <div class="slider owl-carousel">
             @foreach ($p->candidate as $c)
             <div class="card">
@@ -245,7 +274,7 @@
 
     <!-- Footer -->
     <footer>
-                <div class="footer-bottom">
+        <div class="footer-bottom">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 footer-copyright">
@@ -258,7 +287,8 @@
 
     <script src="{{url('assets/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{url('assets/js/script.js')}}"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script><script  src="./script.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>

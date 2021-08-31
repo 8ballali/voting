@@ -56,7 +56,7 @@ a:focus {
     color: #fff;
 }
 
-.iklan{
+.iklan {
     width: 100px;
     margin-left: 70px;
 }
@@ -523,50 +523,10 @@ form .button input:hover {
     border: 0;
 }
 
+/*Countdown*/
 
-
-
-@media (max-width: 584px) {
-    .container {
-        max-width: 100%;
-    }
-
-    form .user-details .input-box,
-    form .user-details .gender-details {
-        margin-bottom: 15px;
-        width: 100%;
-    }
-
-    form .category {
-        width: 100%;
-    }
-
-    .content form .user-details {
-        max-height: 300px;
-        overflow-y: scroll;
-    }
-
-    .user-details::-webkit-scrollbar {
-        width: 5px;
-    }
-
-    .pie-chart-container {
-        width: 300px;
-        height: 300px;
-        margin-left: 30px;
-    }
-
-    .chart-container {
-        width: 100%;
-        height: 480px;
-        margin-top: 100px;
-
-    }
-}
-
-/*Count*/
 .countdown {
-    width: 720px;
+    width: 560px;
     margin: 0 auto;
   }
   .countdown .bloc-time {
@@ -587,9 +547,9 @@ form .button input:hover {
   .countdown .figure {
     position: relative;
     float: left;
-    height: 110px;
-    width: 100px;
-    margin-right: 10px;
+    height: 60px;
+    width: 50px;
+    margin-right: 5px;
     background-color: #fff;
     border-radius: 8px;
     -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
@@ -604,7 +564,7 @@ form .button input:hover {
     left: 0;
     right: 0;
     margin: auto;
-    font: normal 5.94em/107px "Lato";
+    font: normal 2.94em/57px "Lato";
     font-weight: 700;
     color: #de4848;
   }
@@ -699,44 +659,95 @@ form .button input:hover {
     margin: auto;
   }
 
+
+
+@media (max-width: 584px) {
+    .container {
+        max-width: 100%;
+    }
+
+    form .user-details .input-box,
+    form .user-details .gender-details {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    form .category {
+        width: 100%;
+    }
+
+    .content form .user-details {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
+    .user-details::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .pie-chart-container {
+        width: 300px;
+        height: 300px;
+        margin-left: 30px;
+    }
+
+    .chart-container {
+        width: 100%;
+        height: 480px;
+        margin-top: 100px;
+
+    }
+}
+
 @media (max-width: 459px) {
+
+    .iklan {
+        width: 100px;
+        margin-left: 15px;
+    }
 
     .countdown {
         width: 720px;
         margin: 0 auto;
-        margin-left: 40px;
-      }
-      .countdown .bloc-time {
+        margin-left: 20px;
+    }
+
+    .countdown .bloc-time {
         float: left;
         margin-right: 10px;
         text-align: center;
-      }
-      .countdown .bloc-time:last-child {
+    }
+
+    .countdown .bloc-time:last-child {
         margin-right: 0;
-      }
-      .countdown .count-title {
+    }
+
+    .countdown .count-title {
         display: block;
         margin-bottom: 15px;
         font: normal 0.94em "Lato";
         color: #1a1a1a;
         text-transform: uppercase;
-      }
-      .countdown .figure {
+    }
+
+    .countdown .figure {
         position: relative;
         float: left;
         height: 110px;
-        width: 50px;
+        width: 40px;
         margin-right: 5px;
         background-color: #fff;
         border-radius: 8px;
         -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
         -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
         box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
-      }
-      .countdown .figure:last-child {
+    }
+
+    .countdown .figure:last-child {
         margin-right: 0;
-      }
-      .countdown .figure > span {
+    }
+
+    .countdown .figure>span {
         position: absolute;
         left: 0;
         right: 0;
@@ -745,8 +756,10 @@ form .button input:hover {
         font-weight: 700;
         color: #de4848;
         font-size: 30px;
-      }
-      .countdown .figure .top:after, .countdown .figure .bottom-back:after {
+    }
+
+    .countdown .figure .top:after,
+    .countdown .figure .bottom-back:after {
         content: "";
         position: absolute;
         z-index: -1;
@@ -755,8 +768,9 @@ form .button input:hover {
         width: 100%;
         height: 100%;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-      }
-      .countdown .figure .top {
+    }
+
+    .countdown .figure .top {
         z-index: 3;
         background-color: #f7f7f7;
         transform-origin: 50% 100%;
@@ -771,11 +785,13 @@ form .button input:hover {
         -ms-transform: perspective(200px);
         -webkit-transform: perspective(200px);
         transform: perspective(200px);
-      }
-      .countdown .figure .bottom {
+    }
+
+    .countdown .figure .bottom {
         z-index: 1;
-      }
-      .countdown .figure .bottom:before {
+    }
+
+    .countdown .figure .bottom:before {
         content: "";
         position: absolute;
         display: block;
@@ -784,8 +800,9 @@ form .button input:hover {
         width: 100%;
         height: 50%;
         background-color: rgba(0, 0, 0, 0.02);
-      }
-      .countdown .figure .bottom-back {
+    }
+
+    .countdown .figure .bottom-back {
         z-index: 2;
         top: 0;
         height: 50%;
@@ -797,22 +814,26 @@ form .button input:hover {
         -moz-border-radius-topright: 10px;
         -webkit-border-top-right-radius: 10px;
         border-top-right-radius: 10px;
-      }
-      .countdown .figure .bottom-back span {
+    }
+
+    .countdown .figure .bottom-back span {
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         margin: auto;
-      }
-      .countdown .figure .top, .countdown .figure .top-back {
+    }
+
+    .countdown .figure .top,
+    .countdown .figure .top-back {
         height: 50%;
         overflow: hidden;
         -moz-backface-visibility: hidden;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
-      }
-      .countdown .figure .top-back {
+    }
+
+    .countdown .figure .top-back {
         z-index: 4;
         bottom: 0;
         background-color: #fff;
@@ -828,14 +849,15 @@ form .button input:hover {
         -moz-border-radius-bottomright: 10px;
         -webkit-border-bottom-right-radius: 10px;
         border-bottom-right-radius: 10px;
-      }
-      .countdown .figure .top-back span {
+    }
+
+    .countdown .figure .top-back span {
         position: absolute;
         top: -100%;
         left: 0;
         right: 0;
         margin: auto;
-      }
+    }
 
 
     .container .content .category {
@@ -857,47 +879,53 @@ form .button input:hover {
 
 @media (max-width: 380px) {
 
-    .iklan{
+    .iklan {
         width: 100px;
-        margin-left: 0;
+        margin-left: 5px;
     }
 
     .countdown {
         width: 720px;
         margin: 0 auto;
-        margin-left: 20px;
-      }
-      .countdown .bloc-time {
+        margin-left: 35px;
+    }
+
+    .countdown .bloc-time {
         float: left;
         margin-right: 10px;
         text-align: center;
-      }
-      .countdown .bloc-time:last-child {
+    }
+
+    .countdown .bloc-time:last-child {
         margin-right: 0;
-      }
-      .countdown .count-title {
+    }
+
+    .countdown .count-title {
         display: block;
         margin-bottom: 15px;
         font: normal 0.94em "Lato";
         color: #1a1a1a;
         text-transform: uppercase;
-      }
-      .countdown .figure {
+    }
+
+    .countdown .figure {
         position: relative;
         float: left;
         height: 110px;
-        width: 50px;
+        width: 30px;
         margin-right: 5px;
         background-color: #fff;
         border-radius: 8px;
         -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
         -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
         box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
-      }
-      .countdown .figure:last-child {
+    }
+
+    .countdown .figure:last-child {
         margin-right: 0;
-      }
-      .countdown .figure > span {
+    }
+
+    .countdown .figure>span {
         position: absolute;
         left: 0;
         right: 0;
@@ -906,8 +934,10 @@ form .button input:hover {
         font-weight: 700;
         color: #de4848;
         font-size: 30px;
-      }
-      .countdown .figure .top:after, .countdown .figure .bottom-back:after {
+    }
+
+    .countdown .figure .top:after,
+    .countdown .figure .bottom-back:after {
         content: "";
         position: absolute;
         z-index: -1;
@@ -916,8 +946,9 @@ form .button input:hover {
         width: 100%;
         height: 100%;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-      }
-      .countdown .figure .top {
+    }
+
+    .countdown .figure .top {
         z-index: 3;
         background-color: #f7f7f7;
         transform-origin: 50% 100%;
@@ -932,11 +963,13 @@ form .button input:hover {
         -ms-transform: perspective(200px);
         -webkit-transform: perspective(200px);
         transform: perspective(200px);
-      }
-      .countdown .figure .bottom {
+    }
+
+    .countdown .figure .bottom {
         z-index: 1;
-      }
-      .countdown .figure .bottom:before {
+    }
+
+    .countdown .figure .bottom:before {
         content: "";
         position: absolute;
         display: block;
@@ -945,8 +978,9 @@ form .button input:hover {
         width: 100%;
         height: 50%;
         background-color: rgba(0, 0, 0, 0.02);
-      }
-      .countdown .figure .bottom-back {
+    }
+
+    .countdown .figure .bottom-back {
         z-index: 2;
         top: 0;
         height: 50%;
@@ -958,22 +992,26 @@ form .button input:hover {
         -moz-border-radius-topright: 10px;
         -webkit-border-top-right-radius: 10px;
         border-top-right-radius: 10px;
-      }
-      .countdown .figure .bottom-back span {
+    }
+
+    .countdown .figure .bottom-back span {
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         margin: auto;
-      }
-      .countdown .figure .top, .countdown .figure .top-back {
+    }
+
+    .countdown .figure .top,
+    .countdown .figure .top-back {
         height: 50%;
         overflow: hidden;
         -moz-backface-visibility: hidden;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
-      }
-      .countdown .figure .top-back {
+    }
+
+    .countdown .figure .top-back {
         z-index: 4;
         bottom: 0;
         background-color: #fff;
@@ -989,14 +1027,16 @@ form .button input:hover {
         -moz-border-radius-bottomright: 10px;
         -webkit-border-bottom-right-radius: 10px;
         border-bottom-right-radius: 10px;
-      }
-      .countdown .figure .top-back span {
+    }
+
+    .countdown .figure .top-back span {
         position: absolute;
         top: -100%;
         left: 0;
         right: 0;
         margin: auto;
-      }
+    }
+
 
     .container .content .category {
         flex-direction: column;
@@ -1017,147 +1057,12 @@ form .button input:hover {
 
 @media (max-width: 360px) {
 
-    .iklan{
+    .iklan {
         width: 100px;
-        margin-left: 0;
+        margin-left: 5px;
     }
 
-    .countdown {
-        width: 720px;
-        margin: 0 auto;
-        margin-left: 15px;
-      }
-      .countdown .bloc-time {
-        float: left;
-        margin-right: 10px;
-        text-align: center;
-      }
-      .countdown .bloc-time:last-child {
-        margin-right: 0;
-      }
-      .countdown .count-title {
-        display: block;
-        margin-bottom: 15px;
-        font: normal 0.94em "Lato";
-        color: #1a1a1a;
-        text-transform: uppercase;
-      }
-      .countdown .figure {
-        position: relative;
-        float: left;
-        height: 110px;
-        width: 50px;
-        margin-right: 5px;
-        background-color: #fff;
-        border-radius: 8px;
-        -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
-        -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
-        box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
-      }
-      .countdown .figure:last-child {
-        margin-right: 0;
-      }
-      .countdown .figure > span {
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: auto;
-        font: normal 5.94em/107px "Lato";
-        font-weight: 700;
-        color: #de4848;
-        font-size: 30px;
-      }
-      .countdown .figure .top:after, .countdown .figure .bottom-back:after {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-      }
-      .countdown .figure .top {
-        z-index: 3;
-        background-color: #f7f7f7;
-        transform-origin: 50% 100%;
-        -webkit-transform-origin: 50% 100%;
-        -moz-border-radius-topleft: 10px;
-        -webkit-border-top-left-radius: 10px;
-        border-top-left-radius: 10px;
-        -moz-border-radius-topright: 10px;
-        -webkit-border-top-right-radius: 10px;
-        border-top-right-radius: 10px;
-        -moz-transform: perspective(200px);
-        -ms-transform: perspective(200px);
-        -webkit-transform: perspective(200px);
-        transform: perspective(200px);
-      }
-      .countdown .figure .bottom {
-        z-index: 1;
-      }
-      .countdown .figure .bottom:before {
-        content: "";
-        position: absolute;
-        display: block;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 50%;
-        background-color: rgba(0, 0, 0, 0.02);
-      }
-      .countdown .figure .bottom-back {
-        z-index: 2;
-        top: 0;
-        height: 50%;
-        overflow: hidden;
-        background-color: #f7f7f7;
-        -moz-border-radius-topleft: 10px;
-        -webkit-border-top-left-radius: 10px;
-        border-top-left-radius: 10px;
-        -moz-border-radius-topright: 10px;
-        -webkit-border-top-right-radius: 10px;
-        border-top-right-radius: 10px;
-      }
-      .countdown .figure .bottom-back span {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-      }
-      .countdown .figure .top, .countdown .figure .top-back {
-        height: 50%;
-        overflow: hidden;
-        -moz-backface-visibility: hidden;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-      }
-      .countdown .figure .top-back {
-        z-index: 4;
-        bottom: 0;
-        background-color: #fff;
-        -webkit-transform-origin: 50% 0;
-        transform-origin: 50% 0;
-        -moz-transform: perspective(200px) rotateX(180deg);
-        -ms-transform: perspective(200px) rotateX(180deg);
-        -webkit-transform: perspective(200px) rotateX(180deg);
-        transform: perspective(200px) rotateX(180deg);
-        -moz-border-radius-bottomleft: 10px;
-        -webkit-border-bottom-left-radius: 10px;
-        border-bottom-left-radius: 10px;
-        -moz-border-radius-bottomright: 10px;
-        -webkit-border-bottom-right-radius: 10px;
-        border-bottom-right-radius: 10px;
-      }
-      .countdown .figure .top-back span {
-        position: absolute;
-        top: -100%;
-        left: 0;
-        right: 0;
-        margin: auto;
-      }
-
+    
     .container .content .category {
         flex-direction: column;
     }
