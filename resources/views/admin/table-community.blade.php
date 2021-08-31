@@ -294,9 +294,9 @@
                                     <td>{{ $co->updated_at }}</td>
 
                                     <td>
-                                        <a href="/e-vote/admin/community/delete/{{ $co->id }}"
+                                        <a href="{{url('/e-vote/admin/community/delete/'.$co->id)}}"
                                             onClick="confirm('Delete entry?')" class="btn btn-danger btn-sm">Hapus</a>
-                                        <a href="/e-vote/admin/community/edit/{{ $co->id }}"
+                                        <a href="{{url('/e-vote/admin/community/edit/'.$co->id)}}"
                                             class="btn btn-warning">Edit</a>
                                     </td>
 
