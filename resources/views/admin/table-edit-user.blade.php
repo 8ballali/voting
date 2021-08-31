@@ -28,7 +28,7 @@
                     <a href="/e-vote/admin" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="/e-vote/admin/community" class="nav-link active">User</a>
+                    <a href="/e-vote/admin/user" class="nav-link active">User</a>
                 </li>
             </ul>
 

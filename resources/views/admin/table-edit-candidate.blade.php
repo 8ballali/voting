@@ -28,7 +28,7 @@
                     <a href="{{url('/e-vote/admin')}}" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="{{url('/e-vote/admin/community')}}" class="nav-link active">Community</a>
+                    <a href="{{url('/e-vote/admin/candidate')}}" class="nav-link active">Edit Candidate</a>
                 </li>
             </ul>
 

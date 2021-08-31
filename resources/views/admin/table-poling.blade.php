@@ -32,7 +32,7 @@
                     <a href="{{url('/e-vote/admin')}}" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="{{url('/e-vote/admin/user')}}" class="nav-link active">Data User</a>
+                    <a href="{{url('/e-vote/admin/poling')}}" class="nav-link active">Data Poling</a>
                 </li>
             </ul>
 
