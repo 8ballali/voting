@@ -68,7 +68,7 @@
     <div class="container">
         <!--Kandidat Kosong-->
         @if(!@$poling[0]->candidate->isNotEmpty())
-        <div class="container-fluid banner">
+        <div class="container-fluid banner" style="margin-top:50px ">
             <div class="container text-center">
                 <h4 class="display-4 mt-5 pt-5">Selamat Datang</h4>
                 <h4 class="display-8">Pemilu Ketua Kosmos</h4>
@@ -109,27 +109,27 @@
             <h2 class="">{{$p->title}}</h2>
             <p id="demo"></p>
                 <div class="countdown">
-                  <div class="bloc-time hours" data-init-value="11">
+                  <div class="bloc-time hours" data-init-value="0">
                     <span class="count-title">Hours</span>
                     <div class="figure hours hours-1">
-                      <span class="top">2</span>
+                      <span class="top">0</span>
                       <span class="top-back">
-                        <span>2</span>
+                        <span>0</span>
                       </span>
-                      <span class="bottom">2</span>
+                      <span class="bottom">0</span>
                       <span class="bottom-back">
-                        <span>2</span>
+                        <span>0</span>
                       </span>
                     </div>
               
                     <div class="figure hours hours-2">
-                      <span class="top">4</span>
+                      <span class="top">0</span>
                       <span class="top-back">
-                        <span>4</span>
+                        <span>0</span>
                       </span>
-                      <span class="bottom">4</span>
+                      <span class="bottom">0</span>
                       <span class="bottom-back">
-                        <span>4</span>
+                        <span>0</span>
                       </span>
                     </div>
                   </div>
