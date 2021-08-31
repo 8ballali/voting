@@ -81,24 +81,6 @@
         </div>
         <script>
             $(function () {
-                /* ChartJS
-                 * -------
-                 * Here we will create a few charts using ChartJS
-                 */
-
-                //--------------
-                //- AREA CHART -
-                //--------------
-
-                // Get context with jQuery - using jQuery's .get() method.
-
-
-                //-------------
-                //- DONUT CHART -
-                //-------------
-                // Get context with jQuery - using jQuery's .get() method.
-
-
                 var donutData = {
                     labels: {
                         !!$data!!

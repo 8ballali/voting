@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Token</title>
 
+    <!-- Select2: Source -->
+
     <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -286,6 +289,12 @@
                                             <Option value='{{ $u ->id}}'>{{ $u->name}}</Option>
                                             @endforeach
                                         </select>
+                                        {{-- <select class="form-control" id="" name="user[id]">
+                                            @foreach($user as $u)
+                                            <option value='{{ $u ->id}}'>{{ $u->name}}</option>
+                                            @endforeach
+                                          </select> --}}
+
 
                                     </div>
                                     <div class="form-group">
@@ -365,7 +374,14 @@
         });
 
     </script>
-    <!-- jQuery -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $("#single").select2({
+          allowClear: true
+      });
+    </script>
     <script src="{{ asset('/style/plugins/jquery/jquery.min.js')}}"></script>
     <!-- Bootstrap 4 -->
     <script src="{{ asset('/style/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
