@@ -284,7 +284,7 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
-                                    <th>Community ID</th>
+                                    <th>Community</th>
                                     <th>Role</th>
                                     <th>Option</th>
                                 </tr>
