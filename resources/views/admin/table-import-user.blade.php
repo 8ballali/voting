@@ -25,10 +25,10 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="/e-vote/admin" class="nav-link">Home</a>
+                    <a href="{{url('/e-vote/admin')}}" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="/e-vote/admin/user/import" class="nav-link active">Import User</a>
+                    <a href="{{url('/e-vote/admin/user/import')}}" class="nav-link active">Import User</a>
                 </li>
             </ul>
 
@@ -60,7 +60,7 @@
                         <img src="{{ url('/style/dist/img/user1-128x128.jpg')}}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="/e-vote/admin/" class="d-block">CAN CREATIVE</a>
+                        <a href="{{url('/e-vote/admin/')}}" class="d-block">CAN CREATIVE</a>
                     </div>
                 </div>
 
@@ -84,7 +84,7 @@
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="/e-vote/admin/community" class="nav-link">
+                            <a href="{{url('/e-vote/admin/community')}}" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Community
@@ -93,19 +93,19 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/community" class="nav-link">
+                                    <a href="{{url('/e-vote/admin/community')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List Community</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/community/add" class="nav-link">
+                                    <a href="{{url('/e-vote/admin/community/add')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add Community</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/community/import" class="nav-link">
+                                    <a href="{{url('/e-vote/admin/community/import')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Import Community</p>
                                     </a>
@@ -113,7 +113,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="/e-vote/admin/candidate" class="nav-link">
+                            <a href="{{url('/e-vote/admin/candidate')}}" class="nav-link">
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
                                     candidate
@@ -123,13 +123,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/candidate" class="nav-link">
+                                    <a href="{{url('/e-vote/admin/candidate')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List Candidate</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/candidate/add" class="nav-link">
+                                    <a href="{{url('/e-vote/admin/candidate/add')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add Candidate</p>
                                     </a>
@@ -137,7 +137,7 @@
                             </ul>
                         </li>
                         <li class="nav-item menu-open">
-                            <a href="/e-vote/admin/user" class="nav-link active">
+                            <a href="{{url('/e-vote/admin/user')}}" class="nav-link active">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
                                     User
@@ -146,13 +146,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/user" class="nav-link">
+                                    <a href="{{url('/e-vote/admin/user')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List User</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/user/import" class="nav-link active">
+                                    <a href="{{url('/e-vote/admin/user/import')}}" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Import User</p>
                                     </a>
@@ -160,7 +160,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="/e-vote/admin/quick-count" class="nav-link">
+                            <a href="{{url('/e-vote/admin/quick-count')}}" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>
                                     Quick Count
@@ -169,7 +169,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/quick-count" class="nav-link">
+                                    <a href="{{url('/e-vote/admin/quick-count')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Quick Count</p>
                                     </a>
@@ -177,7 +177,7 @@
                             </ul>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/vote" class="nav-link">
+                                    <a href="{{url('/e-vote/admin/vote')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List Suara</p>
                                     </a>
@@ -185,7 +185,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="/e-vote/admin/generate" class="nav-link">
+                            <a href="{{url('/e-vote/admin/generate')}}" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>
                                     Generate Code
@@ -194,20 +194,20 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/generate" class="nav-link">
+                                    <a href="{{url('/e-vote/admin/generate')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List Code</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/e-vote/admin/generate/create" class="nav-link">
+                                    <a href="{{url('/e-vote/admin/generate/create')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Create Code</p>
                                     </a>
                                 </li>
                             </ul>
                             <li class="nav-item">
-                                <a href="/e-vote/admin/poling" class="nav-link ">
+                                <a href="{{url('/e-vote/admin/poling')}}" class="nav-link ">
                                     <i class="nav-icon fas fa-edit"></i>
                                     <p>
                                         Poling
@@ -216,7 +216,7 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="/e-vote/admin/poling" class="nav-link ">
+                                        <a href="{{url('/e-vote/admin/poling')}}" class="nav-link ">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>List Poling</p>
                                         </a>
@@ -337,7 +337,7 @@
                                 <div class="modal fade" id="importExcel" tabindex="-1" role="dialog"
                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
-                                        <form method="post" action="/e-vote/admin/user/import-excel"
+                                        <form method="post" action="{{url('/e-vote/admin/user/import-excel')}}"
                                             enctype="multipart/form-data">
                                             <div class="modal-content">
                                                 <div class="modal-header">
