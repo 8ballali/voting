@@ -22,12 +22,12 @@ class ValidasiController extends Controller
             }
             $candidate = Candidate::find($request->candidate_id);
             $poling = Poling::find($candidate->poling_id);
-            if ($poling->start_at <= date('Y-m-d')){
+            if ($poling->start_at <= date('Y-m-d H:i:s')){
 
             }else{
                 return 3;
             }
-            if ($poling->stop_at >= date('Y-m-d') ) {
+            if ($poling->stop_at >= date('Y-m-d H:i:s') ) {
                 Vote::create([
                     'candidate_id' => $request->candidate_id,
                     'user_id' => $user_id,
