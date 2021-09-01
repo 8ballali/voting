@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Sponsor;
 use Illuminate\Http\Request;
+
 
 class SponsorUserController extends Controller
 {

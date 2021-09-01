@@ -166,7 +166,7 @@
                         </li>
                         <li class="nav-item menu">
                             <a href="{{url('/e-vote/admin/quick-count')}}" class="nav-link ">
-                                <i class="nav-icon fas fa-edit"></i>
+                                <i class="nav-icon fas fa-chart-pie"></i>
                                 <p>
                                     Quick Count
                                     <i class="fas fa-angle-left right"></i>
@@ -230,7 +230,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{url('/e-vote/admin/sponsor')}}" class="nav-link ">
-                                <i class="nav-icon fas fa-edit"></i>
+                                <i class="nav-icon far fa-image"></i>
                                 <p>
                                     Sponsor
                                     <i class="right fas fa-angle-left"></i>
@@ -308,23 +308,15 @@
 
                                     <div class="form-group">
                                         <label>User</label>
-                                        <select name="user_id[]" class="form-control">
-
+                                        <select name="user_id[]" class="select2"  style="width: 100%;">
                                             @foreach($user as $u)
                                             <Option value='{{ $u ->id}}'>{{ $u->name}}</Option>
                                             @endforeach
                                         </select>
-                                        {{-- <select class="form-control" id="" name="user[id]">
-                                            @foreach($user as $u)
-                                            <option value='{{ $u ->id}}'>{{ $u->name}}</option>
-                                            @endforeach
-                                          </select> --}}
-
-
                                     </div>
                                     <div class="form-group">
                                         <label>Poling</label>
-                                        <select name="poling_id[]" class="form-control">
+                                        <select name="poling_id[]" class="select2" style="width: 100%">
 
                                             @foreach($poling as $p)
                                             <Option value='{{ $p ->id}}'>{{ $p->title}}</Option>
@@ -408,12 +400,19 @@
       });
     </script>
     <script src="{{ asset('/style/plugins/jquery/jquery.min.js')}}"></script>
+    <!-- Select 2 -->
+    <script src="{{asset('/style/plugins/select2/js/select2.full.min.js')}}"></script>
     <!-- Bootstrap 4 -->
     <script src="{{ asset('/style/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('/style/dist/js/adminlte.min.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('/style/dist/js/demo.js')}}"></script>
+    <script>
+    $(function () {
+      $('.select2').select2()
+    });
+</script>
 </body>
 
 </html>

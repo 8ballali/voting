@@ -230,6 +230,31 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{url('/e-vote/admin/sponsor')}}" class="nav-link ">
+                                <i class="nav-icon far fa-image"></i>
+                                <p>
+                                    Sponsor
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{url('/e-vote/admin/sponsor')}}" class="nav-link ">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List Sponsor</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{url('/e-vote/admin/sponsor/add')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Sponsor</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                     <li class="nav-item">
                         <div class=" " aria-labelledby="navbarDropdown">

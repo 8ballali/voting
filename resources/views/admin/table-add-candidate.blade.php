@@ -186,7 +186,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-edit"></i>
+                                <i class="nav-icon fas fa-chart-pie"></i>
                                 <p>
                                     Generate Code
                                     <i class="right fas fa-angle-left"></i>
@@ -225,7 +225,7 @@
                             </li>
                             <li class="nav-item">
                                 <a href="{{url('/e-vote/admin/sponsor')}}" class="nav-link ">
-                                    <i class="nav-icon fas fa-edit"></i>
+                                    <i class="nav-icon far fa-image"></i>
                                     <p>
                                         Sponsor
                                         <i class="right fas fa-angle-left"></i>

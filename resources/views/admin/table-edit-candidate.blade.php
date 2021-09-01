@@ -161,7 +161,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{url('/e-vote/admin/quick-count')}}" class="nav-link">
-                                <i class="nav-icon fas fa-edit"></i>
+                                <i class="nav-icon fas fa-chart-pie"></i>
                                 <p>
                                     Quick Count
                                     <i class="fas fa-angle-left right"></i>
@@ -244,6 +244,31 @@
                                         <a href="{{url('/e-vote/admin/poling')}}" class="nav-link ">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>List Poling</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{url('/e-vote/admin/sponsor')}}" class="nav-link">
+                                    <i class="nav-icon far fa-image"></i>
+                                    <p>
+                                        Sponsor
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="{{url('/e-vote/admin/sponsor')}}" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>List Sponsor</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="{{url('/e-vote/admin/sponsor/add')}}" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Add Sponsor</p>
                                         </a>
                                     </li>
                                 </ul>

@@ -161,7 +161,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{url('/e-vote/admin/quick-count')}}" class="nav-link">
-                                <i class="nav-icon fas fa-edit"></i>
+                                <i class="nav-icon fas fa-chart-pie"></i>
                                 <p>
                                     Quick Count
                                     <i class="fas fa-angle-left right"></i>
@@ -225,7 +225,7 @@
                             </li>
                             <li class="nav-item menu-open">
                                 <a href="{{url('/e-vote/admin/sponsor')}}" class="nav-link active">
-                                    <i class="nav-icon fas fa-edit"></i>
+                                    <i class="nav-icon far fa-image"></i>
                                     <p>
                                         Sponsor
                                         <i class="right fas fa-angle-left"></i>
