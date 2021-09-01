@@ -11,6 +11,8 @@
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('/style/plugins/fontawesome-free/css/all.min.css')}}">
+    <!-- Font Awesome kit -->
+    <script src="https://kit.fontawesome.com/1dd0cacffc.js" crossorigin="anonymous"></script>
     <!-- DataTables -->
     <link rel="stylesheet" href="{{ asset('/style/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{ asset('/style/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
@@ -89,7 +91,7 @@
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
                             <a href="{{url('/e-vote/admin/community')}}" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                                <i class="nav-icon fas fa-car-side"></i>
                                 <p>
                                     Community
                                     <i class="right fas fa-angle-left"></i>
@@ -118,7 +120,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{url('/e-vote/admin/candidate')}}" class="nav-link">
-                                <i class="nav-icon fas fa-copy"></i>
+                                <i class="nav-icon far fa-address-book"></i>
                                 <p>
                                     candidate
                                     <i class="fas fa-angle-left right"></i>
@@ -142,7 +144,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{url('/e-vote/admin/user')}}" class="nav-link">
-                                <i class="nav-icon fas fa-table"></i>
+                                <i class="nav-icon fas fa-user"></i>
                                 <p>
                                     User
                                     <i class="right fas fa-angle-left"></i>
@@ -190,7 +192,7 @@
                         </li>
                         <li class="nav-item menu-open">
                             <a href="{{url('/e-vote/admin/generate')}}" class="nav-link active">
-                                <i class="nav-icon fas fa-edit"></i>
+                                <i class="nav-icon fas fa-code"></i>
                                 <p>
                                     Generate Code
                                     <i class="right fas fa-angle-left"></i>
@@ -229,7 +231,7 @@
                             </li>
                             <li class="nav-item">
                                 <a href="{{url('/e-vote/admin/sponsor')}}" class="nav-link ">
-                                    <i class="nav-icon far fa-image"></i>
+                                    <i class="nav-icon far fa-images"></i>
                                     <p>
                                         Sponsor
                                         <i class="right fas fa-angle-left"></i>

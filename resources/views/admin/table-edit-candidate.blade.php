@@ -85,13 +85,14 @@
                with font-awesome or any other icon font library -->
                         <li class="nav-item ">
                             <a href="{{url('/e-vote/admin/community')}}" class="nav-link ">
-                                <i class="nav-icon fas fa-th"></i>
+                                <i class="nav-icon fas fa-car-side"></i>
                                 <p>
                                     Community
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
+
                                 <li class="nav-item">
                                     <a href="{{url('/e-vote/admin/community')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
@@ -99,22 +100,22 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{url('/e-vote/admin/community/add')}}" class="nav-link ">
+                                    <a href="{{url('/e-vote/admin/community/add')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add Community</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{url('/e-vote/admin/community/import')}}" class="nav-link active">
+                                    <a href="{{url('/e-vote/admin/community/import')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Import Community</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item menu">
+                        <li class="nav-item menu-open">
                             <a href="{{url('/e-vote/admin/candidate')}}" class="nav-link active">
-                                <i class="nav-icon fas fa-copy"></i>
+                                <i class="nav-icon far fa-address-book"></i>
                                 <p>
                                     candidate
                                     <i class="fas fa-angle-left right"></i>
@@ -128,6 +129,8 @@
                                         <p>List Candidate</p>
                                     </a>
                                 </li>
+                            </ul>
+                            <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="{{url('/e-vote/admin/candidate/add')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
@@ -136,9 +139,9 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item ">
                             <a href="{{url('/e-vote/admin/user')}}" class="nav-link">
-                                <i class="nav-icon fas fa-table"></i>
+                                <i class="nav-icon fas fa-user"></i>
                                 <p>
                                     User
                                     <i class="right fas fa-angle-left"></i>
@@ -151,6 +154,8 @@
                                         <p>List User</p>
                                     </a>
                                 </li>
+                            </ul>
+                            <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="{{url('/e-vote/admin/user/import')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
@@ -185,33 +190,8 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="{{url('/e-vote/admin/sponsor')}}" class="nav-link ">
-                                <i class="nav-icon fas fa-edit"></i>
-                                <p>
-                                    Sponsor
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{url('/e-vote/admin/sponsor')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>List Sponsor</p>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{url('/e-vote/admin/sponsor/add')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Add Sponsor</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
                             <a href="{{url('/e-vote/admin/generate')}}" class="nav-link">
-                                <i class="nav-icon fas fa-edit"></i>
+                                <i class="nav-icon fas fa-code"></i>
                                 <p>
                                     Generate Code
                                     <i class="right fas fa-angle-left"></i>
@@ -249,8 +229,8 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a href="{{url('/e-vote/admin/sponsor')}}" class="nav-link">
-                                    <i class="nav-icon far fa-image"></i>
+                                <a href="{{url('/e-vote/admin/sponsor')}}" class="nav-link ">
+                                    <i class="nav-icon far fa-images"></i>
                                     <p>
                                         Sponsor
                                         <i class="right fas fa-angle-left"></i>

@@ -85,7 +85,7 @@
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
                             <a href="/e-vote/admin/community" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                                <i class="nav-icon fas fa-car-side"></i>
                                 <p>
                                     Community
                                     <i class="right fas fa-angle-left"></i>
@@ -114,7 +114,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="/e-vote/admin/candidate" class="nav-link">
-                                <i class="nav-icon fas fa-copy"></i>
+                                <i class="nav-icon far fa-address-book"></i>
                                 <p>
                                     candidate
                                     <i class="fas fa-angle-left right"></i>
@@ -138,7 +138,7 @@
                         </li>
                         <li class="nav-item menu-open">
                             <a href="/e-vote/admin/user" class="nav-link">
-                                <i class="nav-icon fas fa-table"></i>
+                                <i class="nav-icon fas fa-user"></i>
                                 <p>
                                     User
                                     <i class="right fas fa-angle-left"></i>
@@ -192,7 +192,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="/e-vote/admin/generate" class="nav-link">
-                                <i class="nav-icon fas fa-edit"></i>
+                                <i class="nav-icon fas fa-code"></i>
                                 <p>
                                     Generate Code
                                     <i class="right fas fa-angle-left"></i>
@@ -231,7 +231,7 @@
                             </li>
                             <li class="nav-item ">
                                 <a href="{{url('/e-vote/admin/sponsor')}}" class="nav-link ">
-                                    <i class="nav-icon far fa-image"></i>
+                                    <i class="nav-icon far fa-images"></i>
                                     <p>
                                         Sponsor
                                         <i class="right fas fa-angle-left"></i>
