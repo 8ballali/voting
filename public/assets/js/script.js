@@ -263,6 +263,7 @@ function previewImage() {
 
 //Countdown
 // Create Countdown
+<<<<<<< HEAD
 var Countdown = {
 
     // Backbone-like structure
@@ -358,54 +359,18 @@ var Countdown = {
 
           // Seconds
           that.checkDay(that.values.seconds, $sec_1, $sec_2);
+=======
+>>>>>>> ef7d4a8dd3d5014f9088c6fef8f68dd561c398e3
 
-          --that.total_seconds;
-        } // end if(that.total_seconds > 0)
-        else {
-          clearInterval(that.countdown_interval);
-        }
-      }, 1000);
+$.ajax({
+    type: "GET",
+    url: "/e-vote/admin/poling",
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     },
+})
 
-    animateFigure: function($el, value) {
-
-      var that = this,
-        $top = $el.find('.top'),
-        $bottom = $el.find('.bottom'),
-        $back_top = $el.find('.top-back'),
-        $back_bottom = $el.find('.bottom-back');
-
-      // Before we begin, change the back value
-      $back_top.find('span').html(value);
-
-      // Also change the back bottom value
-      $back_bottom.find('span').html(value);
-
-      // Then animate
-      TweenMax.to($top, 0.8, {
-        rotationX: '-180deg',
-        transformPerspective: 300,
-        ease: Quart.easeOut,
-        onComplete: function() {
-
-          $top.html(value);
-
-          $bottom.html(value);
-
-          TweenMax.set($top, {
-            rotationX: 0
-          });
-        }
-      });
-
-      TweenMax.to($back_top, 0.8, {
-        rotationX: 0,
-        transformPerspective: 300,
-        ease: Quart.easeOut,
-        clearProps: 'all'
-      });
-    },
-
+<<<<<<< HEAD
     checkDay: function(value, $el_1, $el_2) {
 
       var val_1 = value.toString().charAt(0),
@@ -428,3 +393,5 @@ var Countdown = {
   };
   // Let's go !
   Countdown.init();
+=======
+>>>>>>> ef7d4a8dd3d5014f9088c6fef8f68dd561c398e3
