@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SponsorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,6 +53,12 @@ Route::group(['middleware' => 'admin'], function () {
     Route::put('/e-vote/admin/community/update/{id}', 'CommunityController@update');
     Route::get('/e-vote/admin/community/delete/{id}', 'CommunityController@delete');
     Route::get('/e-vote/admin/community/delete/{id}', 'CommunityController@delete');
+    Route::get('/e-vote/admin/sponsor', 'SponsorController@index');
+    Route::get('/e-vote/admin/sponsor/add', 'SponsorController@add');
+    Route::post('/e-vote/admin/sponsor/store', 'SponsorController@store');
+    Route::get('/e-vote/admin/sponsor/edit/{id}', 'SponsorController@edit');
+    Route::put('/e-vote/admin/sponsor/update/{id}', 'SponsorController@update');
+    Route::get('/e-vote/admin/sponsor/delete/{id}', 'SponsorController@delete');
     Route::get('/e-vote/admin/quick-count', 'QuickCountController@index');
     Route::get('/e-vote/admin/vote', 'VoteAdminController@index');
     Route::get('/e-vote/admin/vote/delete/{id}', 'VoteAdminController@delete');

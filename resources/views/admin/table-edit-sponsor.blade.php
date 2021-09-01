@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Add Community</title>
+    <title>Edit Sponsor</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -28,7 +28,7 @@
                     <a href="{{url('/e-vote/admin')}}" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="{{url('/e-vote/admin/community/add')}}" class="nav-link active">Add Community</a>
+                    <a href="{{url('/e-vote/admin/sponsor')}}" class="nav-link active">Edit Sponsor</a>
                 </li>
             </ul>
 
@@ -55,12 +55,12 @@
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user (optional) -->
-                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
                         <img src="{{ url('/style/dist/img/user1-128x128.jpg')}}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="{{url('/e-vote/admin/')}}" class="d-block">CAN CREATIVE</a>
+                        <a href="{{url('/e-vote/admin')}}" class="d-block">CAN CREATIVE</a>
                     </div>
                 </div>
 
@@ -83,8 +83,8 @@
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                        <li class="nav-item menu-open">
-                            <a href="{{url('/e-vote/admin/community')}}" class="nav-link active">
+                        <li class="nav-item ">
+                            <a href="{{url('/e-vote/admin/community')}}" class="nav-link ">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Community
@@ -99,21 +99,21 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{url('/e-vote/admin/community/add')}}" class="nav-link active">
+                                    <a href="{{url('/e-vote/admin/community/add')}}" class="nav-link ">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add Community</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{url('/e-vote/admin/community/import')}}" class="nav-link">
+                                    <a href="{{url('/e-vote/admin/community/import')}}" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Import Community</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{url('/e-vote/admin/candidate')}}" class="nav-link">
+                        <li class="nav-item menu">
+                            <a href="{{url('/e-vote/admin/candidate')}}" class="nav-link active">
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
                                     candidate
@@ -123,7 +123,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{url('/e-vote/admin/candidate')}}" class="nav-link">
+                                    <a href="{{url('/e-vote/admin/candidate')}}" class="nav-link ">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List Candidate</p>
                                     </a>
@@ -185,7 +185,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{url('/e-vote/admin/generate')}}" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>
                                     Generate Code
@@ -207,7 +207,24 @@
                                 </li>
                             </ul>
                             <li class="nav-item">
-                                <a href="{{url('/e-vote/admin/sponsor')}}" class="nav-link ">
+                                <a href="{{url('/e-vote/admin/poling')}}" class="nav-link ">
+                                    <i class="nav-icon fas fa-edit"></i>
+                                    <p>
+                                        Poling
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="{{url('/e-vote/admin/poling')}}" class="nav-link ">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>List Poling</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item menu-open">
+                                <a href="{{url('/e-vote/admin/sponsor')}}" class="nav-link active">
                                     <i class="nav-icon fas fa-edit"></i>
                                     <p>
                                         Sponsor
@@ -216,7 +233,7 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="{{url('/e-vote/admin/sponsor')}}" class="nav-link">
+                                        <a href="{{url('/e-vote/admin/sponsor')}}" class="nav-link ">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>List Sponsor</p>
                                         </a>
@@ -227,6 +244,12 @@
                                         <a href="{{url('/e-vote/admin/sponsor/add')}}" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Add Sponsor</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{url('/e-vote/admin/sponsor/edit')}}" class="nav-link active">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Edit Sponsor</p>
                                         </a>
                                     </li>
                                 </ul>
@@ -256,12 +279,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Add Community</h1>
+                            <h1>Edit Sponsor</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Add Community</li>
+                                <li class="breadcrumb-item active">Edit Sponsor</li>
                             </ol>
                         </div>
                     </div>
@@ -273,33 +296,36 @@
                 <div class="container">
                     <div class="card mt-5">
                         <div class="card-header text-center">
-                            Add Community
+                            Edit Sponsor
                         </div>
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
                         <div class="card-body">
-                            <a href="{{url('/e-vote/admin/community')}}" class="btn btn-primary">Back</a>
+                            <a href="{{url('/e-vote/admin/sponsor')}}" class="btn btn-primary">Back</a>
                             <br />
                             <br />
 
-                            <form method="post" action="{{url('/e-vote/admin/community/store')}}">
+                            <form method="post" action="{{url('/e-vote/admin/sponsor/update/'.$sponsor->id )}}"
+                                enctype="multipart/form-data">
 
                                 {{ csrf_field() }}
+                                {{ method_field('PUT') }}
 
                                 <div class="form-group">
-                                    <label>Community Name</label>
-                                    <input type="text" name="name" class="form-control" placeholder="Nama Komunitas">
-
-                                    @if($errors->has('name'))
-                                    <div class="text-danger">
-                                        {{ $errors->first('name')}}
-                                    </div>
-                                    @endif
-
+                                    <b>Gambar</b><br />
+                                    <input type="file" name="file">
                                 </div>
-
                                 <div class="form-group">
                                     <label>Description</label>
                                     <textarea name="description" class="form-control"
-                                        placeholder="Deskripsi Komunitas"></textarea>
+                                        placeholder="Jenis Pemilihan"> {{ $sponsor->description }} </textarea>
 
                                     @if($errors->has('description'))
                                     <div class="text-danger">
@@ -309,20 +335,8 @@
 
                                 </div>
                                 <div class="form-group">
-                                    <label>Phone Number</label>
-                                    <textarea name="phone" class="form-control" placeholder="Nomor Telepon"></textarea>
-
-                                    @if($errors->has('phone'))
-                                    <div class="text-danger">
-                                        {{ $errors->first('phone')}}
-                                    </div>
-                                    @endif
-
-                                </div>
-                                <div class="form-group">
                                     <input type="submit" class="btn btn-success" value="Simpan">
                                 </div>
-
                             </form>
 
                         </div>
