@@ -262,13 +262,4 @@ function previewImage() {
 };
 
 //Countdown
-// Create Countdown
-
-$.ajax({
-    type: "GET",
-    url: "/e-vote/admin/poling",
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    },
-})
 
