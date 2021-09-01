@@ -262,6 +262,7 @@ function previewImage() {
 };
 
 //Countdown
+<<<<<<< HEAD
 // Create Countdown
 <<<<<<< HEAD
 var Countdown = {
@@ -369,6 +370,8 @@ $.ajax({
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     },
 })
+=======
+>>>>>>> 95c3c5705973464b6f03f9e2e823ea4ef58c963c
 
 <<<<<<< HEAD
     checkDay: function(value, $el_1, $el_2) {
