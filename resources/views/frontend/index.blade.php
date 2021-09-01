@@ -295,16 +295,16 @@
             countdown_interval: null,
             total_seconds: 0,
 
-            // Initialize the countdown
+            // Initialize the countdown  
             init: function () {
-                var Today = new Date('{{$p->start_at}}');
+                var Today = new Date();
                 var Todayday = Today
-            .getDate(); // getDay() is an integer corresponding to the day of the week: 0 for Sunday, 1 for Monday, 2 for Tuesday, and so on.
+                    .getDate(); // getDay() is an integer corresponding to the day of the week: 0 for Sunday, 1 for Monday, 2 for Tuesday, and so on.
                 var Todayhours = Today.getHours();
                 var Todayminutes = Today.getMinutes();
                 var Todayseconds = Today.getSeconds();
 
-                var DeadLine = new Date('{{$p->stop_at}}');
+                var DeadLine = new Date();
                 var DeadLineday = DeadLine.getDate();
                 var DeadLinehours = DeadLine.getHours(); // I'm not sure why getHours() here is "loaded jangá"
                 var DeadLineminutes = DeadLine.getMinutes();
@@ -331,7 +331,7 @@
                 this.total_seconds = this.values.seconds + (this.values.minutes * 60) + (this.values.hours *
                     60 * 60) + (this.values.days * 24 * 60 * 60);
 
-                // Animate countdown to the end
+                // Animate countdown to the end 
                 this.count();
             },
 
@@ -369,12 +369,13 @@
 
                             that.values.hours = 24;
                             --that.values.days;
-
-                            if (that.values.days <= 0 && that.values.hours >= 0) {
-                                that.values.hours = 0;
-                                that.values.days = 0;
-                            }
                         } // end if
+
+                        if (that.values.days <= 0 && that.values.hours >= 0) {
+
+                        that.values.hours = 0;
+                        that.values.days= 0;
+                        }
 
                         // Update DOM values
                         // Days
@@ -460,7 +461,7 @@
         Countdown.init();
 
     </script>
-      @endforeach
+    @endforeach
     <script src="{{url('assets/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{url('assets/js/script.js')}}"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script>
