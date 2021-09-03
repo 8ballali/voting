@@ -28,7 +28,7 @@
                     <a href="{{url('/e-vote/admin')}}" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="{{url('/e-vote/admin/candidate/add')}}" class="nav-link active">Add Candidate</a>
+                    <a href="{{url('/e-vote/admin/candidate/add')}}" class="nav-link active">Add Sponsor</a>
                 </li>
             </ul>
 
@@ -112,8 +112,8 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item  menu-open">
-                            <a href="{{url('/e-vote/admin/candidate')}}" class="nav-link active">
+                        <li class="nav-item">
+                            <a href="{{url('/e-vote/admin/candidate')}}" class="nav-link">
                                 <i class="nav-icon far fa-address-book"></i>
                                 <p>
                                     candidate
