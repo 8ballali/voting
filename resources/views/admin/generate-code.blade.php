@@ -34,7 +34,7 @@
                     <a href="{{url('/e-vote/admin')}}" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="{{url('/e-vote/admin/generate')}}" class="nav-link active">Generate Code</a>
+                    <a href="{{url('/e-vote/admin/generate')}}" class="nav-link active">Token</a>
                 </li>
             </ul>
 
@@ -283,7 +283,7 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Generate Code</li>
+                                <li class="breadcrumb-item active">Token</li>
                             </ol>
                         </div>
                     </div>
