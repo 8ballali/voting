@@ -54,8 +54,8 @@
             <!-- Brand Logo -->
             {{-- <a href="/e-vote/admin/" class="brand-link">
                 <img src="{{ url('/style/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo"
-                    class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">CAN CREATIVE</span>
+            class="brand-image img-circle elevation-3" style="opacity: .8">
+            <span class="brand-text font-weight-light">CAN CREATIVE</span>
             </a> --}}
 
             <!-- Sidebar -->
@@ -307,10 +307,9 @@
 
                                 {{ csrf_field() }}
                                 <div id="dynamic_field">
-
                                     <div class="form-group">
                                         <label>User</label>
-                                        <select name="user_id[]" class="select2"  style="width: 100%;">
+                                        <select name="user_id[]" class="select2" style="width: 100%;">
                                             @foreach($user as $u)
                                             <Option value='{{ $u ->id}}'>{{ $u->name}}</Option>
                                             @endforeach
@@ -324,7 +323,6 @@
                                             <Option value='{{ $p ->id}}'>{{ $p->title}}</Option>
                                             @endforeach
                                         </select>
-
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -369,37 +367,36 @@
             var i = 1;
             $('#add').click(function () {
                 i++;
-                $('#dynamic_field').append(` <div class="form-group">
-                                    <label>User</label>
-                                    <select name="user_id[]" class="form-control">
+                $('#dynamic_field').append(`<div class="form-group">
+                                        <label>User</label>
+                                        <select name="user_id[]" class="select2" style="width: 100%;">
+                                            @foreach($user as $u)
+                                            <Option value='{{ $u ->id}}'>{{ $u->name}}</Option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Poling</label>
+                                        <select name="poling_id[]" class="select2" style="width: 100%">
 
-                                        @foreach($user as $u)
-                                        <Option value='{{ $u ->id}}'>{{ $u->name}}</Option>
-                                        @endforeach
-                                    </select>
+                                            @foreach($poling as $p)
+                                            <Option value='{{ $p ->id}}'>{{ $p->title}}</Option>
+                                            @endforeach
+                                        </select>
 
-                                </div>
-                                <div class="form-group">
-                                    <label>Poling</label>
-                                    <select name="poling_id[]" class="form-control">
-
-                                        @foreach($poling as $p)
-                                        <Option value='{{ $p ->id}}'>{{ $p->title}}</Option>
-                                        @endforeach
-                                    </select>
-
-                                </div>`);
+                                    </div>`);
             });
         });
 
     </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
-      $("#single").select2({
-          allowClear: true
-      });
+        $("#single").select2({
+            allowClear: true
+        });
+
     </script>
     <script src="{{ asset('/style/plugins/jquery/jquery.min.js')}}"></script>
     <!-- Select 2 -->
@@ -411,10 +408,11 @@
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('/style/dist/js/demo.js')}}"></script>
     <script>
-    $(function () {
-      $('.select2').select2()
-    });
-</script>
+        $(function () {
+            $('.select2').select2()
+        });
+
+    </script>
 </body>
 
 </html>
