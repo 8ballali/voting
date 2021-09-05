@@ -217,6 +217,12 @@
 
             if (seconds_left <= 0) {
                 clearInterval(x);
+                countdown.innerHTML = '<span class="days">' + 0 +
+                ' <label>Days</label></span> <span class="hours">' + 0 +
+                ' <label>Hours</label></span> <span class="minutes">' +
+                0 + ' <label>Minutes</label></span> <span class="seconds">' + 0 +
+                ' <label>Seconds</label></span>';
+
             }
         }, 1000);
 
@@ -224,8 +230,6 @@
     @endforeach
     <script src="{{url('assets/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{url('assets/js/script.js')}}"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script>
-    <script src="./script.js"></script>
 </body>
 
 </html>
