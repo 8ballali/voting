@@ -363,12 +363,23 @@
     <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    $(function () {
+        $('.select2').select2()
+    });
+
+</script>
     <script>
         $(document).ready(function () {
             var i = 1;
             $('#add').click(function () {
+                $(function () {
+        $('.select2').select2()
+    });
                 i++;
-                $('#dynamic_field').append(`<div class="form-group">
+                $('#dynamic_field').append(` <div class="form-group">
                                         <label>User</label>
                                         <select name="user_id[]" class="select2" style="width: 100%;">
                                             @foreach($user as $u)
@@ -384,16 +395,15 @@
                                             <Option value='{{ $p ->id}}'>{{ $p->title}}</Option>
                                             @endforeach
                                         </select>
-
                                     </div>`);
             });
         });
 
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
         $("#single").select2({
             allowClear: true
         });

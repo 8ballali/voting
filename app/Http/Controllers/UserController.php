@@ -40,8 +40,9 @@ class UserController extends Controller
         }
 
         public function edit($id){
+            $community = Community::get();
             $user = User::find($id);
-            return view('admin.table-edit-user', ['user' => $user]);
+            return view('admin.table-edit-user', compact('community', 'user'));
         }
 
         public function update ($id, Request $request){

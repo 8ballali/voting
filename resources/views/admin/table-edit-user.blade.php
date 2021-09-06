@@ -8,6 +8,7 @@
 
     <link rel="shortcut icon" href="{{url('assets/images/site-removebg.png')}}" type="image/png">
     <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -348,9 +349,23 @@
 
                                 </div>
                                 <div class="form-group">
-                                    <label>Community</label>
+                                    {{-- <label>Community</label>
                                     <textarea name="community_id" class="form-control"
-                                        placeholder="Nomor Telepon"> {{ $user->community_id }} </textarea>
+                                        placeholder="Nomor Telepon"> {{ $user->community_id }} </textarea> --}}
+
+
+
+                                    <label>Community</label>
+                                    <select name="community_id" placeholder="{{$user->community_id}}"
+                                        class="select2" style="width: 100%;">
+                                        @foreach($community as $co)
+                                        @if ($co->id==$user->community_id)
+                                        <Option value='{{ $co ->id}}' selected>{{ $co->name}}</Option>
+                                        @else
+                                        <Option value='{{ $co ->id}}'>{{ $co->name}}</Option>
+                                        @endif
+                                        @endforeach
+                                    </select>
 
                                     @if($errors->has('community_id'))
                                     <div class="text-danger">
@@ -407,12 +422,20 @@
 
     <!-- jQuery -->
     <script src="{{ asset('/style/plugins/jquery/jquery.min.js')}}"></script>
+        <!-- Select 2 -->
+        <script src="{{asset('/style/plugins/select2/js/select2.full.min.js')}}"></script>
     <!-- Bootstrap 4 -->
     <script src="{{ asset('/style/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('/style/dist/js/adminlte.min.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('/style/dist/js/demo.js')}}"></script>
+    <script>
+        $(function () {
+            $('.select2').select2()
+        });
+
+    </script>
 </body>
 
 </html>
