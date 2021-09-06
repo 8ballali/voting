@@ -183,7 +183,7 @@
     @foreach ($poling as $p)
     <script>
         // set the date we're counting down to
-        var target_date = new Date(0).getTime();
+        var target_date = new Date("{{$p->stop_at}}").getTime();
 
         // variables for time units
         var days, hours, minutes, seconds;
@@ -192,10 +192,10 @@
         var countdown = document.getElementById('countdown');
 
         // update the tag with id "countdown" every 1 second
-        setInterval(function () {
+        var x = setInterval(function () {
 
             // find the amount of "seconds" between now and target
-            var current_date = new Date(0).getTime();
+            var current_date = new Date().getTime();
             var seconds_left = (target_date - current_date) / 1000;
 
             // do some time calculations
@@ -215,14 +215,21 @@
                 minutes + ' <label>Minutes</label></span> <span class="seconds">' + seconds +
                 ' <label>Seconds</label></span>';
 
+            if (seconds_left <= 0) {
+                clearInterval(x);
+                countdown.innerHTML = '<span class="days">' + 0 +
+                ' <label>Days</label></span> <span class="hours">' + 0 +
+                ' <label>Hours</label></span> <span class="minutes">' +
+                0 + ' <label>Minutes</label></span> <span class="seconds">' + 0 +
+                ' <label>Seconds</label></span>';
+
+            }
         }, 1000);
 
     </script>
     @endforeach
     <script src="{{url('assets/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{url('assets/js/script.js')}}"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script>
-    <script src="./script.js"></script>
 </body>
 
 </html>
