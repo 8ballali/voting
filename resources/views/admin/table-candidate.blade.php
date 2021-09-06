@@ -308,16 +308,16 @@
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
                                     <th>Name</th>
+                                    <th>Komunitas</th>
                                     <th>Tempat Lahir</th>
                                     <th>Tanggal Lahir</th>
                                     <th>Status</th>
                                     <th>Phone</th>
                                     <th>Persyaratan</th>
                                     <th>Foto Profil</th>
-                                    <th>Created At</th>
-                                    <th>Updated At</th>
+                                    {{-- <th>Created At</th>
+                                    <th>Updated At</th> --}}
                                     <th>Option</th>
                                 </tr>
                             </thead>
@@ -325,16 +325,16 @@
                                 @foreach($candidate as $ca)
                                 <tr>
 
-                                    <td>{{ $ca->id }}</td>
                                     <td>{{ $ca->name }}</td>
+                                    <td>{{ $ca->community->name }}</td>
                                     <td>{{ $ca->tempatlahir }}</td>
                                     <td>{{ $ca->tanggallahir }}</td>
                                     <td>{{ $ca->status }}</td>
                                     <td>{{ $ca->user_phone }}</td>
                                     <td><img src="{{ url('storage').'/'.$ca->file }}" height="30px" width="30px" />
                                     <td><img src="{{ url('storage').'/'.$ca->avatar }}" height="30px" width="30px" />
-                                    <td>{{ $ca->created_at }}</td>
-                                    <td>{{ $ca->updated_at }}</td>
+                                    {{-- <td>{{ $ca->created_at }}</td>
+                                    <td>{{ $ca->updated_at }}</td> --}}
 
 
                                     </td>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Poling;
 use App\Candidate;
+use App\Sponsor;
 use Auth;
 
 class HomeController extends Controller
@@ -26,10 +27,13 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $sponsor = Sponsor::all();
         $poling = Poling::with(['candidate'=>function($query) {
             $query->where("status", "CONFIRMED");
            }])->get();
-                   return view('frontend.index', compact('poling'));
+                   return view('frontend.index', compact('poling', 'sponsor'));
+
+
     }
 
     public function visi1()
