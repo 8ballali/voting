@@ -312,7 +312,7 @@
                                 <tr>
 
                                     <td>{{ $s->id }}</td>
-                                    <td><img src="{{ url('data_file').'/'.$s->file }}" height="30px" width="30px" /></td>
+                                    <td><img src="{{ url('storage').'/'.$s->file }}" height="30px" width="30px" /></td>
                                     <td>{{ $s->description }}</td>
                                     <td>{{ $s->updated_at }}</td>
 
