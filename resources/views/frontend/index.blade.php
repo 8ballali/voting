@@ -175,7 +175,7 @@
     <script>
         // set the date we're counting down to
         var target_date = new Date("{{$p->stop_at}}").getTime();
-
+        var start_date = new Date("{{$p->start_at}}").getTime();
         // variables for time units
         var days, hours, minutes, seconds;
 
@@ -206,6 +206,16 @@
                 ' <label>Hours</label></span> <span class="minutes">' +
                 minutes + ' <label>Minutes</label></span> <span class="seconds">' + seconds +
                 ' <label>Seconds</label></span>';
+
+                if (current_date <= start_date) {
+                clearInterval(x);
+                countdown.innerHTML = '<span class="days">' + 0 +
+                    ' <label>Days</label></span> <span class="hours">' + 0 +
+                    ' <label>Hours</label></span> <span class="minutes">' +
+                    0 + ' <label>Minutes</label></span> <span class="seconds">' + 0 +
+                    ' <label>Seconds</label></span>';
+
+            }
 
             if (seconds_left <= 0) {
                 clearInterval(x);
