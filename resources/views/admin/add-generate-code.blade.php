@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Token</title>
 
+    <link rel="shortcut icon" href="{{url('assets/images/site-removebg.png')}}" type="image/png">
     <!-- Select2: Source -->
     <script src="https://kit.fontawesome.com/1dd0cacffc.js" crossorigin="anonymous"></script>
     <!-- Google Font: Source Sans Pro -->

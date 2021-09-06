@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
     <title>CRUD Eloquent Laravel</title>
+    <link rel="shortcut icon" href="{{url('assets/images/site-removebg.png')}}" type="image/png">
 </head>
 
 <body>

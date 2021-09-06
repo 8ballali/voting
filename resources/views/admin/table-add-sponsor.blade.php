@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Candidate</title>
+    <title>Sponsor</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -309,7 +309,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Deskripsi</label>
-                                    <textarea name="description" class="form-control" placeholder="Nomor Urut"></textarea>
+                                    <textarea name="description" class="form-control" placeholder=""></textarea>
 
                                     @if($errors->has('description'))
                                     <div class="text-danger">
