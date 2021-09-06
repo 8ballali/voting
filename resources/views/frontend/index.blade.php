@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
+    <link rel="shortcut icon" href="{{url('assets/images/site-removebg.png')}}" type="image/png">
     <link rel="stylesheet" href="{{url('assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/awesome.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/style.css')}}" />
@@ -48,14 +49,14 @@
                         </a>
                     </li>
                     @auth
-                    
+
                     <li class="nav-item">
                         <div class=" " aria-labelledby="navbarDropdown">
                             <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
-                            
+
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
@@ -84,25 +85,24 @@
         <!--Kandidat-->
         <!--Iklan-->
         <section style="padding-top: 50px">
-            <div class="brand-carousel section-padding owl-carousel mt-5 pt-5">
+            <div class="brand-carousel owl-carousel mt-5 pt-5">
+                @foreach ($sponsor as $s)
                 <div class="img">
-                    @foreach ($sponsor as $s)
-                    <a href="{{url('').'/'.$s->id}}"><img
-                        src="{{ url('storage').'/'.$s->file }}" alt=""></a>
-                    </div>
-                @endforeach
+                    <img value="{{$s->id}}" src="{{ url('storage').'/'.$s->file }}"alt="">
                 </div>
+                @endforeach
             </div>
-        </div>
+    </div>
+    </div>
     </section>
-        @foreach ($poling as $p)
-        <section style="margin-top: -80px">
-            <div class="section-title">
-                <h2 class="">{{$p->title}}</h2>
-                <div class="countdown">
+    @foreach ($poling as $p)
+    <section style="margin-top: -80px">
+        <div class="section-title">
+            <h2 class="">{{$p->title}}</h2>
+            <div class="countdown">
                 <div id="countdown"></div>
             </div>
-        </section>
+    </section>
     <section style="margin-top: -80px">
         <div class="slider owl-carousel">
             @foreach ($p->candidate as $c)
@@ -110,7 +110,7 @@
                 <div class="img">
                     <a href="{{url('e-vote/user/candidate/').'/'.$c->id}}"><img
                             src="{{ url('storage').'/'.$c->avatar }}" alt=""></a>
-                        </div>
+                </div>
                 <div class="content">
                     <div class="title">
                         {{$c->name}}
@@ -123,7 +123,7 @@
         </div>
     </section>
     @endforeach
-    
+
     <!--Logo-->
     <section style="padding-bottom: 30px">
         <div class="section-title" style="margin-top: -50px">
@@ -133,7 +133,7 @@
             <div class="single-logo">
                 <img src="{{url('assets/images/logo1-removebg-preview.png')}}" width="100" height="110"
                     style="border-radius: 50%;" alt="">
-                </div>
+            </div>
             <div class="single-logo">
                 <img src="{{url('assets/images/logo2.jpg')}}" width="100" height="110" style="border-radius: 50%;"
                     alt="">

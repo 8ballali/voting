@@ -56,6 +56,11 @@ a:focus {
     color: #fff;
 }
 
+.inactiveLink {
+    pointer-events: none;
+    cursor: default;
+ }
+
 .iklan {
     width: 100px;
     margin-left: 70px;
