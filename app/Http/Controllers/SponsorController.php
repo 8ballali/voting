@@ -27,7 +27,7 @@ class SponsorController extends Controller
         $nama_file = time() . "_" . $file->getClientOriginalName();
 
         // isi dengan nama folder tempat kemana file diupload
-        $tujuan_upload = 'data_file';
+        $tujuan_upload = 'storage';
         $file->move($tujuan_upload, $nama_file);
 
         Sponsor::create([
@@ -55,9 +55,9 @@ class SponsorController extends Controller
             $nama_file = time() . "_" . $file->getClientOriginalName();
 
             // isi dengan nama folder tempat kemana file diupload
-            $tujuan_upload = 'data_file';
+            $tujuan_upload = 'storage';
             $file->move($tujuan_upload, $nama_file);
-            @unlink(public_path('/') . '/data_file/' . $sponsor->file);
+            @unlink(public_path('/') . '/storage/' . $sponsor->file);
         }
 
             $sponsor->file = $nama_file;
