@@ -48,14 +48,14 @@
                         </a>
                     </li>
                     @auth
-
+                    
                     <li class="nav-item">
                         <div class=" " aria-labelledby="navbarDropdown">
                             <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
-
+                            
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
@@ -86,32 +86,21 @@
         <section style="padding-top: 50px">
             <div class="brand-carousel section-padding owl-carousel mt-5 pt-5">
                 <div class="iklan">
-                    <img src="{{url('assets/images/sponsor.png')}}">
-                </div>
-                <div class="iklan">
-                    <img src="{{url('assets/images/sponsor.png')}}">
-                </div>
-                <div class="iklan">
-                    <img src="{{url('assets/images/sponsor.png')}}">
-                </div>
-                <div class="iklan">
-                    <img src="{{url('assets/images/sponsor.png')}}">
-                </div>
-                <div class="iklan">
-                    <img src="{{url('assets/images/sponsor.png')}}">
+                    @foreach ($sponsor as $s)
+                <img src="{{ url('storage').'/'.$s->file }}" alt="">
+                @endforeach
                 </div>
             </div>
-        </section>
-    </div>
-
-    @foreach ($poling as $p)
-    <section style="margin-top: -80px">
-        <div class="section-title">
-            <h2 class="">{{$p->title}}</h2>
-            <div class="countdown">
+        </div>
+    </section>
+        @foreach ($poling as $p)
+        <section style="margin-top: -80px">
+            <div class="section-title">
+                <h2 class="">{{$p->title}}</h2>
+                <div class="countdown">
                 <div id="countdown"></div>
             </div>
-    </section>
+        </section>
     <section style="margin-top: -80px">
         <div class="slider owl-carousel">
             @foreach ($p->candidate as $c)
@@ -119,7 +108,7 @@
                 <div class="img">
                     <a href="{{url('e-vote/user/candidate/').'/'.$c->id}}"><img
                             src="{{ url('storage').'/'.$c->avatar }}" alt=""></a>
-                </div>
+                        </div>
                 <div class="content">
                     <div class="title">
                         {{$c->name}}
@@ -132,7 +121,7 @@
         </div>
     </section>
     @endforeach
-
+    
     <!--Logo-->
     <section style="padding-bottom: 30px">
         <div class="section-title" style="margin-top: -50px">
@@ -142,7 +131,7 @@
             <div class="single-logo">
                 <img src="{{url('assets/images/logo1-removebg-preview.png')}}" width="100" height="110"
                     style="border-radius: 50%;" alt="">
-            </div>
+                </div>
             <div class="single-logo">
                 <img src="{{url('assets/images/logo2.jpg')}}" width="100" height="110" style="border-radius: 50%;"
                     alt="">
@@ -218,10 +207,10 @@
             if (seconds_left <= 0) {
                 clearInterval(x);
                 countdown.innerHTML = '<span class="days">' + 0 +
-                ' <label>Days</label></span> <span class="hours">' + 0 +
-                ' <label>Hours</label></span> <span class="minutes">' +
-                0 + ' <label>Minutes</label></span> <span class="seconds">' + 0 +
-                ' <label>Seconds</label></span>';
+                    ' <label>Days</label></span> <span class="hours">' + 0 +
+                    ' <label>Hours</label></span> <span class="minutes">' +
+                    0 + ' <label>Minutes</label></span> <span class="seconds">' + 0 +
+                    ' <label>Seconds</label></span>';
 
             }
         }, 1000);
