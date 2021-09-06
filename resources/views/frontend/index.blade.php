@@ -85,9 +85,11 @@
         <!--Iklan-->
         <section style="padding-top: 50px">
             <div class="brand-carousel section-padding owl-carousel mt-5 pt-5">
-                <div class="iklan">
+                <div class="img">
                     @foreach ($sponsor as $s)
-                <img src="{{ url('storage').'/'.$s->file }}" alt="">
+                    <a href="{{url('').'/'.$s->id}}"><img
+                        src="{{ url('storage').'/'.$s->file }}" alt=""></a>
+                    </div>
                 @endforeach
                 </div>
             </div>
@@ -185,6 +187,7 @@
 
             // find the amount of "seconds" between now and target
             var current_date = new Date().getTime();
+
             var seconds_left = (target_date - current_date) / 1000;
 
             // do some time calculations

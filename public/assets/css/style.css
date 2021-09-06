@@ -59,6 +59,7 @@ a:focus {
 .iklan {
     width: 100px;
     margin-left: 70px;
+    background-repeat: no-repeat;
 }
 
 .sponsor
