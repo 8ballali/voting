@@ -11,6 +11,7 @@
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('/style/plugins/fontawesome-free/css/all.min.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('/style/dist/css/adminlte.min.css')}}">
 </head>
@@ -48,8 +49,8 @@
             <!-- Brand Logo -->
             {{-- <a href="/e-vote/admin/" class="brand-link">
                 <img src="{{ url('/style/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo"
-                    class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">CAN CREATIVE</span>
+            class="brand-image img-circle elevation-3" style="opacity: .8">
+            <span class="brand-text font-weight-light">CAN CREATIVE</span>
             </a> --}}
 
             <!-- Sidebar -->
@@ -57,7 +58,8 @@
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="{{ url('/style/dist/img/user1-128x128.jpg')}}" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{ url('/style/dist/img/user1-128x128.jpg')}}" class="img-circle elevation-2"
+                            alt="User Image">
                     </div>
                     <div class="info">
                         <a href="{{url('/e-vote/admin')}}" class="d-block">CAN CREATIVE</a>
@@ -211,49 +213,49 @@
                                     </a>
                                 </li>
                             </ul>
-                            <li class="nav-item">
-                                <a href="{{url('/e-vote/admin/poling')}}" class="nav-link ">
-                                    <i class="nav-icon fas fa-edit"></i>
-                                    <p>
-                                        Poling
-                                        <i class="right fas fa-angle-left"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="{{url('/e-vote/admin/poling')}}" class="nav-link ">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>List Poling</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{url('/e-vote/admin/sponsor')}}" class="nav-link ">
-                                    <i class="nav-icon far fa-images"></i>
-                                    <p>
-                                        Sponsor
-                                        <i class="right fas fa-angle-left"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="{{url('/e-vote/admin/sponsor')}}" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>List Sponsor</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="{{url('/e-vote/admin/sponsor/add')}}" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Add Sponsor</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
+                        <li class="nav-item">
+                            <a href="{{url('/e-vote/admin/poling')}}" class="nav-link ">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>
+                                    Poling
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{url('/e-vote/admin/poling')}}" class="nav-link ">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List Poling</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{url('/e-vote/admin/sponsor')}}" class="nav-link ">
+                                <i class="nav-icon far fa-images"></i>
+                                <p>
+                                    Sponsor
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{url('/e-vote/admin/sponsor')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List Sponsor</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{url('/e-vote/admin/sponsor/add')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Sponsor</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
                             <div class=" " aria-labelledby="navbarDropdown">
                                 <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -416,9 +418,24 @@
 
                                 </div>
                                 <div class="form-group">
-                                    <label>Komunitas</label>
+                                    {{-- <label>Komunitas</label>
                                     <textarea name="community_id" class="form-control"
                                         placeholder="Komunitas Kandidat"> {{ $candidate->community_id }} </textarea>
+                                    --}}
+
+
+                                    <label>Community</label>
+                                    <select name="community_id" placeholder="{{$candidate->community_id}}"
+                                        class="select2" style="width: 100%;">
+                                        @foreach($community as $co)
+                                        @if ($co->id==$candidate->community_id)
+                                        <Option value='{{ $co ->id}}' selected>{{ $co->name}}</Option>
+                                        @else
+                                        <Option value='{{ $co ->id}}'>{{ $co->name}}</Option>
+                                        @endif
+                                        @endforeach
+                                    </select>
+
 
                                     @if($errors->has('community_id'))
                                     <div class="text-danger">
@@ -484,12 +501,20 @@
 
     <!-- jQuery -->
     <script src="{{ asset('/style/plugins/jquery/jquery.min.js')}}"></script>
+    <!-- Select 2 -->
+    <script src="{{asset('/style/plugins/select2/js/select2.full.min.js')}}"></script>
     <!-- Bootstrap 4 -->
     <script src="{{ asset('/style/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('/style/dist/js/adminlte.min.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('/style/dist/js/demo.js')}}"></script>
+    <script>
+        $(function () {
+            $('.select2').select2()
+        });
+
+    </script>
 </body>
 
 </html>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Candidate;
+use App\Community;
 
 class CandidateAdminCOntroller extends Controller
 {
@@ -65,8 +66,9 @@ class CandidateAdminCOntroller extends Controller
 
     public function edit($id)
     {
+        $community = Community::get();
         $candidate = candidate::find($id);
-        return view('admin.table-edit-candidate', ['candidate' => $candidate]);
+        return view('admin.table-edit-candidate', compact('community', 'candidate'));
     }
 
     public function update($id, Request $request)
@@ -81,8 +83,8 @@ class CandidateAdminCOntroller extends Controller
             'gender' => 'required',
             'user_phone' => 'required',
             'community_id' => 'required',
-            'file' => 'required|file|image|mimes:jpeg,png,jpg|max:20480',
-            'avatar' => 'required|file|image|mimes:jpeg,png,jpg|max:20480',
+            'file' => 'file|image|mimes:jpeg,png,jpg|max:20480',
+            'avatar' => 'file|image|mimes:jpeg,png,jpg|max:20480',
             'poling_id' => 'required'
 
         ]);
@@ -96,6 +98,8 @@ class CandidateAdminCOntroller extends Controller
             $tujuan_upload = 'storage';
             $file->move($tujuan_upload, $nama_file);
             @unlink(public_path('/') . '/storage/' . $candidate->file);
+        }else{
+            $nama_file=$candidate->file;
         }
         if ($request->avatar) {
             $avatar = $request->file('avatar');
@@ -106,6 +110,8 @@ class CandidateAdminCOntroller extends Controller
             $tujuan_upload = 'storage';
             $avatar->move($tujuan_upload, $nama_avatar);
             @unlink(public_path('/') . '/storage/' . $candidate->avatar);
+        }else{
+            $nama_avatar = $candidate->avatar;
         }
 
         $candidate->name = $request->name;
