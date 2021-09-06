@@ -58,6 +58,8 @@ class SponsorController extends Controller
             $tujuan_upload = 'storage';
             $file->move($tujuan_upload, $nama_file);
             @unlink(public_path('/') . '/storage/' . $sponsor->file);
+        }else{
+            $nama_file = $sponsor->file;
         }
 
             $sponsor->file = $nama_file;
