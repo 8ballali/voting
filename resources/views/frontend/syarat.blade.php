@@ -43,7 +43,7 @@
                         <a class="nav-link" href="{{url('e-vote/user/syarat')}}">Syarat</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('e-vote/user/registrasi')}}">Registrasi</a>
+                        {{-- <a class="nav-link" href="{{url('e-vote/user/registrasi')}}">Registrasi</a> --}}
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">

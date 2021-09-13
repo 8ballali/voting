@@ -88,9 +88,9 @@ Route::post('/e-vote/user/candidate/store', 'CandidateUserController@store');
     Route::get('e-vote/user/syarat', function () {
         return view('frontend/syarat');
     });
-    Route::get('e-vote/user/registrasi', function () {
-            return view('frontend/registrasi');
-    });
+    // Route::get('e-vote/user/registrasi', function () {
+    //         return view('frontend/registrasi');
+    // });
 
     Route::get('e-vote/user/visi1', function () {
         return view('frontend/visi1');

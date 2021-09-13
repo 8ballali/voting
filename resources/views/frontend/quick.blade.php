@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quick</title>
-    
+
     <link rel="shortcut icon" href="{{url('assets/images/site-removebg.png')}}" type="image/png">
     <link rel="stylesheet" href="{{url('assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/awesome.css')}}">
@@ -45,7 +45,7 @@
                         <a class="nav-link" href="{{url('e-vote/user/syarat')}}">Syarat</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('e-vote/user/registrasi')}}">Registrasi</a>
+                        {{-- <a class="nav-link" href="{{url('e-vote/user/registrasi')}}">Registrasi</a> --}}
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">
