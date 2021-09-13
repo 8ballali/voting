@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Candidate;
 use App\Community;
+use App\Poling;
 
 class CandidateAdminCOntroller extends Controller
 {
@@ -16,7 +17,9 @@ class CandidateAdminCOntroller extends Controller
 
     public function add()
     {
-        return view('admin.table-add-candidate');
+        $poling = Poling::All();
+        $community = Community::All();
+        return view('admin.table-add-candidate', compact('poling', 'community'));
     }
 
     public function store(Request $request)
@@ -26,10 +29,11 @@ class CandidateAdminCOntroller extends Controller
             'visi' => 'required',
             'misi' => 'required',
             'alamat' => 'required',
-            'ttl' => 'required',
+            'tempatlahir' => 'required',
+            'tanggallahir' => 'required',
             'gender' => 'required',
             'user_phone' => 'required',
-            'user_id' => 'required',
+            'community_id' => 'required',
             'file' => 'required|file|image|mimes:jpeg,png,jpg|max:20480',
             'avatar' => 'required|file|image|mimes:jpeg,png,jpg|max:20480',
             'poling_id' => 'required'

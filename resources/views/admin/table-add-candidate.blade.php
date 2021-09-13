@@ -7,6 +7,7 @@
     <title>Candidate</title>
 
     <link rel="shortcut icon" href="{{url('assets/images/site-removebg.png')}}" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -362,7 +363,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Tanggal Lahir</label>
-                                    <textarea name="tanggallahir" class="form-control" placeholder="Tanggal Lahir Anda"></textarea>
+                                    <input type="date" name="tanggallahir" class="form-control" >
 
                                     @if($errors->has('tanggallahir'))
                                     <div class="text-danger">
@@ -374,7 +375,13 @@
 
                                 <div class="form-group">
                                     <label>Jenis Kelamin</label>
-                                    <textarea name="gender" class="form-control" placeholder="jenis Kelamin"></textarea>
+                                    <select name="gender" class="select2" style="width: 100%">
+
+                                        <option value="laki-laki">Laki - laki</option>
+
+                                        <option value="perempuan">Perempuan</option>
+
+                                    </select>
 
                                     @if($errors->has('gender'))
                                     <div class="text-danger">
@@ -406,8 +413,13 @@
                                     <input type="file" name="avatar">
                                 </div>
                                 <div class="form-group">
-                                    <label>Nomor Urut</label>
-                                    <textarea name="community_id" class="form-control" placeholder="Nomor Urut"></textarea>
+                                    <label>Komunitas</label>
+                                    <select name="community_id" class="select2" style="width: 100%">
+
+                                        @foreach($community as $c)
+                                        <Option value='{{ $c ->id}}'>{{ $c->name}}</Option>
+                                        @endforeach
+                                    </select>
 
                                     @if($errors->has('community_id'))
                                     <div class="text-danger">
@@ -417,15 +429,19 @@
 
                                 </div>
                                 <div class="form-group">
-                                    <label>Poling ID</label>
-                                    <textarea name="poling_id" class="form-control" placeholder="Poling ID"></textarea>
+                                    <label>Poling</label>
+                                    <select name="poling_id" class="select2" style="width: 100%">
+
+                                        @foreach($poling as $p)
+                                        <Option value='{{ $p ->id}}'>{{ $p->title}}</Option>
+                                        @endforeach
+                                    </select>
 
                                     @if($errors->has('poling_id'))
                                     <div class="text-danger">
                                         {{ $errors->first('poling_id')}}
                                     </div>
                                     @endif
-
                                 </div>
 
                                 <div class="form-group">
@@ -463,12 +479,20 @@
 
     <!-- jQuery -->
     <script src="{{ asset('/style/plugins/jquery/jquery.min.js')}}"></script>
+      <!-- Select 2 -->
+      <script src="{{asset('/style/plugins/select2/js/select2.full.min.js')}}"></script>
     <!-- Bootstrap 4 -->
     <script src="{{ asset('/style/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('/style/dist/js/adminlte.min.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('/style/dist/js/demo.js')}}"></script>
+    <script>
+        $(function () {
+            $('.select2').select2()
+        });
+
+    </script>
 </body>
 
 </html>

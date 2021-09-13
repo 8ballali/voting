@@ -23,12 +23,12 @@ class CommunityController extends Controller
             'description'=> 'required',
             'phone' => 'required'
         ]);
-    
+
         Community::create([
             'name' => $request->name,
             'description' => $request->description,
             'phone' => $request->phone
-            
+
         ]);
         return redirect('/e-vote/admin/community');
         }
