@@ -113,9 +113,10 @@
                 </div>
                 <div class="content">
                     <div class="title">
-                        {{$c->name}}
+                        {{$c->name}} 
                     </div>
                     <div class="sub-title">
+                        {{$c->community->name}}
                     </div>
                 </div>
             </div>
