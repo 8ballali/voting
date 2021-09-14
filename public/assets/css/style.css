@@ -131,7 +131,7 @@ a:focus {
     font-size: 19px;
     font-weight: 600;
     color: #e74c3c;
-    line-height: 20px;
+    line-height: 19px;
 }
 
 .card .content p {
@@ -650,7 +650,7 @@ label {
         display: block;
         border-right: 1px solid #FFF;
       }
-    
+
 
     .container .content .category {
         flex-direction: column;
@@ -717,7 +717,7 @@ label {
         display: block;
         border-right: 1px solid #FFF;
       }
-    
+
 
 }
 
@@ -727,7 +727,7 @@ label {
         width: 100px;
         margin-left: 5px;
     }
-    
+
     #countdown {
         width: 50%;
         margin-left: 40px;
@@ -746,7 +746,7 @@ label {
         display: block;
         border-right: 1px solid #FFF;
       }
-    
+
     .container .content .category {
         flex-direction: column;
     }
