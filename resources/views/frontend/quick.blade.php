@@ -81,26 +81,41 @@
                 <canvas id="pieChart"></canvas>
             </div>
         </div>
+
+        <div class="container">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+
         <script>
             $(function () {
-              /* ChartJS
-               * -------
-               * Here we will create a few charts using ChartJS
-               */
-
-              //--------------
-              //- AREA CHART -
-              //--------------
-
-              // Get context with jQuery - using jQuery's .get() method.
-
-
-              //-------------
-              //- DONUT CHART -
-              //-------------
-              // Get context with jQuery - using jQuery's .get() method.
-
-
               var donutData        = {
                 labels: {!! $data !!},
                 datasets: [
@@ -121,23 +136,16 @@
                 maintainAspectRatio : false,
                 responsive : true,
               }
-              //Create pie or douhnut chart
-              // You can switch between pie and douhnut using the method below.
               new Chart(pieChartCanvas, {
                 type: 'pie',
                 data: pieData,
                 options: pieOptions
               })
-              //-------------
-              //- BAR CHART -
-              //-------------
-
-
-
             })
           </script>
 
         </script>
+
     </div>
     <!-- Footer -->
     <footer>
