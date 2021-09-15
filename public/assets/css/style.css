@@ -280,17 +280,22 @@ section {
 .textarea {
     width: 100%;
     outline: none;
-    border: 1px solid #d5dbd9;
+    color: black;
+    background-color: transparent;
+    border: none;
     font-size: 15px;
     padding: 8px 10px;
     border-radius: 3px;
     transition: all 0.3s ease;
+    resize: none;
+    height: 180px;
+    overflow: hidden;
+    text-align: center;
 }
 
-.textarea {
-    resize: none;
-    height: 125px;
-}
+
+    
+
 
 .input_box .input:focus,
 .input_box .textarea:focus {
