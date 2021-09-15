@@ -82,38 +82,25 @@
             </div>
         </div>
 
-        <div class="container">
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
-                </tbody>
-              </table>
-        </div>
-
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Peringkat</th>
+                <th>Nama</th>
+                <th>Jumlah Suara</th>
+              </tr>
+            </thead>
+            @foreach(DB::table('vote')->selectRaw(DB::raw('count(*) as count, candidate_id'))->groupBy('candidate_id')->orderBy('count', 'desc')->get() as $v)
+            <tbody>
+              <tr>
+                <td>{{$loop->iteration}}</td>
+                <td>{{\App\Candidate::find($v->candidate_id)->name}}</td>
+                <td>{{$v->count}}</td>
+                <td></td>
+              </tr>
+            </tbody>
+            @endforeach
+          </table>
         <script>
             $(function () {
               var donutData        = {

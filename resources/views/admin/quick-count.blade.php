@@ -286,17 +286,6 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
-            <!-- AREA CHART -->
-
-            <!-- /.card -->
-
-            <!-- DONUT CHART -->
-
-              <!-- /.card-body -->
-
-            <!-- /.card -->
-
-            <!-- PIE CHART -->
             <div class="card card-danger">
               <div class="card-header">
                 <h3 class="card-title">Hasil Suara</h3>
@@ -313,33 +302,19 @@
               <div class="card-body">
                 <canvas id="pieChart" style="min-height: 500px; height: 500px; max-height: 500px; max-width: 100%;"></canvas>
               </div>
-              <!-- /.card-body -->
             </div>
-            <!-- /.card -->
-
           </div>
           <!-- /.col (LEFT) -->
           <div class="col-md-6">
-            <!-- LINE CHART -->
 
-              <!-- /.card-body -->
             </div>
-            <!-- /.card -->
 
-            <!-- BAR CHART -->
-
-              <!-- /.card-body -->
             </div>
-            <!-- /.card -->
-
-            <!-- STACKED BAR CHART -->
-
-              <!-- /.card-body -->
             </div>
-            <!-- /.card -->
+
 
           </div>
-          <!-- /.col (RIGHT) -->
+
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->

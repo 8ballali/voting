@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Vote;
+use App\Candidate;
 use Illuminate\Support\Facades\DB;
 
 class QuickUserController extends Controller
@@ -19,9 +20,11 @@ class QuickUserController extends Controller
        return $x->name;
        });
 
+       $candidate = Candidate::All();
+       $vote = Vote::All();
 
 
-   return view('frontend.quick', ['label' => $label, 'data' => $data]);
+   return view('frontend.quick', ['label' => $label, 'data' => $data, 'candidate' => $candidate, 'vote' => $vote]);
 
 }
 }
