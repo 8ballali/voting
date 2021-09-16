@@ -73,34 +73,47 @@
     </nav>
 
     <div id="body">
-        <div class="chart-container">
-            <div class="section-title">
-                <h2>Hasil Pemilihan</h2>
-            </div>
-            <div class="pie-chart-container">
-                <canvas id="pieChart"></canvas>
-            </div>
-        </div>
 
-        <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>Peringkat</th>
-                <th>Nama</th>
-                <th>Jumlah Suara</th>
-              </tr>
-            </thead>
-            @foreach(DB::table('vote')->selectRaw(DB::raw('count(*) as count, candidate_id'))->groupBy('candidate_id')->orderBy('count', 'desc')->get() as $v)
-            <tbody>
-              <tr>
-                <td>{{$loop->iteration}}</td>
-                <td>{{\App\Candidate::find($v->candidate_id)->name}}</td>
-                <td>{{$v->count}}</td>
-                <td></td>
-              </tr>
-            </tbody>
-            @endforeach
-          </table>
+            <div class="container">
+                <div class="chart-container">
+                    <div class="section-title">
+                        <h2>Hasil Pemilihan</h2>
+                    </div>
+                    <div class="pie-chart-container">
+                        <canvas id="pieChart"></canvas>
+                    </div>
+                </div>
+                <div class="table-container-fluid">
+                    <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Peringkat</th>
+                            <th>Nama</th>
+                            <th>Jumlah Suara</th>
+                          </tr>
+                        </thead>
+                        @foreach(DB::table('vote')->selectRaw(DB::raw('count(*) as count, candidate_id'))->groupBy('candidate_id')->orderBy('count', 'desc')->get() as $v)
+                        <tbody>
+                          <tr>
+                            <td>{{$loop->iteration}}</td>
+                            <td>{{\App\Candidate::find($v->candidate_id)->name}}</td>
+                            <td>{{$v->count}}</td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                        @endforeach
+                      </table>
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
         <script>
             $(function () {
               var donutData        = {
@@ -108,7 +121,7 @@
                 datasets: [
                   {
                     data: {!! $label !!},
-                    backgroundColor : ['#f56954', '#00a65a'],
+                    backgroundColor : ['#80ED99', '#57CC99', '#7DEDFF', '#7C83FD'],
                   }
                 ]
               }
