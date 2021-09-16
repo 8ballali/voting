@@ -488,7 +488,7 @@ form .button input:hover {
 .pie-chart-container {
     width: 500px;
     height: 500px;
-    margin-top: -30px;
+    margin-top: -15px;
     margin-left: 400px;
     /* float: left; */
 
@@ -497,9 +497,10 @@ form .button input:hover {
 .table-container-fluid{
     width: 100%;
     height: 100%;
-    margin-top: 200px;
+    margin-top: 210px;
     margin-left: 10px;
     margin-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 /***** Footer *****/
@@ -684,8 +685,18 @@ label {
     .pie-chart-container {
         width: 300px;
         height: 300px;
-        margin-left: 60px;
+        margin-left: 40px;
+        margin-top: -10px;
     }
+
+    .table-container-fluid{
+        width: 100%;
+        height: 100%;
+        margin-top: -80px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+    
 }
 
 @media (max-width: 380px) {
@@ -779,6 +790,6 @@ label {
     .pie-chart-container {
         width: 300px;
         height: 300px;
-        margin-left: 30px;
+        margin-left: 15px;
     }
 }
