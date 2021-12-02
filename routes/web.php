@@ -26,7 +26,6 @@ Auth::routes();
 
 Route::group(['middleware' => 'admin'], function () {
     Route::get('/e-vote/admin', 'AdminController@index');
-    // Route::get('/e-vote/admin/dashboard', 'AdminController@dashboard');
     Route::get('/e-vote/admin/candidate', 'CandidateAdminController@index');
     Route::get('/e-vote/admin/candidate/add', 'CandidateAdminController@add');
     Route::post('/e-vote/admin/candidate/store', 'CandidateAdminController@store');

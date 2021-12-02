@@ -349,12 +349,6 @@
 
                                 </div>
                                 <div class="form-group">
-                                    {{-- <label>Community</label>
-                                    <textarea name="community_id" class="form-control"
-                                        placeholder="Nomor Telepon"> {{ $user->community_id }} </textarea> --}}
-
-
-
                                     <label>Community</label>
                                     <select name="community_id" placeholder="{{$user->community_id}}"
                                         class="select2" style="width: 100%;">
@@ -366,13 +360,11 @@
                                         @endif
                                         @endforeach
                                     </select>
-
                                     @if($errors->has('community_id'))
                                     <div class="text-danger">
                                         {{ $errors->first('community_id')}}
                                     </div>
                                     @endif
-
                                 </div>
                                 <div class="form-group">
                                     <label>Role</label>

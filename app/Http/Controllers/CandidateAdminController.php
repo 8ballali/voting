@@ -90,7 +90,6 @@ class CandidateAdminCOntroller extends Controller
             'file' => 'file|image|mimes:jpeg,png,jpg|max:20480',
             'avatar' => 'file|image|mimes:jpeg,png,jpg|max:20480',
             'poling_id' => 'required'
-
         ]);
         $candidate = Candidate::find($id);
         if ($request->file) {

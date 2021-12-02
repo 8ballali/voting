@@ -10,14 +10,20 @@ class QuickCountController extends Controller
 {
     public function index (){
 
+            //Untuk menghitung suara
              $label = DB::table('vote')->selectRaw(DB::raw('count(*) as name'))->groupBy('candidate_id')->orderBy('candidate_id', 'asc')->get()->map(function($x) {
             return $x->name;
             });
 
+            dd($label);
+
+            // Untuk Menampilkan Nama
             $data = DB::table('candidate')->join('vote', 'vote.candidate_id', 'candidate.id')->groupBy('name')->select('candidate.name')->orderBy('candidate.id', 'asc')->get(
             )->map(function($x) {
             return $x->name;
             });
+            // dd($data);
+
 
 
 
