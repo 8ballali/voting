@@ -300,16 +300,16 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Data Kandidat</h3>
+                        <h3 class="card-title">Data Suara</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+
                                     <th>User</th>
-                                    <th>Kandidat</th>
+                                    <th>Memilih</th>
                                     <th>Created At</th>
                                     <th>Updated At</th>
                                     <th>Option</th>
@@ -319,7 +319,7 @@
                                 @foreach($vote as $v)
                                 <tr>
 
-                                    <td>{{ $v->id }}</td>
+
                                     <td>{{ $v->user->name}}</td>
                                     <td>{{ $v->candidate->name }}</td>
                                     <td>{{ $v->created_at }}</td>

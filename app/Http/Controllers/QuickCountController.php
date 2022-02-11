@@ -15,7 +15,7 @@ class QuickCountController extends Controller
             return $x->name;
             });
 
-            dd($label);
+            // dd($label);
 
             // Untuk Menampilkan Nama
             $data = DB::table('candidate')->join('vote', 'vote.candidate_id', 'candidate.id')->groupBy('name')->select('candidate.name')->orderBy('candidate.id', 'asc')->get(

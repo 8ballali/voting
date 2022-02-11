@@ -13,7 +13,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('/style/dist/css/adminlte.min.css')}}">
 </head>
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -75,6 +75,7 @@
       </div>
 
       <!-- Sidebar Menu -->
+
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
@@ -260,6 +261,10 @@
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
+    <div class="sidebar-custom">
+        <a href="#" class="btn btn-link"><i class="fas fa-cogs"></i></a>
+        <a href="#" class="btn btn-secondary hide-on-collapse pos-right">Help</a>
+      </div>
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
@@ -289,19 +294,34 @@
             <div class="card card-danger">
               <div class="card-header">
                 <h3 class="card-title">Hasil Suara</h3>
-
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
                     <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
                   </button>
                 </div>
               </div>
               <div class="card-body">
                 <canvas id="pieChart" style="min-height: 500px; height: 500px; max-height: 500px; max-width: 100%;"></canvas>
               </div>
+              <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Peringkat</th>
+                        <th>Nama</th>
+                        <th>Jumlah Suara</th>
+                    </tr>
+                </thead>
+                @foreach(DB::table('vote')->selectRaw(DB::raw('count(*) as peringkat, candidate_id'))->groupBy('candidate_id')->orderBy('peringkat', 'desc')->get() as $v)
+                    <tbody>
+                      <tr>
+                        <td>{{$loop->iteration}}</td>
+                        <td>{{\App\Candidate::find($v->candidate_id)->name}}</td>
+                        <td>{{$v->peringkat}}</td>
+
+                      </tr>
+                    </tbody>
+                    @endforeach
+            </table>
             </div>
           </div>
           <!-- /.col (LEFT) -->
@@ -374,7 +394,7 @@
       datasets: [
         {
           data: {!! $label !!},
-          backgroundColor : ['#f56954', '#00a65a'],
+          backgroundColor : ['#f56954', '#00a65a', '#5633FF', '#FF3333'],
         }
       ]
     }

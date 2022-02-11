@@ -92,12 +92,12 @@
                             <th>Jumlah Suara</th>
                           </tr>
                         </thead>
-                        @foreach(DB::table('vote')->selectRaw(DB::raw('count(*) as count, candidate_id'))->groupBy('candidate_id')->orderBy('count', 'desc')->get() as $v)
+                        @foreach(DB::table('vote')->selectRaw(DB::raw('count(*) as peringkat, candidate_id'))->groupBy('candidate_id')->orderBy('peringkat', 'desc')->get() as $v)
                         <tbody>
                           <tr>
                             <td>{{$loop->iteration}}</td>
                             <td>{{\App\Candidate::find($v->candidate_id)->name}}</td>
-                            <td>{{$v->count}}</td>
+                            <td>{{$v->peringkat}}</td>
                             <td></td>
                           </tr>
                         </tbody>

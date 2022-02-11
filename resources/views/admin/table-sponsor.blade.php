@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sponsor</title>
-
     <link rel="shortcut icon" href="{{url('assets/images/site-removebg.png')}}" type="image/png">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -19,7 +17,6 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('/style/dist/css/adminlte.min.css')}}">
 </head>
-
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <!-- Navbar -->
@@ -36,18 +33,13 @@
                     <a href="{{url('/e-vote/admin/sponsor')}}" class="nav-link active">Data Sponsor</a>
                 </li>
             </ul>
-
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Navbar Search -->
-
-
                 <!-- Messages Dropdown Menu -->
-
             </ul>
         </nav>
         <!-- /.navbar -->
-
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
@@ -56,7 +48,6 @@
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">CAN CREATIVE</span>
             </a> --}}
-
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user (optional) -->
@@ -288,10 +279,8 @@
                     </div>
                 </div><!-- /.container-fluid -->
             </section>
-
             <!-- Main content -->
             <section class="content">
-
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">Data Sponsor</h3>
@@ -301,7 +290,6 @@
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
                                     <th>Gambar</th>
                                     <th>Description</th>
                                     <th>Updated at</th>
@@ -311,19 +299,15 @@
                             <tbody>
                                 @foreach($sponsor as $s)
                                 <tr>
-
-                                    <td>{{ $s->id }}</td>
                                     <td><img src="{{ url('storage').'/'.$s->file }}" height="30px" width="30px" /></td>
                                     <td>{{ $s->description }}</td>
                                     <td>{{ $s->updated_at }}</td>
-
                                     <td>
                                         <a href="{{url('/e-vote/admin/sponsor/delete/'.$s->id)}}"
                                             onClick="confirm('Delete entry?')" class="btn btn-danger btn-sm">Hapus</a>
                                         <a href="{{url('/e-vote/admin/sponsor/edit/'.$s->id)}}"
                                             class="btn btn-warning">Edit</a>
                                     </td>
-
                                 </tr>
                                 @endforeach
                             </tbody>

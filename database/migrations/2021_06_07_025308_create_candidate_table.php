@@ -23,6 +23,7 @@ class CreateCandidateTable extends Migration
             $table->date('tanggallahir');
             $table->text('gender');
             $table->string('user_phone');
+            
             $table->string('file');
             $table->string('avatar');
             $table->string('status')->default('UNCONFIRMED');

@@ -303,8 +303,8 @@
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Reg ID</th>
+
+                                    <th>Token</th>
                                     <th>Nama User</th>
                                     <th>Created at</th>
 
@@ -314,7 +314,7 @@
                             <tbody>
                                 @foreach($generate as $g)
                                 <tr>
-                                    <td>{{ $g->id }}</td>
+
 
                                     <td>{{ $g->reg_id }}</td>
 

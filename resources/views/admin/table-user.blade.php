@@ -306,7 +306,7 @@
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
@@ -319,7 +319,7 @@
                                 @foreach($user as $u)
                                 <tr>
 
-                                    <td>{{ $u->id }}</td>
+
                                     <td>{{ $u->name }}</td>
                                     <td>{{ $u->email }}</td>
                                     <td>{{ $u->phone }}</td>

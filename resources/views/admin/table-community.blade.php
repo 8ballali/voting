@@ -301,7 +301,7 @@
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+
                                     <th>Name</th>
                                     <th>Description</th>
                                     <th>Phone</th>
@@ -313,7 +313,7 @@
                                 @foreach($community as $co)
                                 <tr>
 
-                                    <td>{{ $co->id }}</td>
+
                                     <td>{{ $co->name }}</td>
                                     <td>{{ $co->description }}</td>
                                     <td>{{ $co->phone }}</td>
